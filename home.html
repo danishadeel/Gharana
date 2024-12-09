@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html class="home page-template-home">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Sunshine">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/atf.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Luxurious+Roman&display=swap"
+    rel="stylesheet">
+  <script type="text/javascript">
+    // Lazy Load Start
+    document.addEventListener("DOMContentLoaded", function () {
+      var e, n = document.querySelectorAll(".lazy");
+
+      function t() {
+        e && clearTimeout(e), e = setTimeout(function () {
+          for (var e = window.pageYOffset, o = 0; o < n.length; o++) n[o].offsetTop < window.innerHeight + e && (n[o].src = n[o].dataset.src, n[o].classList.remove("lazy"));
+          0 == n.length && (document.removeEventListener("scroll", t), window.removeEventListener("resize", t), window.removeEventListener("orientationChange", t))
+        }, 20)
+      }
+      document.addEventListener("scroll", t), window.addEventListener("resize", t), window.addEventListener("orientationChange", t)
+    });
+    // Lazy Load End
+    // webp format detection
+    /*! modernizr 3.6.0 (Custom Build) | MIT *
+
+    * https://modernizr.com/download/?-webp-setclasses !*/
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(
+              Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no_") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" :
+            "no_") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () { };
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+          uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+          name: "webp"
+        }, {
+          uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+          name: "webp.alpha"
+        }, {
+          uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+          name: "webp.animation"
+        }, {
+          uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+          name: "webp.lossless"
+        }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+    // webp format detection end
+  </script>
+  <style type="text/css">
+    .lazy {
+      background-image: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrapper" onclick="return true">
+    <!-- <div id="google_translate_element"></div> -->
+
+    <!-- <section-fold>  ====== Header Section ====== -->
+
+    <!-- Mobile Header -->
+    <div class="header_mob">
+      <div class="top">
+        <div class="btns">
+          <a href="#">Dentist Referral</a>
+        </div>
+
+        <ul class="dropdown">
+          <li class="nav-item dropdown">
+            <a class="nav-link"> <em class="fa-phone"></em> Call Us <em class="fa-angle-down"></em></a>
+            <div id="call_nav" class="dropdown-menu">
+              <a class="dropdown-item" href="#">WAKEFIELD</a>
+              <a class="dropdown-item" href="#">BARNsley</a>
+              <a class="dropdown-item" href="#">Selby</a>
+              <a class="dropdown-item" href="#">Goole</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+
+            <a class="nav-link"> <em class="fa-location-1"></em> Location <em class="fa-angle-down"></em></a>
+            <div id="loc_nav" class="dropdown-menu">
+              <a class="dropdown-item" href="#">WAKEFIELD</a>
+              <a class="dropdown-item" href="#">BARNsley</a>
+              <a class="dropdown-item" href="#">Selby</a>
+              <a class="dropdown-item" href="#">Goole</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="row ng bot flex">
+        <div class="logo"> <a class="m_logo img" href="/">
+            <img width="232" height="75" src="images/logo.png" alt=""> </a> </div>
+        <div class="menu_mob text-right flex">
+          <a class="humburger_menu" data-toggle="collapse" data-target="#mobile_nav"> <em class="fa-bars"></em> </a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Header END -->
+
+    <!-- Mobile Nav -->
+    <div class="mobile_nav">
+      <div id="mobile_nav" class=" collapse">
+        <ul class="nav">
+          <li> <a href="#">Book a free consultation</a>
+          </li>
+          <li> <a href="#">Meet the Team</a>
+          </li>
+          <li> <a href="default.html">Treatment</a>
+          </li>
+          <li> <a class="nav-selected" href="#">Technology</a>
+            <ul>
+              <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
+                  class="nav-selected nav-path-selected">Invisalign®</a></li>
+              <li> <a href="#">Invisalign</a>
+                <ul>
+                  <li> <a href="#">Level 3</a>
+                  </li>
+                  <li> <a href="#">Level 3</a>
+                  </li>
+                </ul>
+              </li>
+              <li> <a href="#">Ceramic Braces</a>
+              </li>
+              <li> <a href="#">Traditional Braces</a>
+              </li>
+              <li> <a href="#">Social 6</a>
+              </li>
+            </ul>
+          </li>
+          <li> <a href="default.html"> Fix my smile</a>
+          </li>
+          <li> <a href="#">Cost</a>
+          </li>
+          <li> <a href="#">Before & Afters</a>
+          </li>
+          <li> <a href="#">Patient Zone</a>
+          </li>
+        </ul>
+        <ul>
+          <li><a href="/referrals" class="btn_ref">Dentist referral</a></li>
+        </ul>
+      </div>
+      <div class="mobile_overlay"></div>
+    </div>
+    <!-- Mobile Nav -->
+
+    <!-- Sticky Button -->
+    <div id="scroll-to"> <a href="/free-consultation/" class="btn">Book a free consultation</a> </div>
+
+    <!-- Header -->
+    <header class="header default_sticky" data-top="5">
+      <div class="header_top">
+        <div class="cnt-lg">
+          <div class="flex align-items-center row ng">
+            <div class="logo col-md-2">
+              <a href="/" class="img"> <img title="" alt="" src="images/logo.png" width="232" height="75" /> </a>
+            </div>
+            <div class="col-md-10">
+              <div class="flex jc_end">
+                <ul class="navigation">
+                  <li> <a href="">Feature</a>
+                    <ul>
+                      <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
+                          class="nav-selected nav-path-selected">Invisalign®</a></li>
+                      <li> <a href="#">Invisalign</a>
+                        <ul>
+                          <li> <a href="#">Level 3</a>
+                          </li>
+                          <li> <a href="#">Level 3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li> <a href="#">Ceramic Braces</a>
+                      </li>
+                      <li> <a href="#">Traditional Braces</a>
+                      </li>
+                      <li> <a href="#">Social 6</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li> <a href="">Packages</a>
+                  </li>
+                  <li> <a href="">How it Works</a>
+                  </li>
+                  <li> <a href="">Case Studies</a>
+                  </li>
+                  <li> <a href="">Blog</a>
+                  </li>
+                  <li> <a href="">Content</a>
+                  </li>
+                </ul>
+                <div class="nav_btns" >
+                  <a class="btn btn-v3" href="">Sign Up</a>
+                  <a class="btn btn-v2" href="">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="btn sticky_button bg">Book a free consultation</a>
+    </header>
+    <div class="sticky_space"></div>
+    <!-- Header -->
+    <!-- </section-fold> ====== Header Section End ====== -->
+
+    <!-- Hero -->
+    <section class="home_hero">
+      <div class="flex cnt-lg">
+        <div class="head_content">
+          <div class="txt">
+            <div class="hero-txt">
+              <div class="item">
+                <h1>Streamline Building Operation with <br><span>All-In-One-Solution</span></h1>
+                <p>Bayti Living is your trusted partner for seamless facility management and effortless property
+                  operations.</p>
+                <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
+                  connected, ensuring efficient communication and task management.</p>
+                <div class="btns">
+                  <a href="" class="btn">Request Demo</a>
+                </div>
+              </div>
+              <div class="item">
+                <h1>Streamline Building Operation with <br><span>All-In-One-Solution</span></h1>
+                <p>Bayti Living is your trusted partner for seamless facility management and effortless property
+                  operations.</p>
+                <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
+                  connected, ensuring efficient communication and task management.</p>
+                <div class="btns">
+                  <a href="" class="btn">Request Demo</a>
+                </div>
+              </div>
+              <div class="item">
+                <h1>Streamline Building Operation with <br><span>All-In-One-Solution</span></h1>
+                <p>Bayti Living is your trusted partner for seamless facility management and effortless property
+                  operations.</p>
+                <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
+                  connected, ensuring efficient communication and task management.</p>
+                <div class="btns">
+                  <a href="" class="btn">Request Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="img"></div>
+      </div>
+    </section>
+    <!-- </section-fold> ====== Hero Section End ====== -->
+
+    <div class="space_botm"></div>
+
+    <!-- <section-fold>  ====== Team Home Section ====== -->
+    <section class="sbs flip team_home">
+      <div class="cnt-sm text-center">
+        <h1>Transform your Building Management with Bayti Living</h1>
+      </div>
+      <div class="flex no-flex-sm cnt">
+        <div class="txt">
+          <div class="content">
+            <h4>Welcome to Bayti – your all-in-one solution for streamlined property management in Dubai. </h4>
+            <p>Whether you’re a builder seeking to optimize your property portfolio or a tenant looking for a
+              seamless
+              renting experience, Bayti has you covered. With a suite of powerful features and an intuitive
+              interface,
+              Bayti revolutionizes the way you manage properties and engage with tenants.</p>
+          </div>
+        </div>
+        <div class="img">
+          <img src="images/video-image.png" alt="">
+        </div>
+      </div>
+    </section>
+    <!-- </section-fold> ====== Team Home Section End ====== -->
+
+    <div class="space_botm"></div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="cnt">
+        <div class="cnt-sm text-center mb-5">
+          <h1>Product Features</h1>
+          <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes
+            the way you manage properties and engage with tenants.</p>
+        </div>
+        <div class="feature_list">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="box ml">
+                <h4>Property Management</h4>
+                <ul>
+                  <li>Building, Apartment, Facilities</li>
+                  <li>Owner Property MGR</li>
+                  <li>Top Line Revenue</i>
+                  <li>Licenses Maintenance</li>
+                </ul>
+              </div>
+
+              <div class="box">
+                <h4>Facilities Management</h4>
+                <ul>
+                  <li>Apartment & Facilities</li>
+                  <li>Technicians Communication</li>
+                  <li>Work Order Management</li>
+                </ul>
+              </div>
+
+              <div class="box ml">
+                <h4>Contracts & Tenants</h4>
+                <ul>
+                  <li>Tenancy Contracts</li>
+                  <li>Payment & Due Date Reminders</li>
+                  <li>Tenancy Profile & Docs</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 feature_img">
+              <div class="box mb">
+                <h4>Broadcast</h4>
+                <ul>
+                  <li>Broadcast</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="box mr mb-4">
+                <h4>Renewals & Payments</h4>
+                <p>The assigned support team or individual investigates the reported issue or fulfills the requested
+                  service
+                </p>
+              </div>
+
+              <div class="box mb-4">
+                <h4>Lead Management</h4>
+                <ul>
+                  <li>Customer/Leads</li>
+                  <li>General Communication</li>
+                </ul>
+              </div>
+
+              <div class="box mr">
+                <h4>Management Reports</h4>
+                <ul>
+                  <li>Revenue & Expenses Report</li>
+                  <li>Payment Collection</li>
+                  <li>Vacancy Report</li>
+                  <li>Revenue Projection</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Features End -->
+
+    <div class="space_botm"></div>
+
+    <!-- property sec start -->
+    <div class="property-manager cnt">
+      <div class="cnt-sm text-center">
+        <h4 class="fw-100">Bayti Living platform enables property managers, owners, and lenders to take better care of
+          millions of
+          apartments.</h4>
+      </div>
+      <div class="flex p-m-num">
+        <div class="item_box">
+          <p class="hs2">50,000+</p>
+          <p>Transactions Processed Annually</p>
+        </div>
+        <div class="item_box">
+          <p class="hs2">25,000+</p>
+          <p>Users <br> Registered</p>
+        </div>
+        <div class="item_box">
+          <p class="hs2">29%</p>
+          <p>Year-over-Year <br> Growth</p>
+        </div>
+        <div class="item_box">
+          <p class="hs2">95%</p>
+          <p>Customer <br> Satisfaction Rate</p>
+        </div>
+        <div class="item_box">
+          <p class="hs2">10,000+</p>
+          <p>Properties <br> Managed</p>
+        </div>
+      </div>
+    </div>
+    <!-- property sec end -->
+
+    <div class="space_botm bd cnt"></div>
+
+    <!-- Stakeholders -->
+    <div class="stakeholder">
+      <div class="cnt-sm text-center">
+        <h1>Stakeholder Features</h1>
+        <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes the
+          way you
+          manage properties and engage with tenants.</p>
+      </div>
+      <div class="row cnt">
+        <div class="col-sm-6 sh_img">
+          <img src="images/stakeholder-image.png" alt="">
+          <div class="btns">
+            <a href="" class="btn_tenant">
+              Tenant Documents
+            </a>
+            <a href="" class="btn_tenant">
+              Tenant Contract
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="box">
+            <h3>Tenants</h3>
+            <ul class="list lg">
+              <li>Can Raise Maintenance Request</li>
+              <li>Receive Notification from management</li>
+              <li>Gets all status updates of their request</li>
+              <li>Renew tenancy contract</li>
+              <li>Contact Management</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Real Estate Company</h3>
+            <ul class="list lg">
+              <li>Property Management</li>
+              <li>Online Facility Management</li>
+              <li>Tenancy Renewal</li>
+              <li>Assign tasks</li>
+              <li>Insight Reports</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Technician</h3>
+            <ul class="list lg">
+              <li>Receive Request</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <!-- Stakeholders End -->
+
+    <div class="space_botm"></div>
+
+    <!-- Packages -->
+    <div class="packages">
+      <div class="cnt">
+        <div class="cnt-sm text-center">
+          <h1>Packages</h1>
+          <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes
+            the
+            way you manage properties and engage with tenants.</p>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <div class="box">
+              <h3>Free</h3>
+              <p class="amount">$0<small>.00</small><span>/month</span></p>
+              <div class="sep"></div>
+              <ul class="list lg">
+                <li>Unlimited guest reviewers</li>
+                <li>Unlimited projects</li>
+                <li>Dedicated support</li>
+                <li>Lifetime updates</li>
+                <li>No setup fees</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <h3>Basic</h3>
+              <p class="amount">$14<small>.99</small><span>/month</span></p>
+              <div class="sep"></div>
+              <ul class="list lg">
+                <li>Unlimited guest reviewers</li>
+                <li>Unlimited projects</li>
+                <li>Dedicated support</li>
+                <li>Lifetime updates</li>
+                <li>No setup fees</li>
+              </ul>
+              <a href="" class="btn">Start 14-free days trial</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <h3>Advanced</h3>
+              <p class="amount">$39<small>.99</small><span>/month</span></p>
+              <div class="sep"></div>
+              <ul class="list lg">
+                <li>Unlimited guest reviewers</li>
+                <li>Unlimited projects</li>
+                <li>Dedicated support</li>
+                <li>Lifetime updates</li>
+                <li>No setup fees</li>
+              </ul>
+              <a href="" class="btn">Start 14-free days trial</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <h3>Whitelabled</h3>
+              <div class="pkg-btn">
+                <a href="" class="btn">Contact Us for Pricing</a>
+              </div>
+              <div class="sep"></div>
+              <ul class="list lg">
+                <li>Unlimited guest reviewers</li>
+                <li>Unlimited projects</li>
+                <li>Dedicated support</li>
+                <li>Lifetime updates</li>
+                <li>No setup fees</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Packages End -->
+
+    <div class="space_botm"></div>
+
+    <!-- How it Works -->
+    <div class="how_works cnt-lg">
+      <div class="text-center cnt-sm">
+        <h1>How it works</h1>
+        <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes the
+          way you manage properties and engage with tenants.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="images/img-how-it-works.png" alt="">
+        </div>
+        <div class="col-sm-6">
+          <ol>
+            <li class="box">
+              <p class="head">Sign Up</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+            </li>
+            <li class="box">
+              <p class="head">Fill Onboarding Form</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+            </li>
+            <li class="box">
+              <p class="head">Relationship Manager Assigned</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+            </li>
+            <li class="box">
+              <p class="head">Lorem Ipsum Dolor Sit</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+            </li>
+            <li class="box">
+              <p class="head">Duis Aute Irure Reprehenderit</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- How it Works End -->
+
+    <div class="space_botm"></div>
+
+    <!-- testimonials start -->
+    <div class="testimonial">
+      <div class="cnt-sm text-center">
+        <h1>Our Happy Customers</h1>
+        <p>Our software is so simple that people can’t help but fall in love with it. Simplicity is easy when you just
+          skip tons of mission-critical features.</p>
+      </div>
+      <div class="text-center cnt">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box">
+              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions with
+                tenants by streamlining payments, maintenance requests, and communication, leading to increased tenant
+                satisfaction and operational efficiency.</p>
+              <div class="testimonials_content">
+                <img src="./images/comment-img-1.png" alt="">
+                <div class="pl-2">
+                  <h3>Franceska Soanes</h3>
+                  <p>Edward & Towers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box">
+              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                with tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                tenant satisfaction and operational efficiency.</p>
+              <div class="testimonials_content">
+                <img src="./images/comment-img-2.png" alt="">
+                <div class="pl-2">
+                  <h3>Franceska Soanes</h3>
+                  <p>Edward & Towers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box">
+              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                with tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                tenant satisfaction and operational efficiency.</p>
+              <div class="testimonials_content">
+                <img src="./images/comment-img-1.png" alt="">
+                <div class="pl-2">
+                  <h3>Franceska Soanes</h3>
+                  <p>Edward & Towers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- testimonials end -->
+
+    <div class="space_botm bd cnt"></div>
+
+    <!-- users stats start -->
+    <div class="user_stats">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <div class="uset_txt">
+              <h2>More than 640K users <br>
+                worldwide using <span>Bayti Living</span></h2>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="num">
+              <h3 class="hs2">99%</h3>
+              <p>Satisfied Users Worldwide</p>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="num">
+              <h3 class="hs2">99%</h3>
+              <p>Satisfied Users Worldwide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- users stats end -->
+
+    <div class="space_botm bd cnt"></div>
+
+    <!-- blog start -->
+    <div class="blog">
+      <div class="cnt-sm text-center">
+        <h1>Blogs</h1>
+        <p>Because you’d probably be a little confused if we suggested you complicate your everyday business tasks
+          instead.</p>
+      </div>
+
+      <div class="cnt">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box">
+              <img src="./images/blog-img-1.png" alt="">
+
+              <div class="blog_content">
+                <p>2024-11-13</p>
+                <h3>Bayti Living: Make Commercial Property Management Easier than Ever</h3>
+                <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box">
+              <img src="./images/blog-img-2.png" alt="">
+
+              <div class="blog_content">
+                <p>2024-11-13</p>
+                <h3>Fortifying Trust | Bayti Living's Approach to Data Security in Proptech</h3>
+                <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box">
+              <img src="./images/blog-img-3.png" alt="">
+
+              <div class="blog_content">
+                <p>2024-11-13</p>
+                <h3>The Ultimate Guide to Choosing the Right Property Management Software</h3>
+                <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- blog end -->
+
+    <div class="space_botm"></div>
+
+    <!-- demo start -->
+    <div class="demo text-center cnt">
+      <h1>Let’s talk about your project</h1>
+      <p>We help companies and individuals streamline their workflows and processes.</p>
+      <a class="btn btn-v2" href=""> Request Demo</a>
+
+    </div>
+    <!-- demo start -->
+
+    <div class="space_botm"></div>
+
+    <!-- Footer -->
+    <footer class="cnt">
+      <div class="row m-0 ftr">
+        <div class="col-sm-4">
+
+          <img src="images/logo.png" alt="">
+          <h3>BAYTI LIVING SMART IT SOLUTION CO</h3>
+          <p>Office 1001-AB Plaza 8 Building Al Mamzar, Dubai-UA</p>
+          <a href="">support@baytiliving.ae</a>
+
+          
+        </div>
+        <div class="col-sm-2 qck_lnks">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="">Features</a></li>
+            <li><a href="">Packages</a></li>
+            <li><a href="">How it works</a></li>
+            <li><a href="">Case Studies</a></li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">Contacts</a></li>
+          </ul>
+
+        </div>
+        <div class="col-sm-2 app_icn">
+          <h6>Download App</h6>
+          
+            <a href=""><img src="images/apple-store.png" alt=""></a>
+            <a href=""><img src="images/google-play.png" alt=""></a>
+        
+        </div>
+        <div class="col-sm-4 inpt">
+          <h6>Get Connected</h6>
+          <p>Stay updated with the latest news and updates.</p>
+          <div class="footer_input">
+            <input type="text" placeholder="Email Adress">
+            <div class="input_btn"><a href=""><img src="./images/footer_input.svg" alt=""></a> </div>
+          </div>
+          <div class="social_icn">
+            <img src="./images/" alt="">
+          </div>
+          
+
+        </div>
+      </div>
+      <div class="space_botm"></div>
+      <div class="bottom_links">
+        <p>© 2024 Bayti Living. All rights reserved.</p>
+        <div class="policy">
+        <p><a href="">Terms & Conditions </a> </p>
+        <p><a href="">Privacy Policy </a></p>
+      </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- </section-fold> ====== Footer and Map Section End ====== -->
+
+  </main>
+
+  <noscript id="deferred-styles">
+    <!-- <link href="css/custom.css" rel="stylesheet" /> -->
+    <link href="css/plugins.css" rel="stylesheet" />
+  </noscript>
+
+
+  <script>
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(function () {
+      window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+
+  </script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCMSE7I8AeHEbCDdzoCV0E1LM5USKBDNio"></script>
+  <script src="js/plugins.js"></script>
+  <script>
+    $('.hero-txt').slick({
+      dots: true,
+      arrows: false,
+    });
+  </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- map -->
+</body>
+
+</html>
