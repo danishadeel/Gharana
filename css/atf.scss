@@ -1140,7 +1140,7 @@ a:hover {
   padding: 10px 0;
 
   .logo {
-    @include flexbox;
+    display: flex;
     @include align-items(center);
 
     img {
@@ -1191,12 +1191,12 @@ a:hover {
   }
 
   .top {
-    @include flexbox;
+    display: flex;
     @include justify-content(flex-end);
     @include align-items(center);
 
     .dropdown {
-      @include flexbox;
+      display: flex;
 
       .nav-link {
         text-transform: uppercase;
@@ -1332,6 +1332,7 @@ a:hover {
       min-width: 300px;
       text-align: left;
       max-height: 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       opacity: 0;
       visibility: hidden;
@@ -1344,13 +1345,17 @@ a:hover {
         padding: 0 !important;
         position: relative;
 
+        &:hover {
+          background-color: $c1;
+          transition: all .3s;
+        }
         a {
           width: 100%;
-          padding: 10px 15px;
+          padding: 15px 15px;
           background: transparent;
           border-radius: 0;
           font-weight: 300;
-          font-size: 12px;
+          font-size: 15px;
           line-height: 1;
           border-color: transparent !important;
           margin: 0;
@@ -1361,7 +1366,7 @@ a:hover {
           &.nav-path-selected,
           &.nav-selected,
           &:hover {
-            color: $c1;
+            color: #fff;
           }
         }
 
@@ -1453,196 +1458,177 @@ a:hover {
   position: relative;
   display: none;
   margin-bottom: 0px;
-
-  .top {
-    height: auto;
-    padding: 0;
-    background-color: #fff;
-    float: left;
-    width: 100%;
-
-    .btns {
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    padding: 10px;
+    background: $ct;
+    gap: 10px;
+    a{
+      display: block;
+      border: 0;
+      position: relative;
+      padding: 12px 20px 10px;
       text-align: center;
-
-      a {
-        display: block;
-        font-size: 14px;
-        padding: 12px 10px 12px 30px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #fff;
-        font-weight: 600;
-        background-color: $c3;
-
-        em {
-          font-size: 16px;
-          margin-right: 5px;
-          color: $c3;
-        }
-
-        &.phn {
-          background-image: url(../images/icon-phone.png);
-        }
-
-        &.book {
-          background-image: url(../images/icon-book.png);
-        }
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1;
+      width: 40%;
+      border-radius: 30px;
+      em{
+        //@include circle_icon(32, 16);
+        margin-right: 5px;
+        color: $c1;
+        font-size: 20px;
+      }
+      .fa-chevron-down{
+        margin: 0 0 0 4px;
       }
 
-      .dropdown-menu {
-        left: auto;
-        right: 20px;
 
-        a {
-          font-size: 12px;
-          padding: 5px 10px;
-          text-align: right;
-          display: block;
-          color: $c1;
-
-          &:first-child {
-            border-bottom: 1px solid $c4;
-          }
-        }
+      // Separator: set display block to enable
+      &:before{
+       display: none;
+       content: "";
+       width: 1px;
+       height: 24px;
+       background-color: #fff;
+       opacity: .2;
+       position: absolute;
+       right: 0;
       }
-    }
-
-    .dropdown {
-      li {
-        width: 50%;
-        float: left;
-
-        a {
-          font-size: 16px;
-          font-weight: 600;
-          text-align: center;
-          text-transform: uppercase;
-
-          em {
-            color: $c1;
-          }
+      &:last-child{
+        &:before{
+         display: none;
         }
-      }
-
-      .dropdown-menu {
-        left: 50%;
-        @include transform (translateX(-50%));
       }
     }
   }
-
-  .bot {
+  .bot{
     padding: 12px 20px;
     @include align-items(center);
-    box-shadow: 0 0 50px rgba(#000, .15);
-
-    .logo {
-      width: 58.33333333%;
+    .btn{
+      padding: 9px 15px 6px;
+      margin-bottom: 10px;
+      em{
+        font-size: 14px;
+      }
     }
-
-    .menu_mob {
-      width: 41.66666667%;
+    .logo{
+      width: 50%;
+    }
+    .menu_mob{
+      width: 50%;
       justify-content: flex-end;
+      @include align-items(flex-end);
+      @include flex-direction(column);
     }
   }
-
+  .phn{
+    font-size: 26px;
+    padding: 0 15px;
+    position: relative;
+    line-height: 26px;
+    &:before{
+     display: block;
+     content: "";
+     width: 1px;
+     height: 26px;
+     background-color: $c2;
+     position: absolute;
+     right: 0;
+     top: 0;
+    }
+  }
   .humburger_menu {
     border: none;
     margin: 0 0;
     outline: 0;
     width: 50px;
-    height: 50px;
     border-radius: 50%;
     @include flex_center;
     color: $ct;
     cursor: pointer;
-
     em {
+      width: 48px;
+      height: 48px;
       font-size: 24px;
+      color: $cf;
+      border-radius: 50%;
+      background-color: $c5;
+      display: flex;
+      @include align-items(center);
+      @include justify-content(center);
     }
-
     &.sticky {
       position: fixed;
       right: 20px;
       top: 5px;
+      height: 50px;
       z-index: 500;
-      color: #fff;
       background-color: $c2;
       box-shadow: 0 0 10px rgba(#000, .2);
       animation: slideIn2 0.3s linear;
       -webkit-animation: slideIn2 0.3s linear;
+      em{
+        color: #fff;
+      }
     }
   }
-
   .m_logo {
-    max-width: 180px;
+    max-width: 120px;
     display: block;
   }
 }
 
 //Mobile nav
+
+//Mobile nav
 .mobile_nav {
   display: none;
-
   .collapse {
     display: none;
   }
-
   .collapse.show {
     display: block;
   }
-
-  .navigation {
-    margin-top: 0;
-  }
-
-  #mobile_nav {
+  #mobile_nav{
     padding-top: 0px;
-    @extend .bc5;
+    background-color: $c2;
   }
-
-  ul {
+  ul{
     margin-bottom: 0;
     flex-direction: column;
   }
-
-  .navigation li {
+  li {
     position: relative;
-
     a {
       display: block;
       padding: 15px;
       font-size: 16px;
-      background: $c5;
+      background: $c2;
       color: #fff;
-
       &:focus {
         color: $c1;
       }
-
       .fa-chevron-right {
         display: none;
       }
     }
-
     ul {
       display: none;
       padding-left: 20px;
-      webkit-transform: none !important;
-      -moz-transform: none !important;
-      -ms-transform: none !important;
-      transform: none !important;
-
       a {
         padding: 10px 15px;
         font-size: 14px;
-
         &:focus {
           color: $c1;
         }
       }
     }
-
     &:last-child a {
       border: none;
     }
@@ -2331,7 +2317,7 @@ a:hover {
 
   .img {
     width: 50%;
-    @include flexbox;
+    display: flex;
     @include justify-content(space-between);
     @include align-items(flex-start);
     position: relative;
@@ -2961,6 +2947,20 @@ a:hover {
   background-image: url(../images/feature-img.png), radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(229, 61, 3, 0.25) 49.5%, rgba(255, 255, 255, 0) 100%);
 }
 
+@media all and (max-width: 991px) {
+  .feature_list [class*='col']{
+    display: flex;
+    .box{
+      transform: none;
+      margin: 0 !important;
+    }
+  }
+  .feature_img{
+    position: absolute;
+    background-image: none;
+  }
+}
+
 // Features End
 
 // Stakeholder
@@ -3145,7 +3145,7 @@ a:hover {
       }
 
       &:before {
-        content: counter(item) ". ";
+        content: counter(item) "";
         /* Add the number with a period */
         counter-increment: item;
         /* Increment the counter */
@@ -3606,7 +3606,7 @@ a:hover {
   }
 
   .row {
-    @include flexbox;
+    display: flex;
 
     [class*="col-"] {
       background-color: $c2;
@@ -3979,7 +3979,7 @@ a:hover {
   .box {
     padding: 0 35px;
     max-width: none;
-    @include flexbox;
+    display: flex;
     @include justify-content(space-between);
   }
 
@@ -4085,7 +4085,7 @@ a:hover {
 
   .head_content {
     width: 40%;
-    @include flexbox;
+    display: flex;
     @include align-items(center);
     @include justify-content(center);
 
@@ -4133,16 +4133,28 @@ a:hover {
 
 @media all and (max-width: 991px) {
   .home_hero {
-    background-position: right bottom;
+    background-size: contain;
+    background-position: center bottom;
+    &:after{
+      top: 60px;
+      left: -100px;
+      width: 416px;
+      height: 342px;
+    }
 
     .flex {
-      height: 60vh;
+      height: calc(100svh - 130px);
       @include flex-direction(column);
-      ;
+      max-height: none;
     }
 
     .head_content {
       text-align: center;
+      width: 100%;
+      padding: 20px;
+      h1{
+        font-size: 30px;
+      }
     }
   }
 }
@@ -4233,7 +4245,7 @@ a:hover {
 
   .box {
     width: 20%;
-    @include flexbox;
+    display: flex;
     @include align-items(center);
     text-transform: uppercase;
     font-weight: 600;
@@ -4442,7 +4454,7 @@ a:hover {
 
     .box {
       width: 100%;
-      @include flexbox;
+      display: flex;
       @include justify-content(center);
     }
   }
@@ -4536,6 +4548,9 @@ a:hover {
 
     .txt {
       text-align: center;
+    }
+    &.sbs .img{
+      width: 100%;
     }
   }
 }
@@ -4811,7 +4826,7 @@ a:hover {
   background-color: #c7ccd1;
 
   .row {
-    @include flexbox;
+    display: flex;
     @include align-items(flex-end);
   }
 
@@ -5656,6 +5671,61 @@ footer {
       a {
         color: $ct;
       }
+    }
+  }
+}
+
+// arabic translation
+
+
+.ar {
+  .team_home.sbs .txt .content {
+    padding-left: 0;
+    padding-right: 30px;
+  }
+
+  .feature_list {
+    li {
+      list-style: none;
+      font-size: 15px;
+      font-weight: 300;
+      padding: 5px 25px 5px 0px;
+      background: url(../images/bullet.svg) no-repeat right center;
+    }
+  }
+
+  .list:not(.slick-dots) {
+    li {
+      font-size: 20px;
+      // background-size: 25px;
+      background: url(../images/bullet-lg.svg) no-repeat right center;
+      padding: 5px 35px 5px 0;
+    }
+  }
+
+
+  .how_works ol .box {
+    padding-right: 90px;
+    background-position: right;
+
+    &::before {
+      right: 95%;
+    }
+  }
+
+  .footer_input {
+    .input_btn {
+      margin-right: -20px;
+    }
+  }
+  footer .ftr .inpt .footer_input input {
+    padding-left: 80px;
+    padding-right: 10px;
+  }
+  .stakeholder{
+    .box{
+      padding-right: 90px;
+      background-position: right top;
     }
   }
 }
