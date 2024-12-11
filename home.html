@@ -16,7 +16,6 @@
     // Lazy Load Start
     document.addEventListener("DOMContentLoaded", function () {
       var e, n = document.querySelectorAll(".lazy");
-
       function t() {
         e && clearTimeout(e), e = setTimeout(function () {
           for (var e = window.pageYOffset, o = 0; o < n.length; o++) n[o].offsetTop < window.innerHeight + e && (n[o].src = n[o].dataset.src, n[o].classList.remove("lazy"));
@@ -28,13 +27,11 @@
     // Lazy Load End
     // webp format detection
     /*! modernizr 3.6.0 (Custom Build) | MIT *
-
     * https://modernizr.com/download/?-webp-setclasses !*/
     ! function (e, n, A) {
       function o(e, n) {
         return typeof e === n
       }
-
       function t() {
         var e, n, A, t, a, i, l;
         for (var f in r)
@@ -45,7 +42,6 @@
               Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no_") + l.join("-"))
           }
       }
-
       function a(e) {
         var n = u.className,
           A = Modernizr._config.classPrefix || "";
@@ -55,7 +51,6 @@
         }
         Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
       }
-
       function i(e, n) {
         if ("object" == typeof e)
           for (var A in e) f(e, A) && i(A, e[A]);
@@ -169,9 +164,7 @@
 <body>
   <main class="wrapper" onclick="return true">
     <!-- <div id="google_translate_element"></div> -->
-
     <!-- <section-fold>  ====== Header Section ====== -->
-
     <!-- Mobile Header -->
     <div class="header_mob">
       <div class="top">
@@ -187,7 +180,6 @@
       </div>
     </div>
     <!-- Mobile Header END -->
-
     <!-- Mobile Nav -->
     <div class="mobile_nav">
       <div id="mobile_nav" class=" collapse">
@@ -229,10 +221,8 @@
       <div class="mobile_overlay"></div>
     </div>
     <!-- Mobile Nav -->
-
     <!-- Sticky Button -->
     <!-- <div id="scroll-to"> <a href="/free-consultation/" class="btn">Book a free consultation</a> </div> -->
-
     <!-- Header -->
     <header class="header default_sticky" data-top="5">
       <div class="header_top">
@@ -246,8 +236,7 @@
                 <ul class="navigation">
                   <li> <a class="selected has_child" href="">Feature</a>
                     <ul>
-                      <li class="selected"><a href="" target="_self"
-                          class="selected">Link 1</a></li>
+                      <li class="selected"><a href="" target="_self" class="selected">Link 1</a></li>
                       <li> <a href="#">Link 2</a>
                         <ul>
                           <li> <a href="#">Level 3</a>
@@ -289,7 +278,6 @@
     <div class="sticky_space"></div>
     <!-- Header -->
     <!-- </section-fold> ====== Header Section End ====== -->
-
     <!-- Hero -->
     <section class="home_hero">
       <div class="flex cnt-lg">
@@ -333,9 +321,7 @@
       </div>
     </section>
     <!-- </section-fold> ====== Hero Section End ====== -->
-
     <div class="space_botm"></div>
-
     <!-- <section-fold>  ====== Team Home Section ====== -->
     <section class="sbs flip team_home">
       <div class="cnt-sm text-center">
@@ -353,16 +339,16 @@
           </div>
         </div>
         <div class="img">
-          <video class="video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" controls="">
+          <video class="video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen="" controls="">
             <source src="./Video/video.mp4" type="video/mp4">
           </video>
         </div>
       </div>
     </section>
     <!-- </section-fold> ====== Team Home Section End ====== -->
-
     <div class="space_botm"></div>
-
     <!-- Features -->
     <div class="features">
       <div class="cnt">
@@ -383,7 +369,6 @@
                   <li>Licenses Maintenance</li>
                 </ul>
               </div>
-
               <div class="box">
                 <h4>Facilities Management</h4>
                 <ul>
@@ -392,7 +377,6 @@
                   <li>Work Order Management</li>
                 </ul>
               </div>
-
               <div class="box ml">
                 <h4>Contracts & Tenants</h4>
                 <ul>
@@ -417,7 +401,6 @@
                   service
                 </p>
               </div>
-
               <div class="box mb-4">
                 <h4>Lead Management</h4>
                 <ul>
@@ -425,7 +408,6 @@
                   <li>General Communication</li>
                 </ul>
               </div>
-
               <div class="box mr">
                 <h4>Management Reports</h4>
                 <ul>
@@ -441,9 +423,7 @@
       </div>
     </div>
     <!-- Features End -->
-
     <div class="space_botm"></div>
-
     <!-- property sec start -->
     <div class="property-manager cnt">
       <div class="cnt-sm text-center">
@@ -475,9 +455,7 @@
       </div>
     </div>
     <!-- property sec end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- Stakeholders -->
     <div class="stakeholder">
       <div class="cnt-sm text-center">
@@ -531,9 +509,7 @@
       </div>
     </div>
     <!-- Stakeholders End -->
-
     <div class="space_botm"></div>
-
     <!-- Packages -->
     <div class="packages">
       <div class="cnt">
@@ -608,9 +584,7 @@
       </div>
     </div>
     <!-- Packages End -->
-
     <div class="space_botm"></div>
-
     <!-- How it Works -->
     <div class="how_works cnt-lg">
       <div class="text-center cnt-sm">
@@ -649,9 +623,7 @@
       </div>
     </div>
     <!-- How it Works End -->
-
     <div class="space_botm"></div>
-
     <!-- testimonials start -->
     <div class="testimonial">
       <div class="cnt-sm text-center">
@@ -673,7 +645,6 @@
                   <p>Edward & Towers</p>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="col-lg-4">
@@ -688,7 +659,6 @@
                   <p>Edward & Towers</p>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="col-lg-4">
@@ -703,16 +673,13 @@
                   <p>Edward & Towers</p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- testimonials end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- users stats start -->
     <div class="user_stats">
       <div class="container">
@@ -739,9 +706,7 @@
       </div>
     </div>
     <!-- users stats end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- blog start -->
     <div class="blog">
       <div class="cnt-sm text-center">
@@ -749,75 +714,59 @@
         <p>Because you’d probably be a little confused if we suggested you complicate your everyday business tasks
           instead.</p>
       </div>
-
       <div class="cnt">
         <div class="row">
           <div class="col-md-4">
             <div class="box img">
               <img src="./images/blog-img-1.png" alt="">
-
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Bayti Living: Make Commercial Property Management Easier than Ever</h3>
                 <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
               </div>
-
             </div>
           </div>
           <div class="col-md-4">
             <div class="box img">
               <img src="./images/blog-img-2.png" alt="">
-
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Fortifying Trust | Bayti Living's Approach to Data Security in Proptech</h3>
                 <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
               </div>
-
             </div>
           </div>
           <div class="col-md-4">
             <div class="box img">
               <img src="./images/blog-img-3.png" alt="">
-
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>The Ultimate Guide to Choosing the Right Property Management Software</h3>
                 <p>In the rapidly evolving landscape of proptech cornerstones of trust and reliability…</p>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
     </div>
     <!-- blog end -->
-
     <div class="space_botm"></div>
-
     <!-- demo start -->
     <div class="demo text-center cnt">
       <h1>Let’s talk about your project</h1>
       <p>We help companies and individuals streamline their workflows and processes.</p>
       <a class="btn btn-v2" href=""> Request Demo</a>
-
     </div>
     <!-- demo start -->
-
     <div class="space_botm"></div>
-
     <!-- Footer -->
     <footer class="cnt">
       <div class="row m-0 ftr text-center text-lg-left">
         <div class="col-lg-4">
-
           <img src="images/logo.png" alt="">
           <h3>BAYTI LIVING SMART IT SOLUTION CO</h3>
           <p>Office 1001-AB Plaza 8 Building Al Mamzar, Dubai-UA</p>
           <a href="">support@baytiliving.ae</a>
-
-
         </div>
         <div class="col-lg-2 qck_lnks">
           <h6>Quick Links</h6>
@@ -829,14 +778,11 @@
             <li><a href="">Blogs</a></li>
             <li><a href="">Contacts</a></li>
           </ul>
-
         </div>
         <div class="col-lg-2 app_icn">
           <h6>Download App</h6>
-
           <a href=""><img src="images/apple-store.png" alt=""></a>
           <a href=""><img src="images/google-play.png" alt=""></a>
-
         </div>
         <div class="col-lg-4 inpt">
           <h6>Get Connected</h6>
@@ -855,10 +801,7 @@
             <a href="">
               <img src="./images/twitter.png" alt="">
             </a>
-
           </div>
-
-
         </div>
       </div>
       <div class="space_botm"></div>
@@ -871,17 +814,12 @@
       </div>
     </footer>
     <!-- Footer End -->
-
     <!-- </section-fold> ====== Footer and Map Section End ====== -->
-
   </main>
-
   <noscript id="deferred-styles">
     <!-- <link href="css/custom.css" rel="stylesheet" /> -->
     <link href="css/plugins.css" rel="stylesheet" />
   </noscript>
-
-
   <script>
     var loadDeferredStyles = function () {
       var addStylesNode = document.getElementById("deferred-styles");
@@ -895,7 +833,6 @@
       window.setTimeout(loadDeferredStyles, 0);
     });
     else window.addEventListener('load', loadDeferredStyles);
-
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/plugins.js"></script>

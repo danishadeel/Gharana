@@ -4242,7 +4242,7 @@ a:hover {
 @media all and (max-width: 991px) {
   .home_hero {
     background-size: contain;
-    background-position: center bottom;
+    background-position: center bottom !important;
     &:after{
       top: 60px;
       left: -100px;
@@ -5845,8 +5845,8 @@ footer {
 
 // arabic translation
 
-
 .ar {
+  overflow-x: hidden;
   .team_home.sbs .txt .content {
     padding-left: 0;
     padding-right: 30px;
@@ -5874,7 +5874,7 @@ footer {
 
   .how_works ol .box {
     padding-right: 90px;
-    background-position: right;
+    background-position: calc(100% - 10px);
 
     &::before {
       right: 95%;
@@ -5891,9 +5891,56 @@ footer {
     padding-right: 10px;
   }
   .stakeholder{
+    .sh_img{
+      &:before{
+        left: 55%;
+        right: inherit;
+      }
+    }
     .box{
+      padding: 20px;
       padding-right: 90px;
-      background-position: right top;
+      background: no-repeat;
+      background-position: calc(100% - 20px) 20px;;
+      background-image: url(../images/sh-icn-1.svg);
+    }
+  }
+  body{
+    position: relative;
+    background-image: none;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      background: url('../images/hero-art.svg') no-repeat top right;
+      background-size: 70%; /* Adjust size as needed */
+      transform: scaleX(-1); /* Flip the image horizontally */
+      z-index: -1; /* Keeps it behind all content */
+    }
+  }
+  .home_hero{
+    background-position: 0;
+    
+    &::after{
+      right: -200px;
+    }
+    .slick-dots{
+      text-align: right;
+    }
+  }
+  .testimonial{
+    .box{
+      text-align: right;
+      &::before{
+        left: -20px;
+        right: inherit;
+      }
+      .testimonials_content{
+        gap: 15px;
+      }
     }
   }
 }

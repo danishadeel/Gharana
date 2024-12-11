@@ -16,7 +16,6 @@
     // Lazy Load Start
     document.addEventListener("DOMContentLoaded", function () {
       var e, n = document.querySelectorAll(".lazy");
-
       function t() {
         e && clearTimeout(e), e = setTimeout(function () {
           for (var e = window.pageYOffset, o = 0; o < n.length; o++) n[o].offsetTop < window.innerHeight + e && (n[o].src = n[o].dataset.src, n[o].classList.remove("lazy"));
@@ -28,13 +27,11 @@
     // Lazy Load End
     // webp format detection
     /*! modernizr 3.6.0 (Custom Build) | MIT *
-
     * https://modernizr.com/download/?-webp-setclasses !*/
     ! function (e, n, A) {
       function o(e, n) {
         return typeof e === n
       }
-
       function t() {
         var e, n, A, t, a, i, l;
         for (var f in r)
@@ -45,7 +42,6 @@
               Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no_") + l.join("-"))
           }
       }
-
       function a(e) {
         var n = u.className,
           A = Modernizr._config.classPrefix || "";
@@ -55,7 +51,6 @@
         }
         Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
       }
-
       function i(e, n) {
         if ("object" == typeof e)
           for (var A in e) f(e, A) && i(A, e[A]);
@@ -168,258 +163,126 @@
 
 <body>
   <main class="wrapper" onclick="return true">
-
     <!-- <section-fold>  ====== Header Section ====== -->
-
     <!-- Mobile Header -->
     <div class="header_mob">
       <div class="top">
         <a class="btn" href="">
-
-          اشتراك
-
-        </a>
+          اشتراك</a>
         <a class="btn btn-v2" href="">
-
-          تسجيل الدخول
-
-        </a>
+          تسجيل الدخول</a>
       </div>
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="/">
-            <img width="232" height="75" src="images/logo.png" alt=""> </a> </div>
+            <img width="232" height="75" src="images/logo.png" alt=""> </a>
+        </div>
         <div class="menu_mob text-right flex">
           <a class="humburger_menu" data-toggle="collapse" data-target="#mobile_nav"> <em class="fa-bars"></em> </a>
         </div>
       </div>
     </div>
     <!-- Mobile Header END -->
-
     <!-- Mobile Nav -->
     <div class="mobile_nav">
       <div id="mobile_nav" class=" collapse">
         <ul class="nav">
-          <li> <a href="#">
-
-              احجز استشارة مجانية
-
-            </a>
-          </li>
-          <li> <a href="#">
-
-              تعرف على الفريق
-
-            </a>
-          </li>
+          <li> <a href="#"> احجز استشارة مجانية</a></li>
+          <li> <a href="#"> تعرف على الفريق</a></li>
           <li> <a href="default.html">
-
-              علاج
-
-            </a>
+              علاج</a>
           </li>
-          <li> <a class="nav-selected" href="#">
-
-              تكنولوجيا
-
-            </a>
-            <em class="fa fa-plus-squared visible-xs visible-sm menu_expander"></em>
+          <li>
+            <a class="selected has_child" href="#">
+              تكنولوجيا</a>
             <ul>
               <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
                   class="nav-selected nav-path-selected">
-
                   إنفيزالاين®
-
-                </a></li>
-              <li> <a href="#">
-
-                  تقويم إنفيزلاين
-
                 </a>
+              </li>
+              <li>
+                <a href="#"> تقويم إنفيزلاين</a>
                 <em class="fa fa-plus-squared visible-xs visible-sm menu_expander"></em>
                 <ul>
-                  <li> <a href="#">
-
-                      المستوى 3
-
-                    </a>
-                  </li>
-                  <li> <a href="#">
-
-                      المستوى 3
-
-                    </a>
-                  </li>
+                  <li> <a href="#"> المستوى 3</a></li>
+                  <li> <a href="#"> المستوى 3</a></li>
                 </ul>
               </li>
-              <li> <a href="#">
-
-                  تقويم الأسنان الخزفي
-
-                </a>
-              </li>
-              <li> <a href="#">
-
-                  تقويم الأسنان التقليدي
-
-                </a>
-              </li>
-              <li> <a href="#">
-
-                  اجتماعي 6
-
-                </a>
-              </li>
+              <li> <a href="#"> تقويم الأسنان الخزفي</a></li>
+              <li> <a href="#"> تقويم الأسنان التقليدي</a></li>
+              <li> <a href="#"> اجتماعي 6</a></li>
             </ul>
           </li>
           <li> <a href="default.html">
-
-              إصلاح ابتسامتي
-
-            </a>
+              إصلاح ابتسامتي</a>
           </li>
-          <li> <a href="#">
-
-              يكلف
-
-            </a>
-          </li>
-          <li> <a href="#">
-
-              قبل وبعد
-
-            </a>
-          </li>
-          <li> <a href="#">
-
-              منطقة المريض
-
-            </a>
-          </li>
+          <li> <a href="#"> يكلف</a></li>
+          <li> <a href="#"> قبل وبعد</a></li>
+          <li> <a href="#"> منطقة المريض</a></li>
         </ul>
         <ul>
           <li><a href="/referrals" class="btn_ref">
-
               إحالة طبيب الأسنان
-
-            </a></li>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="mobile_overlay"></div>
     </div>
     <!-- Mobile Nav -->
-
-    <!-- Sticky Button -->
-    <div id="scroll-to"> <a href="/free-consultation/" class="btn">
-
-        احجز استشارة مجانية
-
-      </a> </div>
-
     <!-- Header -->
     <header class="header default_sticky" data-top="5">
       <div class="header_top">
         <div class="cnt-lg">
           <div class="flex align-items-center row ng">
             <div class="logo col-md-2">
-              <a href="/" class="img"> <img title="" alt="" src="images/logo.png" width="232" height="75"> </a>
+              <a href="/" class="img"> <img title="" alt="" src="images/logo.png" width="232" height="75"></a>
             </div>
             <div class="col-md-10">
               <div class="flex jc_end">
                 <ul class="navigation">
-                  <li> <a href="">
-
-                      ميزة
-
-                    </a>
+                  <li>
+                    <a class="selected has_child" href="">
+                      ميزة</a>
                     <ul>
                       <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
                           class="nav-selected nav-path-selected">
-
                           الرابط 1
-
-                        </a></li>
-                      <li> <a href="#">
-
-                          الرابط 2
-
                         </a>
+                      </li>
+                      <li>
+                        <a href="#"> الرابط 2</a>
                         <ul>
-                          <li> <a href="#">
-
-                              المستوى 3
-
-                            </a>
-                          </li>
-                          <li> <a href="#">
-
-                              المستوى 3
-
-                            </a>
-                          </li>
+                          <li> <a href="#"> المستوى 3</a></li>
+                          <li> <a href="#"> المستوى 3</a></li>
                         </ul>
                       </li>
-                      <li> <a href="#">
-
-                          الرابط 3
-
-                        </a>
-                      </li>
-                      <li> <a href="#">
-
-                          الرابط 4
-
-                        </a>
-                      </li>
-                      <li> <a href="#">
-
-                          الرابط 5
-
-                        </a>
-                      </li>
+                      <li> <a href="#"> الرابط 3</a></li>
+                      <li> <a href="#"> الرابط 4</a></li>
+                      <li> <a href="#"> الرابط 5</a></li>
                     </ul>
                   </li>
                   <li> <a href="">
-
-                      الحزم
-
-                    </a>
+                      الحزم</a>
                   </li>
                   <li> <a href="">
-
-                      كيف يعمل
-
-                    </a>
+                      كيف يعمل</a>
                   </li>
                   <li> <a href="">
-
-                      دراسات الحالة
-
-                    </a>
+                      دراسات الحالة</a>
                   </li>
                   <li> <a href="">
-
-                      مدونة
-
-                    </a>
+                      مدونة</a>
                   </li>
                   <li> <a href="">
-
-                      محتوى
-
-                    </a>
+                      محتوى</a>
                   </li>
                 </ul>
                 <div class="nav_btns">
                   <a class="btn btn-v3" href="">
-
-                    اشتراك
-
-                  </a>
+                    اشتراك</a>
                   <a class="btn btn-v2" href="">
-
-                    تسجيل الدخول
-
-                  </a>
+                    تسجيل الدخول</a>
                 </div>
               </div>
             </div>
@@ -427,15 +290,11 @@
         </div>
       </div>
       <a class="btn sticky_button bg">
-
-        احجز استشارة مجانية
-
-      </a>
+        احجز استشارة مجانية</a>
     </header>
     <div class="sticky_space"></div>
     <!-- Header -->
     <!-- </section-fold> ====== Header Section End ====== -->
-
     <!-- Hero -->
     <section class="home_hero">
       <div class="flex cnt-lg">
@@ -459,8 +318,7 @@
                 </p>
                 <div class="btns">
                   <a href="" class="btn" tabindex="-1">
-                    طلب عرض توضيحي
-                  </a>
+                    طلب عرض توضيحي</a>
                 </div>
               </div>
               <div class="item">
@@ -480,8 +338,7 @@
                 </p>
                 <div class="btns">
                   <a href="" class="btn" tabindex="-1">
-                    طلب عرض توضيحي
-                  </a>
+                    طلب عرض توضيحي</a>
                 </div>
               </div>
               <div class="item">
@@ -501,8 +358,7 @@
                 </p>
                 <div class="btns">
                   <a href="" class="btn" tabindex="-1">
-                    طلب عرض توضيحي
-                  </a>
+                    طلب عرض توضيحي</a>
                 </div>
               </div>
             </div>
@@ -512,32 +368,24 @@
       </div>
     </section>
     <!-- </section-fold> ====== Hero Section End ====== -->
-
     <div class="space_botm"></div>
-
     <!-- <section-fold>  ====== Team Home Section ====== -->
     <section class="sbs flip team_home">
       <div class="cnt-sm text-center">
         <h1>
-
           قم بتحويل إدارة المبنى الخاص بك مع Bayti Living
-
         </h1>
       </div>
       <div class="flex no-flex-sm cnt">
         <div class="txt">
           <div class="content">
             <h4>
-
               مرحباً بكم في بيتي – الحل الشامل لإدارة الممتلكات في دبي.
-
             </h4>
             <p>
-
               سواء كنت منشئًا يسعى إلى تحسين محفظة ممتلكاتك العقارية أو مستأجرًا
               يبحث عن تجربة إيجار سلسة، فإن Bayti توفر لك ما تحتاج إليه. بفضل مجموعة من الميزات القوية والواجهة
               البديهية، تعمل Bayti على إحداث ثورة في الطريقة التي تدير بها الممتلكات وتتواصل بها مع المستأجرين.
-
             </p>
           </div>
         </div>
@@ -551,23 +399,17 @@
       </div>
     </section>
     <!-- </section-fold> ====== Team Home Section End ====== -->
-
     <div class="space_botm"></div>
-
     <!-- Features -->
     <div class="features">
       <div class="cnt">
         <div class="cnt-sm text-center mb-5">
           <h1>
-
             مميزات المنتج
-
           </h1>
           <p>
-
             توفر لك Bayti كل ما تحتاج إليه. بفضل مجموعة من الميزات القوية
             والواجهة البديهية، تعمل Bayti على إحداث ثورة في طريقة إدارة العقارات والتواصل مع المستأجرين.
-
           </p>
         </div>
         <div class="feature_list">
@@ -575,81 +417,52 @@
             <div class="col-lg-3">
               <div class="box ml">
                 <h4>
-
                   إدارة الممتلكات
-
                 </h4>
                 <ul>
                   <li>
-
                     مبنى، شقة، مرافق
-
                   </li>
                   <li>
-
                     مالك العقار MGR
-
                   </li>
                   <li>
-
                     الإيرادات الإجمالية
-
-
                   </li>
                   <li>
-
                     صيانة التراخيص
-
                   </li>
                 </ul>
               </div>
-
               <div class="box">
                 <h4>
-
                   إدارة المرافق
-
                 </h4>
                 <ul>
                   <li>
-
                     الشقق والمرافق
-
                   </li>
                   <li>
-
                     فنيين الاتصالات
-
                   </li>
                   <li>
-
                     إدارة أوامر العمل
-
                   </li>
                 </ul>
               </div>
-
               <div class="box ml">
                 <h4>
-
                   العقود والمستأجرين
-
                 </h4>
                 <ul>
                   <li>
-
                     عقود الإيجار
-
                   </li>
                   <li>
-
                     تذكيرات الدفع وتاريخ الاستحقاق
-
                   </li>
                   <li>
-
                     ملف الإيجار والوثائق
-
                   </li>
                 </ul>
               </div>
@@ -657,15 +470,11 @@
             <div class="col-lg-6 feature_img">
               <div class="box mb">
                 <h4>
-
                   إذاعة
-
                 </h4>
                 <ul>
                   <li>
-
                     إذاعة
-
                   </li>
                 </ul>
               </div>
@@ -673,65 +482,42 @@
             <div class="col-lg-3">
               <div class="box mr mb-4">
                 <h4>
-
                   التجديدات والدفعات
-
                 </h4>
                 <p>
-
                   يقوم فريق الدعم أو الفرد المعين بالتحقيق في المشكلة المبلغ عنها
                   أو تنفيذ الخدمة المطلوبة
-
-
                 </p>
               </div>
-
               <div class="box mb-4">
                 <h4>
-
                   إدارة العملاء المحتملين
-
                 </h4>
                 <ul>
                   <li>
-
                     العملاء/المحتملين
-
                   </li>
                   <li>
-
                     الاتصالات العامة
-
                   </li>
                 </ul>
               </div>
-
               <div class="box mr">
                 <h4>
-
                   تقارير الإدارة
-
                 </h4>
                 <ul>
                   <li>
-
                     تقرير الإيرادات والمصروفات
-
                   </li>
                   <li>
-
                     تحصيل الدفع
-
                   </li>
                   <li>
-
                     تقرير الوظائف الشاغرة
-
                   </li>
                   <li>
-
                     توقعات الإيرادات
-
                   </li>
                 </ul>
               </div>
@@ -741,211 +527,139 @@
       </div>
     </div>
     <!-- Features End -->
-
     <div class="space_botm"></div>
-
     <!-- property sec start -->
     <div class="property-manager cnt">
       <div class="cnt-sm text-center">
         <h4 class="fw-100">
-
           تتيح منصة بيتي ليفينج لمديري العقارات والمالكين والمقرضين رعاية ملايين
           الشقق بشكل أفضل.
-
         </h4>
       </div>
       <div class="flex p-m-num">
         <div class="item_box">
           <p class="hs2">
-
             50,000+
-
           </p>
           <p>
-
             المعاملات التي تتم معالجتها سنويا
-
           </p>
         </div>
         <div class="item_box">
           <p class="hs2">
-
             25000+
-
           </p>
           <p>
-
             المستخدمون
             <br>
-
             المسجلون
-
           </p>
         </div>
         <div class="item_box">
           <p class="hs2">
-
             29%
-
           </p>
           <p>
-            <br>
-
             النمو
             من سنة إلى أخرى
-
           </p>
         </div>
         <div class="item_box">
           <p class="hs2">
-
             95%
-
           </p>
           <p>
-            <br>
-
             معدل رضا
             العملاء
-
           </p>
         </div>
         <div class="item_box">
           <p class="hs2">
-
             10000+
-
           </p>
           <p>
-
             العقارات
             <br>
-
             المُدارة
-
           </p>
         </div>
       </div>
     </div>
     <!-- property sec end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- Stakeholders -->
     <div class="stakeholder">
       <div class="cnt-sm text-center">
         <h1>
-
           ميزات أصحاب المصلحة
-
         </h1>
         <p>
-
           توفر لك Bayti كل ما تحتاج إليه. بفضل مجموعة من الميزات القوية والواجهة
           البديهية، تعمل Bayti على إحداث ثورة في طريقة إدارة العقارات والتواصل مع المستأجرين.
-
         </p>
       </div>
       <div class="row cnt">
-        <div class="col-sm-6 sh_img">
+        <div class="col-sm-6 sh_img img">
           <img src="images/stakeholder-image.png" alt="">
           <div class="btns">
             <a href="" class="btn_tenant">
-
-
-              مستندات المستأجر
-
-
-            </a>
+              مستندات المستأجر</a>
             <a href="" class="btn_tenant">
-
-
-              عقد المستأجر
-
-
-            </a>
+              عقد المستأجر</a>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="box">
             <h3>
-
               المستأجرين
-
             </h3>
             <ul class="list lg">
               <li>
-
                 هل يمكن رفع طلب الصيانة
-
               </li>
               <li>
-
                 تلقي إشعار من الإدارة
-
               </li>
               <li>
-
                 يحصل على جميع تحديثات الحالة لطلبهم
-
               </li>
               <li>
-
                 تجديد عقد الإيجار
-
               </li>
               <li>
-
                 إدارة الاتصال
-
               </li>
             </ul>
           </div>
           <div class="box">
             <h3>
-
               شركة عقارية
-
             </h3>
             <ul class="list lg">
               <li>
-
                 إدارة الممتلكات
-
               </li>
               <li>
-
                 إدارة المرافق عبر الإنترنت
-
               </li>
               <li>
-
                 تجديد الإيجار
-
               </li>
               <li>
-
                 تعيين المهام
-
               </li>
               <li>
-
                 تقارير الرؤى
-
               </li>
             </ul>
           </div>
           <div class="box">
             <h3>
-
               فني
-
             </h3>
             <ul class="list lg">
               <li>
-
                 تلقي الطلب
-
               </li>
             </ul>
           </div>
@@ -955,229 +669,151 @@
       </div>
     </div>
     <!-- Stakeholders End -->
-
     <div class="space_botm"></div>
-
     <!-- Packages -->
     <div class="packages">
       <div class="cnt">
         <div class="cnt-sm text-center">
           <h1>
-
             الحزم
-
           </h1>
           <p>
-
             توفر لك Bayti كل ما تحتاج إليه. بفضل مجموعة من الميزات القوية
             والواجهة البديهية، تعمل Bayti على إحداث ثورة في طريقة إدارة العقارات والتواصل مع المستأجرين.
-
           </p>
         </div>
         <div class="row mt-4">
-          <div class="col-md-3">
+          <div class="col-6 col-lg-3">
             <div class="box">
               <h3>
-
                 حر
-
               </h3>
               <p class="amount">
                 <small>
-
                   0.00
-
                 </small>
-
                 $
                 <span>
-
                   /الشهر
-
                 </span>
               </p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>
-
                   عدد غير محدود من المراجعين الضيوف
-
                 </li>
                 <li>
-
                   مشاريع غير محدودة
-
                 </li>
                 <li>
-
                   دعم مخصص
-
                 </li>
                 <li>
-
                   تحديثات مدى الحياة
-
                 </li>
                 <li>
-
                   لا توجد رسوم إعداد
-
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-lg-3">
             <div class="box">
               <h3>
-
                 أساسي
-
               </h3>
               <p class="amount">
                 <small>
-
                   14.99
-
                 </small>
-
                 $
                 <span>
-
                   شهريا
-
                 </span>
               </p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>
-
                   عدد غير محدود من المراجعين الضيوف
-
                 </li>
                 <li>
-
                   مشاريع غير محدودة
-
                 </li>
                 <li>
-
                   دعم مخصص
-
                 </li>
                 <li>
-
                   تحديثات مدى الحياة
-
                 </li>
                 <li>
-
                   لا توجد رسوم إعداد
-
                 </li>
               </ul>
               <a href="" class="btn">
-
-                ابدأ تجربة مجانية لمدة 14 يومًا
-
-              </a>
+                ابدأ تجربة مجانية لمدة 14 يومًا</a>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-lg-3">
             <div class="box">
               <h3>
-
                 متقدم
-
               </h3>
               <p class="amount">
                 <small>
-
                   39.99
-
                 </small>
-
                 $
                 <span>
-
                   / الشهر
-
                 </span>
               </p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>
-
                   عدد غير محدود من المراجعين الضيوف
-
                 </li>
                 <li>
-
                   مشاريع غير محدودة
-
                 </li>
                 <li>
-
                   دعم مخصص
-
                 </li>
                 <li>
-
                   تحديثات مدى الحياة
-
                 </li>
                 <li>
-
                   لا توجد رسوم إعداد
-
                 </li>
               </ul>
               <a href="" class="btn">
-
-                ابدأ تجربة مجانية لمدة 14 يومًا
-
-              </a>
+                ابدأ تجربة مجانية لمدة 14 يومًا</a>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-lg-3">
             <div class="box">
               <h3>
-
                 مُلصقة باللون الأبيض
-
               </h3>
               <div class="pkg-btn">
                 <a href="" class="btn">
-
-                  اتصل بنا لمعرفة الأسعار
-
-                </a>
+                  اتصل بنا لمعرفة الأسعار</a>
               </div>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>
-
                   عدد غير محدود من المراجعين الضيوف
-
                 </li>
                 <li>
-
                   مشاريع غير محدودة
-
                 </li>
                 <li>
-
                   دعم مخصص
-
                 </li>
                 <li>
-
                   تحديثات مدى الحياة
-
                 </li>
                 <li>
-
                   لا توجد رسوم إعداد
-
                 </li>
               </ul>
             </div>
@@ -1186,88 +822,62 @@
       </div>
     </div>
     <!-- Packages End -->
-
     <div class="space_botm"></div>
-
     <!-- How it Works -->
     <div class="how_works cnt-lg">
       <div class="text-center cnt-sm">
         <h1>
-
           كيف يعمل
-
         </h1>
         <p>
-
           توفر لك Bayti كل ما تحتاج إليه. بفضل مجموعة من الميزات القوية والواجهة
           البديهية، تعمل Bayti على إحداث ثورة في طريقة إدارة العقارات والتواصل مع المستأجرين.
-
         </p>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-6 text-center">
           <img src="images/img-how-it-works.png" alt="">
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <ol>
             <li class="box">
               <p class="head">
-
                 اشتراك
-
               </p>
               <p>
-
                 لوريم إيبسوم دولور سيت أميت، كونسيكتور أديبيسينج.
-
               </p>
             </li>
             <li class="box">
               <p class="head">
-
                 إملأ نموذج التوجيه
-
               </p>
               <p>
-
                 لوريم إيبسوم دولور سيت أميت، كونسيكتور أديبيسينج.
-
               </p>
             </li>
             <li class="box">
               <p class="head">
-
                 تم تعيين مدير العلاقات
-
               </p>
               <p>
-
                 لوريم إيبسوم دولور سيت أميت، كونسيكتور أديبيسينج.
-
               </p>
             </li>
             <li class="box">
               <p class="head">
-
                 لوريم إيبسوم دولور سيت
-
               </p>
               <p>
-
                 لوريم إيبسوم دولور سيت أميت، كونسيكتور أديبيسينج.
-
               </p>
             </li>
             <li class="box">
               <p class="head">
-
                 دويس أوت إيرور ريبريهينديريت
-
               </p>
               <p>
-
                 لوريم إيبسوم دولور سيت أميت، كونسيكتور أديبيسينج.
-
               </p>
             </li>
           </ol>
@@ -1275,114 +885,85 @@
       </div>
     </div>
     <!-- How it Works End -->
-
     <div class="space_botm"></div>
-
     <!-- testimonials start -->
     <div class="testimonial">
       <div class="cnt-sm text-center">
         <h1>
-
           عملاؤنا السعداء
-
         </h1>
         <p>
-
           برنامجنا بسيط للغاية لدرجة أن الناس لا يسعهم إلا أن يقعوا في حبه.
           البساطة أمر سهل عندما تتخطى عددًا كبيرًا من الميزات المهمة.
-
         </p>
       </div>
       <div class="text-center cnt">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div class="box">
               <p>
-
                 باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
                 في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
                 المستأجرين وكفاءة التشغيل.
-
               </p>
               <div class="testimonials_content">
                 <img src="./images/comment-img-1.png" alt="">
                 <div class="pl-2">
                   <h3>
-
                     فرانسيسكا سوانيس
-
                   </h3>
                   <p>
-
                     ادوارد و تاورز
-
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div class="box">
               <p>
-
                 باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
                 في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
                 المستأجرين وكفاءة التشغيل.
-
               </p>
               <div class="testimonials_content">
                 <img src="./images/comment-img-2.png" alt="">
                 <div class="pl-2">
                   <h3>
-
                     فرانسيسكا سوانيس
-
                   </h3>
                   <p>
-
                     ادوارد و تاورز
-
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div class="box">
               <p>
-
                 باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
                 في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
                 المستأجرين وكفاءة التشغيل.
-
               </p>
               <div class="testimonials_content">
                 <img src="./images/comment-img-1.png" alt="">
                 <div class="pl-2">
                   <h3>
-
                     فرانسيسكا سوانيس
-
                   </h3>
                   <p>
-
                     ادوارد و تاورز
-
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- testimonials end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- users stats start -->
     <div class="user_stats">
       <div class="container">
@@ -1390,16 +971,11 @@
           <div class="col-8">
             <div class="uset_txt">
               <h2>
-
                 أكثر من 640 ألف مستخدم
                 <br>
-
-
                 حول العالم يستخدمون
                 <span>
-
                   Bayti Living
-
                 </span>
               </h2>
             </div>
@@ -1407,28 +983,20 @@
           <div class="col-2">
             <div class="num">
               <h3 class="hs2">
-
                 99%
-
               </h3>
               <p>
-
                 مستخدمون راضون في جميع أنحاء العالم
-
               </p>
             </div>
           </div>
           <div class="col-2">
             <div class="num">
               <h3 class="hs2">
-
                 99%
-
               </h3>
               <p>
-
                 مستخدمون راضون في جميع أنحاء العالم
-
               </p>
             </div>
           </div>
@@ -1436,222 +1004,149 @@
       </div>
     </div>
     <!-- users stats end -->
-
     <div class="space_botm bd cnt"></div>
-
     <!-- blog start -->
     <div class="blog">
       <div class="cnt-sm text-center">
         <h1>
-
           المدونات
-
         </h1>
         <p>
-
           لأنك ربما تشعر بالارتباك قليلاً إذا اقترحنا عليك تعقيد مهام عملك
           اليومية بدلاً من ذلك.
-
         </p>
       </div>
-
       <div class="cnt">
         <div class="row">
           <div class="col-md-4">
-            <div class="box">
+            <div class="box img">
               <img src="./images/blog-img-1.png" alt="">
-
               <div class="blog_content">
                 <p>
-
                   2024-11-13
-
                 </p>
                 <h3>
-
                   بيتي ليفينج: إدارة الممتلكات التجارية أصبحت أسهل من أي وقت مضى
-
-
                 </h3>
                 <p>
-
                   في المشهد سريع التطور لتكنولوجيا العقارات، تشكل الثقة
                   والموثوقية حجر الزاوية...
-
                 </p>
               </div>
-
             </div>
           </div>
           <div class="col-md-4">
-            <div class="box">
+            <div class="box img">
               <img src="./images/blog-img-2.png" alt="">
-
               <div class="blog_content">
                 <p>
-
                   2024-11-13
-
                 </p>
                 <h3>
-
                   تعزيز الثقة | نهج بيتي ليفينج في مجال أمن البيانات في مجال
                   التكنولوجيا العقارية
-
                 </h3>
                 <p>
-
                   في المشهد سريع التطور لتكنولوجيا العقارات، تشكل الثقة
                   والموثوقية حجر الزاوية...
-
                 </p>
               </div>
-
             </div>
           </div>
           <div class="col-md-4">
-            <div class="box">
+            <div class="box img">
               <img src="./images/blog-img-3.png" alt="">
-
               <div class="blog_content">
                 <p>
-
                   2024-11-13
-
                 </p>
                 <h3>
-
                   الدليل الشامل لاختيار برنامج إدارة العقارات المناسب
-
                 </h3>
                 <p>
-
                   في المشهد سريع التطور لتكنولوجيا العقارات، تشكل الثقة
                   والموثوقية حجر الزاوية...
-
                 </p>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
     </div>
     <!-- blog end -->
-
     <div class="space_botm"></div>
-
     <!-- demo start -->
     <div class="demo text-center cnt">
       <h1>
-
         دعونا نتحدث عن مشروعك
-
       </h1>
       <p>
-
         نحن نساعد الشركات والأفراد على تبسيط سير العمل والعمليات الخاصة بهم.
-
-
       </p>
       <a class="btn btn-v2" href="">
-
-        طلب عرض توضيحي
-
-      </a>
-
+        طلب عرض توضيحي</a>
     </div>
     <!-- demo start -->
-
     <div class="space_botm"></div>
-
     <!-- Footer -->
     <footer class="cnt">
-      <div class="row m-0 ftr">
-        <div class="col-sm-4">
-
+      <div class="row m-0 ftr text-center text-lg-left">
+        <div class="col-lg-4">
           <img src="images/logo.png" alt="">
           <h3>
-
             شركة بيتي ليفينج للحلول الذكية لتكنولوجيا المعلومات
-
           </h3>
           <p>
-
             المكتب رقم 1001-AB، مبنى بلازا 8، الممزر، دبي، الإمارات العربية
             المتحدة
-
           </p>
           <a href="">
-
-            الدعم@baytiliving.ae
-
-          </a>
-
-
+            الدعم@baytiliving.ae</a>
         </div>
-        <div class="col-sm-2 qck_lnks">
+        <div class="col-lg-2 qck_lnks">
           <h6>
-
             روابط سريعة
-
           </h6>
           <ul>
             <li><a href="">
-
                 سمات
-
-              </a></li>
+              </a>
+            </li>
             <li><a href="">
-
                 الحزم
-
-              </a></li>
+              </a>
+            </li>
             <li><a href="">
-
                 كيف يعمل
-
-              </a></li>
+              </a>
+            </li>
             <li><a href="">
-
                 دراسات الحالة
-
-              </a></li>
+              </a>
+            </li>
             <li><a href="">
-
                 المدونات
-
-              </a></li>
+              </a>
+            </li>
             <li><a href="">
-
                 جهات الاتصال
-
-              </a></li>
+              </a>
+            </li>
           </ul>
-
         </div>
-        <div class="col-sm-2 app_icn">
+        <div class="col-lg-2 app_icn">
           <h6>
-
             تنزيل التطبيق
-
           </h6>
-
           <a href=""><img src="images/apple-store.png" alt=""></a>
           <a href=""><img src="images/google-play.png" alt=""></a>
-
         </div>
-        <div class="col-sm-4 inpt">
+        <div class="col-lg-4 inpt">
           <h6>
-
             تواصل معنا
-
           </h6>
           <p>
-
             ابقى على اطلاع بأحدث الأخبار والمستجدات.
-
           </p>
           <div class="footer_input">
             <input type="text" placeholder="عنوان البريد الإلكتروني">
@@ -1661,53 +1156,38 @@
           </div>
           <div class="social_icn">
             <a href="">
-              <img src="./images/fb.svg" alt="">
-            </a>
+              <img src="./images/fb.svg" alt=""></a>
             <a href="">
-              <img src="./images/linkedin.png" alt="">
-            </a>
+              <img src="./images/linkedin.png" alt=""></a>
             <a href="">
-              <img src="./images/twitter.png" alt="">
-            </a>
-
+              <img src="./images/twitter.png" alt=""></a>
           </div>
-
-
         </div>
       </div>
       <div class="space_botm"></div>
       <div class="bottom_links">
         <p>
-
           © 2024 بيتي ليفينج. جميع الحقوق محفوظة.
-
         </p>
         <div class="policy">
           <p><a href="">
-
               الشروط والأحكام
-
-            </a> </p>
+            </a>
+          </p>
           <p><a href="">
-
               سياسة الخصوصية
-
-            </a></p>
+            </a>
+          </p>
         </div>
       </div>
     </footer>
     <!-- Footer End -->
-
     <!-- </section-fold> ====== Footer and Map Section End ====== -->
-
   </main>
-
   <noscript id="deferred-styles">
     <!-- <link href="css/custom.css" rel="stylesheet" /> -->
     <link href="css/plugins.css" rel="stylesheet" />
   </noscript>
-
-
   <script>
     var loadDeferredStyles = function () {
       var addStylesNode = document.getElementById("deferred-styles");
@@ -1721,12 +1201,9 @@
       window.setTimeout(loadDeferredStyles, 0);
     });
     else window.addEventListener('load', loadDeferredStyles);
-
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <!-- <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCMSE7I8AeHEbCDdzoCV0E1LM5USKBDNio"></script>
   <script src="js/plugins.js"></script>
   <script>
     $('.hero-txt').slick({
@@ -1735,7 +1212,16 @@
     });
   </script>
 
-  <!-- map -->
+  <!-- <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 </body>
 
 </html>
