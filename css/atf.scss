@@ -2591,6 +2591,10 @@ a:hover {
       .content {
         max-width: none;
         text-align: center;
+        padding: 0 !important;
+      }
+      h4{
+        max-width: 100% !important;
       }
     }
 
@@ -2999,6 +3003,15 @@ a:hover {
   }
   }
 }
+@media all and (max-width: 767px) {
+  .feature_list [class*=col]{
+    display: block;
+  }
+  .feature_list .feature_img .box{
+    width: 100%;
+    max-width: none;
+  }
+}
 
 // Features End
 
@@ -3100,6 +3113,12 @@ a:hover {
   }
 }
 
+@media all and (max-width: 767px) {
+  .stakeholder .cnt{
+    padding: 0;
+  }
+}
+
 // Stakeholder End
 
 // Packages
@@ -3196,6 +3215,18 @@ a:hover {
         max-width: 100%;
       }
     }
+    .box {
+      h3{
+        margin-bottom: 0;
+      }
+      .amount{
+        margin-bottom: 0;
+        line-height: 1;
+      }
+      .btn{
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -3239,8 +3270,8 @@ a:hover {
         position: absolute;
         left: 95%;
         top: 0px;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         background-color: $c1;
         border-radius: 45px;
         display: flex;
@@ -3274,6 +3305,17 @@ a:hover {
         left: 91%;
         top: -10px;
       }
+    }
+  }
+}
+@media all and (max-width: 767px) {
+  .how_works ol .box{
+    padding-left: 70px;
+    padding-right: 30px;
+    background-size: 40px;
+    &:before{
+      left: auto;
+      right: -10px;
     }
   }
 }
@@ -4180,8 +4222,9 @@ a:hover {
   }
 
   .flex {
-    height: calc(100vh - 100px);
-    max-height: 550px;
+    // height: calc(100vh - 100px);
+    height: 620px;
+    // max-height: 550px;
     align-items: center;
     position: relative;
   }
@@ -4270,12 +4313,11 @@ a:hover {
 @media all and (max-width: 767px) {
   .home_hero {
     .flex {
-      height: 70vh;
+      height: calc(100svh - 180px);
     }
 
     .head_content {
-      width: 100%;
-      padding: 20px 0 50px;
+      padding: 10px;
 
       h1 {
         font-size: 60px;
@@ -4692,12 +4734,22 @@ a:hover {
     width: 20%;
   }
 }
+@media all and (max-width: 767px) {
+  .property-manager .item_box{
+    width: 100%;
+    .hs2{
+      margin-bottom: 0;
+    }
+    br{
+      display: none;
+    }
+  }
+}
 
 @media all and (max-width: 991px) {
   .property-manager {
     h4{
       font-weight: 500;
-      font-size: 22px;
     }
     .hs2{
       font-size: 25px;
@@ -4710,11 +4762,6 @@ a:hover {
 
 //  Stats End
 
-.user_txt {
-  span {
-    color: $c1;
-  }
-}
 
 // booking_bar
 .booking_bar {
@@ -5322,6 +5369,9 @@ a:hover {
 
 @media all and (max-width: 767px) {
 
+  body{
+    font-size: 14px;
+  }
   // .media-mixin(767px);
   .no-flex-xs,
   .nfx {
@@ -5388,16 +5438,6 @@ a:hover {
   // General
   .navbar-default .navigation li ul {
     top: 44px;
-  }
-
-  .hs1,
-  h1 {
-    font-size: 50px;
-
-    strong {
-      font-size: 30px;
-      margin-top: -10px;
-    }
   }
 
   .hs2,
@@ -5506,6 +5546,12 @@ a:hover {
   // General
   .breadcrumb {
     display: none;
+  }
+
+  
+  .cnt, .cnt-sm, .cnt-lg {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .content_default {
@@ -5728,6 +5774,9 @@ html.edit_mode .show_at_edit_mode {
   .hs2 {
     margin: 0;
     font-weight: 600;
+  }
+  @media all and (max-width: 767px) {
+    text-align: center;
   }
 }
 
