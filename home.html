@@ -12,175 +12,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
     rel="stylesheet">
-  <script type="text/javascript">
-    // Lazy Load Start
-    document.addEventListener("DOMContentLoaded", function () {
-      var e, n = document.querySelectorAll(".lazy");
-      function t() {
-        e && clearTimeout(e), e = setTimeout(function () {
-          for (var e = window.pageYOffset, o = 0; o < n.length; o++) n[o].offsetTop < window.innerHeight + e && (n[o].src = n[o].dataset.src, n[o].classList.remove("lazy"));
-          0 == n.length && (document.removeEventListener("scroll", t), window.removeEventListener("resize", t), window.removeEventListener("orientationChange", t))
-        }, 20)
-      }
-      document.addEventListener("scroll", t), window.addEventListener("resize", t), window.addEventListener("orientationChange", t)
-    });
-    // Lazy Load End
-    // webp format detection
-    /*! modernizr 3.6.0 (Custom Build) | MIT *
-    * https://modernizr.com/download/?-webp-setclasses !*/
-    ! function (e, n, A) {
-      function o(e, n) {
-        return typeof e === n
-      }
-      function t() {
-        var e, n, A, t, a, i, l;
-        for (var f in r)
-          if (r.hasOwnProperty(f)) {
-            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
-              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
-            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(
-              Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no_") + l.join("-"))
-          }
-      }
-      function a(e) {
-        var n = u.className,
-          A = Modernizr._config.classPrefix || "";
-        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
-          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
-          n = n.replace(o, "$1" + A + "js$2")
-        }
-        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
-      }
-      function i(e, n) {
-        if ("object" == typeof e)
-          for (var A in e) f(e, A) && i(A, e[A]);
-        else {
-          e = e.toLowerCase();
-          var o = e.split("."),
-            t = Modernizr[o[0]];
-          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
-          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" :
-            "no_") + o.join("-")]), Modernizr._trigger(e, n)
-        }
-        return Modernizr
-      }
-      var s = [],
-        r = [],
-        l = {
-          _version: "3.6.0",
-          _config: {
-            classPrefix: "",
-            enableClasses: !0,
-            enableJSClass: !0,
-            usePrefixes: !0
-          },
-          _q: [],
-          on: function (e, n) {
-            var A = this;
-            setTimeout(function () {
-              n(A[e])
-            }, 0)
-          },
-          addTest: function (e, n, A) {
-            r.push({
-              name: e,
-              fn: n,
-              options: A
-            })
-          },
-          addAsyncTest: function (e) {
-            r.push({
-              name: null,
-              fn: e
-            })
-          }
-        },
-        Modernizr = function () { };
-      Modernizr.prototype = l, Modernizr = new Modernizr;
-      var f, u = n.documentElement,
-        c = "svg" === u.nodeName.toLowerCase();
-      ! function () {
-        var e = {}.hasOwnProperty;
-        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
-          return n in e && o(e.constructor.prototype[n], "undefined")
-        } : function (n, A) {
-          return e.call(n, A)
-        }
-      }(), l._l = {}, l.on = function (e, n) {
-        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
-          Modernizr._trigger(e, Modernizr[e])
-        }, 0)
-      }, l._trigger = function (e, n) {
-        if (this._l[e]) {
-          var A = this._l[e];
-          setTimeout(function () {
-            var e, o;
-            for (e = 0; e < A.length; e++)(o = A[e])(n)
-          }, 0), delete this._l[e]
-        }
-      }, Modernizr._q.push(function () {
-        l.addTest = i
-      }), Modernizr.addAsyncTest(function () {
-        function e(e, n, A) {
-          function o(n) {
-            var o = n && "load" === n.type ? 1 == t.width : !1,
-              a = "webp" === e;
-            i(e, a && o ? new Boolean(o) : o), A && A(n)
-          }
-          var t = new Image;
-          t.onerror = o, t.onload = o, t.src = n
-        }
-        var n = [{
-          uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
-          name: "webp"
-        }, {
-          uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
-          name: "webp.alpha"
-        }, {
-          uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
-          name: "webp.animation"
-        }, {
-          uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
-          name: "webp.lossless"
-        }],
-          A = n.shift();
-        e(A.name, A.uri, function (A) {
-          if (A && "load" === A.type)
-            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
-        })
-      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
-      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
-      e.Modernizr = Modernizr
-    }(window, document);
-    // webp format detection end
-  </script>
-  <style type="text/css">
-    .lazy {
-      background-image: none !important;
-    }
-  </style>
 </head>
 
 <body>
   <main class="wrapper" onclick="return true">
     <div id="google_translate_element"></div>
-    <!-- <section-fold>  ====== Header Section ====== -->
+    <!-- ====== Header Section ====== -->
+
     <!-- Mobile Header -->
     <div class="header_mob">
       <div class="top">
-        <a class="btn" href="">Sign Up</a>
-        <a class="btn btn-v2" href="">Login</a>
+        <a class="btn" href="sign-up.html">Sign Up</a>
+        <a class="btn btn-v2" href="login.html">Login</a>
         <a class="btn" onclick="toggleLanguage()">Arabic</a>
       </div>
       <div class="row ng bot flex">
-        <div class="logo"> <a class="m_logo img" href="/">
-            <img width="232" height="75" src="images/logo.png" alt=""> </a> </div>
+        <div class="logo"> <a class="m_logo img" href="home.html">
+            <img width="90" height="60" src="images/logo.png"> </a> </div>
         <div class="menu_mob text-right flex">
           <a class="humburger_menu" data-toggle="collapse" data-target="#mobile_nav"> <em class="fa-bars"></em> </a>
         </div>
       </div>
     </div>
     <!-- Mobile Header END -->
+
     <!-- Mobile Nav -->
     <div class="mobile_nav">
       <div id="mobile_nav" class=" collapse">
@@ -188,48 +43,40 @@
       </div>
       <div class="mobile_overlay"></div>
     </div>
-    <!-- Mobile Nav -->
-    <!-- Sticky Button -->
-    <!-- <div id="scroll-to"> <a href="/free-consultation/" class="btn">Book a free consultation</a> </div> -->
+    <!-- Mobile Nav End-->
+
     <!-- Header -->
     <header class="header default_sticky" data-top="5">
       <div class="header_top">
         <div class="cnt-lg">
           <div class="flex align-items-center row ng">
             <div class="logo col-md-2">
-              <a href="/" class="img"> <img title="" alt="" src="images/logo.png" width="232" height="75" /> </a>
+              <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
             </div>
             <div class="col-md-10">
               <div class="flex jc_end">
                 <ul class="navigation">
-                  <li> <a class="selected has_child" href="">Feature</a>
+                  <li> <a class="selected has_child" href="#features">Feature</a>
                     <ul>
-                      <li class="selected"><a href="" target="_self" class="selected">Link 1</a></li>
-                      <li> <a href="#">Link 2</a>
-                      </li>
-                      <li> <a href="#">Link 3</a>
-                      </li>
-                      <li> <a href="#">Link 4</a>
-                      </li>
-                      <li> <a href="#">Link 5</a>
-                      </li>
+                      <li><a href="features.html">Property Management</a></li>
+                      <li><a href="features.html">Facilities Management</a></li>
+                      <li><a href="features.html">Contracts & Tenants</a></li>
+                      <li><a href="features.html">Broadcast</a></li>
+                      <li><a href="features.html">Renewals & Payments</a></li>
+                      <li><a href="features.html">Lead Management</a></li>
+                      <li><a href="features.html">Management Reports</a></li>
                     </ul>
                   </li>
-                  <li> <a href="">Packages</a>
-                  </li>
-                  <li> <a href="">How it Works</a>
-                  </li>
-                  <li> <a href="">Case Studies</a>
-                  </li>
-                  <li> <a href="">Blog</a>
-                  </li>
-                  <li> <a href="">Content</a>
-                  </li>
+                  <li><a href="#packages">Packages</a></li>
+                  <li><a href="#how-it-works">How it works</a></li>
+                  <li><a href="#case-study">Case Studies</a></li>
+                  <li><a href="#blog">Blogs</a></li>
+                  <li><a href="contact.html">Contacts</a></li>
                 </ul>
                 <div class="nav_btns">
-                  <a class="btn btn-v3" href="">Sign Up</a>
-                  <a class="btn btn-v2" href="">Login</a>
-                  
+                  <a class="btn btn-v3" href="sign-up.html">Sign Up</a>
+                  <a class="btn btn-v2" href="login.html">Login</a>
+
                   <label class="switch notranslate">
                     <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
                     <span class="slider"></span>
@@ -242,10 +89,12 @@
       </div>
     </header>
     <div class="sticky_space"></div>
-    <!-- Header -->
-    <!-- </section-fold> ====== Header Section End ====== -->
+    <!-- Header End-->
+
+    <!-- ====== Header Section End ====== -->
+
     <!-- Hero -->
-    <section class="home_hero">
+    <section class="home_hero" id="hero">
       <div class="flex cnt-lg">
         <div class="head_content">
           <div class="txt">
@@ -257,7 +106,7 @@
                 <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
                   connected, ensuring efficient communication and task management.</p>
                 <div class="btns">
-                  <a href="" class="btn">Request Demo</a>
+                  <a href="contact.html" class="btn">Request Demo</a>
                 </div>
               </div>
               <div class="item">
@@ -267,7 +116,7 @@
                 <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
                   connected, ensuring efficient communication and task management.</p>
                 <div class="btns">
-                  <a href="" class="btn">Request Demo</a>
+                  <a href="contact.html" class="btn">Request Demo</a>
                 </div>
               </div>
               <div class="item">
@@ -277,7 +126,7 @@
                 <p>Our innovative platform and mobile app empower tenants, staff, and technicians to stay
                   connected, ensuring efficient communication and task management.</p>
                 <div class="btns">
-                  <a href="" class="btn">Request Demo</a>
+                  <a href="contact.html" class="btn">Request Demo</a>
                 </div>
               </div>
             </div>
@@ -286,10 +135,11 @@
         <div class="img"></div>
       </div>
     </section>
-    <!-- </section-fold> ====== Hero Section End ====== -->
     <div class="space_botm"></div>
-    <!-- <section-fold>  ====== Team Home Section ====== -->
-    <section class="sbs flip team_home">
+    <!-- ====== Hero Section End ====== -->
+
+    <!-- ====== Video Section ====== -->
+    <section class="sbs flip video_section">
       <div class="cnt-sm text-center">
         <h1>Transform your Building Management with Bayti Living</h1>
       </div>
@@ -313,10 +163,11 @@
         </div>
       </div>
     </section>
-    <!-- </section-fold> ====== Team Home Section End ====== -->
     <div class="space_botm"></div>
+    <!-- ====== Video Section End ====== -->
+
     <!-- Features -->
-    <div class="features">
+    <section class="features" id="features">
       <div class="cnt">
         <div class="cnt-sm text-center mb-5">
           <h1>Product Features</h1>
@@ -387,11 +238,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Features End -->
+    </section>
     <div class="space_botm"></div>
+    <!-- Features End -->
+
     <!-- property sec start -->
-    <div class="property-manager cnt">
+    <section class="property-manager cnt">
       <div class="cnt-sm text-center">
         <h4 class="fw-100">Bayti Living platform enables property managers, owners, and lenders to take better care of
           millions of
@@ -419,13 +271,13 @@
           <p>Properties <br> Managed</p>
         </div>
       </div>
-    </div>
-    <!-- property sec end -->
+    </section>
     <div class="space_botm bd cnt"></div>
+    <!-- property sec end -->
 
 
     <!-- Stakeholders -->
-    <div class="stakeholder">
+    <section class="stakeholder">
       <div class="cnt-sm text-center">
         <h1>Stakeholder Features</h1>
         <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes the
@@ -435,34 +287,34 @@
       <div class="row cnt">
         <div class="col-md-6 sh_img img tab-content">
           <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-            <img src="images/stakeholder-image.png" alt="">
+            <img src="images/stakeholder-image.png">
             <div class="btns">
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Tenant Documents
               </a>
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Tenant Contract
               </a>
             </div>
           </div>
           <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-            <img src="images/stakeholder-image.png" alt="">
+            <img src="images/stakeholder-image.png">
             <div class="btns">
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Real Estate Documents
               </a>
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Real Estate Contract
               </a>
             </div>
           </div>
           <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-            <img src="images/stakeholder-image.png" alt="">
+            <img src="images/stakeholder-image.png">
             <div class="btns">
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Technician Documents
               </a>
-              <a href="" class="btn_tenant">
+              <a class="btn_tenant">
                 Technician Contract
               </a>
             </div>
@@ -502,11 +354,12 @@
       </div>
       <div>
       </div>
-    </div>
-    <!-- Stakeholders End -->
+    </section>
     <div class="space_botm"></div>
+    <!-- Stakeholders End -->
+
     <!-- Packages -->
-    <div class="packages">
+    <section class="packages" id="packages">
       <div class="cnt">
         <div class="cnt-sm text-center">
           <h1>Packages</h1>
@@ -516,7 +369,7 @@
         </div>
         <div class="row mt-4">
           <div class="col-6 col-lg-3">
-            <div class="box">
+            <a href="contact.html" class="box">
               <h3>Free</h3>
               <p class="amount"><span class="notranslate"><span
                     class="notranslate">$</span></span>0<small>.00</small><span>/month</span></p>
@@ -528,10 +381,11 @@
                 <li>Lifetime updates</li>
                 <li>No setup fees</li>
               </ul>
-            </div>
+              <span class="btn">Start free trial now</span>
+            </a>
           </div>
           <div class="col-6 col-lg-3">
-            <div class="box">
+            <a href="contact.html" class="box">
               <h3>Basic</h3>
               <p class="amount"><span class="notranslate">$</span>14<small>.99</small><span>/month</span></p>
               <div class="sep"></div>
@@ -542,11 +396,11 @@
                 <li>Lifetime updates</li>
                 <li>No setup fees</li>
               </ul>
-              <a href="" class="btn">Start 14-free days trial</a>
-            </div>
+              <span class="btn">Start 14-free days trial</span>
+            </a>
           </div>
           <div class="col-6 col-lg-3">
-            <div class="box">
+            <a href="contact.html" class="box">
               <h3>Advanced</h3>
               <p class="amount"><span class="notranslate">$</span>39<small>.99</small><span>/month</span></p>
               <div class="sep"></div>
@@ -557,14 +411,14 @@
                 <li>Lifetime updates</li>
                 <li>No setup fees</li>
               </ul>
-              <a href="" class="btn">Start 14-free days trial</a>
-            </div>
+              <span class="btn">Start 14-free days trial</span>
+            </a>
           </div>
           <div class="col-6 col-lg-3">
-            <div class="box">
+            <a href="contact.html" class="box">
               <h3>Whitelabled</h3>
               <div class="pkg-btn">
-                <a href="" class="btn">Contact Us for Pricing</a>
+                <span class="btn">Contact Us for Pricing</span>
               </div>
               <div class="sep"></div>
               <ul class="list lg">
@@ -574,15 +428,16 @@
                 <li>Lifetime updates</li>
                 <li>No setup fees</li>
               </ul>
-            </div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Packages End -->
+    </section>
     <div class="space_botm"></div>
+    <!-- Packages End -->
+
     <!-- How it Works -->
-    <div class="how_works cnt-lg">
+    <section class="how_works cnt-lg" id="how-it-works">
       <div class="text-center cnt-sm">
         <h1>How it works</h1>
         <p>Bayti has you covered. With a suite of powerful features and an intuitive interface, Bayti revolutionizes the
@@ -590,7 +445,7 @@
       </div>
       <div class="row">
         <div class="col-lg-6 text-center img">
-          <img src="images/img-how-it-works.png" alt="">
+          <img src="images/img-how-it-works.png">
         </div>
         <div class="col-lg-6">
           <ol>
@@ -617,11 +472,12 @@
           </ol>
         </div>
       </div>
-    </div>
-    <!-- How it Works End -->
+    </section>
     <div class="space_botm"></div>
+    <!-- How it Works End -->
+
     <!-- testimonials start -->
-    <div class="testimonial">
+    <section class="testimonial" id="case-study">
       <div class="cnt-sm text-center">
         <h1>Our Happy Customers</h1>
         <p>Our software is so simple that people can’t help but fall in love with it. Simplicity is easy when you just
@@ -638,7 +494,7 @@
                   tenant
                   satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png" alt="">
+                  <img src="./images/comment-img-1.png">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -654,7 +510,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-2.png" alt="">
+                  <img src="./images/comment-img-2.png">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -670,7 +526,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png" alt="">
+                  <img src="./images/comment-img-1.png">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -686,7 +542,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png" alt="">
+                  <img src="./images/comment-img-1.png">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -697,11 +553,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- testimonials end -->
+    </section>
     <div class="space_botm bd cnt"></div>
+    <!-- testimonials end -->
+
     <!-- users stats start -->
-    <div class="user_stats">
+    <section class="user_stats">
       <div class="container">
         <div class="row d-block d-sm-flex align-items-center">
           <div class="col-sm-8">
@@ -722,11 +579,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- users stats end -->
+    </section>
     <div class="space_botm bd cnt"></div>
+    <!-- users stats end -->
+
     <!-- blog start -->
-    <div class="blog">
+    <section class="blog" id="blog">
       <div class="cnt-sm text-center">
         <h1>Blogs</h1>
         <p>Because you’d probably be a little confused if we suggested you complicate your everyday business tasks
@@ -736,7 +594,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-1.png" alt="">
+              <img src="./images/blog-img-1.png">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Bayti Living: Make Commercial Property Management Easier than Ever</h3>
@@ -746,7 +604,7 @@
           </div>
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-2.png" alt="">
+              <img src="./images/blog-img-2.png">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Fortifying Trust | Bayti Living's Approach to Data Security in Proptech</h3>
@@ -756,7 +614,7 @@
           </div>
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-3.png" alt="">
+              <img src="./images/blog-img-3.png">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>The Ultimate Guide to Choosing the Right Property Management Software</h3>
@@ -766,60 +624,62 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- blog end -->
+    </section>
     <div class="space_botm"></div>
+    <!-- blog end -->
+
     <!-- demo start -->
-    <div class="demo text-center cnt">
+    <section class="demo text-center cnt">
       <h1>Let’s talk about your project</h1>
       <p>We help companies and individuals streamline their workflows and processes.</p>
-      <a class="btn btn-v2" href=""> Request Demo</a>
-    </div>
-    <!-- demo start -->
+      <a class="btn btn-v2" href="contact.html"> Request Demo</a>
+    </section>
     <div class="space_botm"></div>
+    <!-- demo start -->
+
     <!-- Footer -->
     <footer class="cnt">
       <div class="row m-0 ftr text-center text-lg-left">
         <div class="col-lg-4">
-          <img src="images/logo.png" alt="">
+          <img src="images/logo.png" width="90" height="60">
           <h3>BAYTI LIVING SMART IT SOLUTION CO</h3>
           <p>Office 1001-AB Plaza 8 Building Al Mamzar, Dubai-UA</p>
-          <a href="">support@baytiliving.ae</a>
+          <a href="mailto:support@baytiliving.ae">support@baytiliving.ae</a>
         </div>
         <div class="col-lg-2 qck_lnks">
           <h6>Quick Links</h6>
           <ul>
-            <li><a href="">Features</a></li>
-            <li><a href="">Packages</a></li>
-            <li><a href="">How it works</a></li>
-            <li><a href="">Case Studies</a></li>
-            <li><a href="">Blogs</a></li>
-            <li><a href="">Contacts</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#case-study">Case Studies</a></li>
+            <li><a href="#blog">Blogs</a></li>
+            <li><a href="contact.html">Contacts</a></li>
           </ul>
         </div>
         <div class="col-lg-2 app_icn">
           <h6>Download App</h6>
-          <a href=""><img src="images/apple-store.svg" alt=""></a>
-          <a href=""><img src="images/google-play.svg" alt=""></a>
+          <a href="https://apps.apple.com/ae/app/bayti-living/id6474440931" target="_blank"><img
+              src="images/apple-store.svg"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.bayti.living" target="_blank"><img
+              src="images/google-play.svg"></a>
         </div>
         <div class="col-lg-4 inpt">
           <h6>Get Connected</h6>
           <p>Stay updated with the latest news and updates.</p>
           <div class="footer_input">
             <input type="text" placeholder="Email Address">
-            <a class="input_btn" href=""><img src="./images/footer_input.svg" alt=""></a>
-            <!-- <button class="input_btn"></button>
-            <div> </div> -->
+            <a class="input_btn" href="contact.html"><img src="./images/footer_input.svg"></a>
           </div>
           <div class="social_icn">
             <a href="">
-              <img src="./images/fb.svg" alt="">
+              <img src="./images/fb.svg">
             </a>
             <a href="">
-              <img src="./images/linkedin.png" alt="">
+              <img src="./images/linkedin.png">
             </a>
             <a href="">
-              <img src="./images/twitter.png" alt="">
+              <img src="./images/twitter.png">
             </a>
           </div>
         </div>
@@ -834,10 +694,9 @@
       </div>
     </footer>
     <!-- Footer End -->
-    <!-- </section-fold> ====== Footer and Map Section End ====== -->
+
   </main>
   <noscript id="deferred-styles">
-    <!-- <link href="css/custom.css" rel="stylesheet" /> -->
     <link href="css/plugins.css" rel="stylesheet" />
   </noscript>
   <script>
@@ -878,6 +737,9 @@
           }
         ]
       });
+      $('.packages .box').on('click', function () {
+        $(this).find('.btn').trigger('click')
+      })
     });
 
   </script>

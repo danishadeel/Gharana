@@ -8,10 +8,11 @@
 * {
   padding: 0;
   margin: 0;
-  scroll-behavior: [smooth];
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   color: $ct;
   font-size: 18px;
@@ -21,6 +22,9 @@ body {
   background-position: top right;
   background-repeat: no-repeat;
   background-size: calc(100vw - 40%);
+}
+section{
+  scroll-margin-top: 80px;
 }
 
 a {
@@ -3179,6 +3183,9 @@ a:hover {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     border: 1px solid transparent;
+    cursor: pointer;
+    display: block;
+    color: $c2;
 
     h3 {
       text-align: center;
@@ -3226,6 +3233,9 @@ a:hover {
 
     &:hover {
       border: 1px solid $c1;
+      .btn{
+        background: $c2;
+      }
     }
   }
 
@@ -4699,8 +4709,8 @@ a:hover {
 
 // treatments End
 
-// team_home
-.team_home.sbs {
+// video_section
+.video_section.sbs {
   .txt {
     h4 {
       margin-bottom: 20px;
@@ -4730,7 +4740,7 @@ a:hover {
 }
 
 @media all and (max-width: 991px) {
-  .team_home {
+  .video_section {
     margin-bottom: 50px;
 
     .txt {
@@ -4742,12 +4752,12 @@ a:hover {
   }
 }
 @media all and (max-width: 767px) {
-  .team_home.sbs .img .video{
+  .video_section.sbs .img .video{
     margin-top: 20px;
   }
 }
 
-// team_home End
+// video_section End
 
 //  Stats
 .property-manager {
@@ -5977,6 +5987,10 @@ footer {
   // direction: ltr;
   animation: fade .6s;
 }
+.translated-rtl font font{
+  background: none !important;
+  box-shadow: none !important;
+}
 
 @keyframes fade {
   0% {
@@ -6103,7 +6117,7 @@ body{
   .slick-slider .slick-track, .slick-slider .slick-list{
     direction: ltr;
   }
-  .team_home.sbs .txt .content {
+  .video_section.sbs .txt .content {
     padding-left: 0;
     padding-right: 30px;
   }
