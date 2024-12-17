@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Luxurious+Roman&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
     rel="stylesheet">
   <script type="text/javascript">
     // Lazy Load Start
@@ -185,47 +185,7 @@
     <!-- Mobile Nav -->
     <div class="mobile_nav">
       <div id="mobile_nav" class=" collapse">
-        <ul class="nav">
-          <li> <a href="#"> احجز استشارة مجانية</a></li>
-          <li> <a href="#"> تعرف على الفريق</a></li>
-          <li> <a href="default.html">
-              علاج</a>
-          </li>
-          <li>
-            <a class="selected has_child" href="#">
-              تكنولوجيا</a>
-            <ul>
-              <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
-                  class="nav-selected nav-path-selected">
-                  إنفيزالاين®
-                </a>
-              </li>
-              <li>
-                <a href="#"> تقويم إنفيزلاين</a>
-                <em class="fa fa-plus-squared visible-xs visible-sm menu_expander"></em>
-                <ul>
-                  <li> <a href="#"> المستوى 3</a></li>
-                  <li> <a href="#"> المستوى 3</a></li>
-                </ul>
-              </li>
-              <li> <a href="#"> تقويم الأسنان الخزفي</a></li>
-              <li> <a href="#"> تقويم الأسنان التقليدي</a></li>
-              <li> <a href="#"> اجتماعي 6</a></li>
-            </ul>
-          </li>
-          <li> <a href="default.html">
-              إصلاح ابتسامتي</a>
-          </li>
-          <li> <a href="#"> يكلف</a></li>
-          <li> <a href="#"> قبل وبعد</a></li>
-          <li> <a href="#"> منطقة المريض</a></li>
-        </ul>
-        <ul>
-          <li><a href="/referrals" class="btn_ref">
-              إحالة طبيب الأسنان
-            </a>
-          </li>
-        </ul>
+
       </div>
       <div class="mobile_overlay"></div>
     </div>
@@ -245,8 +205,7 @@
                     <a class="selected has_child" href="">
                       ميزة</a>
                     <ul>
-                      <li class="nav-selected nav-path-selected"><a href="/treatments/invisalign/" target="_self"
-                          class="nav-selected nav-path-selected">
+                      <li><a href="/treatments/invisalign/" target="_self">
                           الرابط 1
                         </a>
                       </li>
@@ -289,8 +248,6 @@
           </div>
         </div>
       </div>
-      <a class="btn sticky_button bg">
-        احجز استشارة مجانية</a>
     </header>
     <div class="sticky_space"></div>
     <!-- Header -->
@@ -299,7 +256,7 @@
     <section class="home_hero">
       <div class="flex cnt-lg">
         <div class="head_content">
-          <div class="txt text-right" dir="ltr">
+          <div class="txt">
             <div class="hero-txt">
               <div class="item">
                 <h1>
@@ -392,7 +349,7 @@
         <div class="img">
           <video class="video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen="" controls="">
+            allowfullscreen="" controls="" poster="images/video-image.png">
             <source src="./Video/video.mp4" type="video/mp4">
           </video>
         </div>
@@ -536,7 +493,7 @@
           الشقق بشكل أفضل.
         </h4>
       </div>
-      <div class="flex p-m-num">
+      <div class="d-block d-md-flex p-m-num">
         <div class="item_box">
           <p class="hs2">
             50,000+
@@ -599,20 +556,39 @@
         </p>
       </div>
       <div class="row cnt">
-        <div class="col-sm-6 sh_img img">
-          <img src="images/stakeholder-image.png" alt="">
-          <div class="btns">
-            <a href="" class="btn_tenant">
-              مستندات المستأجر</a>
-            <a href="" class="btn_tenant">
-              عقد المستأجر</a>
+        <div class="col-md-6 sh_img img tab-content">
+          <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                مستندات المستأجر</a>
+              <a href="" class="btn_tenant">
+                عقد المستأجر</a>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                مستندات المستأجر 2</a>
+              <a href="" class="btn_tenant">
+                عقد المستأجر 2</a>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                مستندات المستأجر 3</a>
+              <a href="" class="btn_tenant">
+                عقد المستأجر 3</a>
+            </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="box">
-            <h3>
-              المستأجرين
-            </h3>
+        <div class="col-md-6">
+          <div class="box active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1"
+            aria-selected="true">
+            <h3>المستأجرين </h3>
             <ul class="list lg">
               <li>
                 هل يمكن رفع طلب الصيانة
@@ -631,10 +607,9 @@
               </li>
             </ul>
           </div>
-          <div class="box">
-            <h3>
-              شركة عقارية
-            </h3>
+          <div class="box" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2"
+            aria-selected="true">
+            <h3>شركة عقارية</h3>
             <ul class="list lg">
               <li>
                 إدارة الممتلكات
@@ -653,10 +628,9 @@
               </li>
             </ul>
           </div>
-          <div class="box">
-            <h3>
-              فني
-            </h3>
+          <div class="box" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3"
+            aria-selected="true">
+            <h3>فني</h3>
             <ul class="list lg">
               <li>
                 تلقي الطلب
@@ -835,7 +809,7 @@
         </p>
       </div>
       <div class="row">
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-6 text-center img">
           <img src="images/img-how-it-works.png" alt="">
         </div>
         <div class="col-lg-6">
@@ -898,63 +872,91 @@
         </p>
       </div>
       <div class="text-center cnt">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="box">
-              <p>
-                باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
-                في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
-                المستأجرين وكفاءة التشغيل.
-              </p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-1.png" alt="">
-                <div class="pl-2">
-                  <h3>
-                    فرانسيسكا سوانيس
-                  </h3>
-                  <p>
-                    ادوارد و تاورز
-                  </p>
+        <div class="row testi_slider">
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>
+                  باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
+                  في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
+                  المستأجرين وكفاءة التشغيل.
+                </p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-1.png" alt="">
+                  <div class="pl-2">
+                    <h3>
+                      فرانسيسكا سوانيس
+                    </h3>
+                    <p>
+                      ادوارد و تاورز
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="box">
-              <p>
-                باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
-                في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
-                المستأجرين وكفاءة التشغيل.
-              </p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-2.png" alt="">
-                <div class="pl-2">
-                  <h3>
-                    فرانسيسكا سوانيس
-                  </h3>
-                  <p>
-                    ادوارد و تاورز
-                  </p>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>
+                  باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
+                  في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
+                  المستأجرين وكفاءة التشغيل.
+                </p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-2.png" alt="">
+                  <div class="pl-2">
+                    <h3>
+                      فرانسيسكا سوانيس
+                    </h3>
+                    <p>
+                      ادوارد و تاورز
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="box">
-              <p>
-                باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
-                في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
-                المستأجرين وكفاءة التشغيل.
-              </p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-1.png" alt="">
-                <div class="pl-2">
-                  <h3>
-                    فرانسيسكا سوانيس
-                  </h3>
-                  <p>
-                    ادوارد و تاورز
-                  </p>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>
+                  باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
+                  في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
+                  المستأجرين وكفاءة التشغيل.
+                </p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-1.png" alt="">
+                  <div class="pl-2">
+                    <h3>
+                      فرانسيسكا سوانيس
+                    </h3>
+                    <p>
+                      ادوارد و تاورز
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>
+                  باعتبارنا مقدم خدمة إدارة الممتلكات، أحدث تطبيق HappyTenant ثورة
+                  في تفاعلاتنا مع المستأجرين من خلال تبسيط المدفوعات وطلبات الصيانة والاتصالات، مما أدى إلى زيادة رضا
+                  المستأجرين وكفاءة التشغيل.
+                </p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-2.png" alt="">
+                  <div class="pl-2">
+                    <h3>
+                      فرانسيسكا سوانيس
+                    </h3>
+                    <p>
+                      ادوارد و تاورز
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -968,19 +970,17 @@
     <div class="user_stats">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-8">
-            <div class="uset_txt">
-              <h2>
-                أكثر من 640 ألف مستخدم
-                <br>
-                حول العالم يستخدمون
-                <span>
-                  Bayti Living
-                </span>
-              </h2>
-            </div>
+          <div class="col-sm-8">
+            <h2>
+              أكثر من 640 ألف مستخدم
+              <br>
+              حول العالم يستخدمون
+              <span>
+                Bayti Living
+              </span>
+            </h2>
           </div>
-          <div class="col-2">
+          <div class="col-sm-2">
             <div class="num">
               <h3 class="hs2">
                 99%
@@ -990,7 +990,7 @@
               </p>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-sm-2">
             <div class="num">
               <h3 class="hs2">
                 99%
@@ -1138,8 +1138,8 @@
           <h6>
             تنزيل التطبيق
           </h6>
-          <a href=""><img src="images/apple-store.png" alt=""></a>
-          <a href=""><img src="images/google-play.png" alt=""></a>
+          <a href=""><img src="images/apple-store.svg" alt=""></a>
+          <a href=""><img src="images/google-play.svg" alt=""></a>
         </div>
         <div class="col-lg-4 inpt">
           <h6>
@@ -1169,16 +1169,16 @@
         <p>
           © 2024 بيتي ليفينج. جميع الحقوق محفوظة.
         </p>
-        <div class="policy">
-          <p><a href="">
+        <ul class="policy">
+          <li><a href="">
               الشروط والأحكام
             </a>
-          </p>
-          <p><a href="">
+          </li>
+          <li><a href="">
               سياسة الخصوصية
             </a>
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </footer>
     <!-- Footer End -->
@@ -1203,15 +1203,32 @@
     else window.addEventListener('load', loadDeferredStyles);
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
-  <!-- <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
   <script src="js/plugins.js"></script>
-  <script>
-    $('.hero-txt').slick({
-      dots: true,
-      arrows: false,
-    });
-  </script>
 
+  <script>
+    $(document).ready(function () {
+
+      $('.hero-txt').slick({
+        dots: true,
+        arrows: false,
+      });
+      $('.testi_slider').slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+
+  </script>
   <!-- <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(

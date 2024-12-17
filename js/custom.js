@@ -22,6 +22,37 @@ $(document).ready(function () {
     });
   }
 
+  // Copy desktop nav to mobile nav
+  $('ul.navigation').clone().appendTo('#mobile_nav');
+
+  // custom tabs
+  $('.box').on('click', function () {
+    $('.box').removeClass('active');
+    $(this).addClass('active');
+
+    const target = $(this).attr('href');
+    $('.tab-pane').removeClass('show active');
+    $(target).addClass('show active');
+  });
+
+  // Adjust stakeholder content according to device
+  function adjustList() {
+    if ($(window).width() < 767) {
+      $('.stakeholder .box .list').each(function () {
+        const targetId = $(this).closest('.box').attr('href');
+        $(this).prependTo(targetId);
+      });
+    } else {
+      $('.stakeholder .tab-pane .list').each(function () {
+        const targetId = $(this).closest('.tab-pane').attr('aria-labelledby');
+        $(this).appendTo('#'+targetId);
+      });
+    }
+  }
+  // Run on window resize and on load
+  adjustList();
+  $(window).resize(adjustList);
+
 
   // Mobile menu function
   if ($('#mobile_nav ul ul').length > 0) {

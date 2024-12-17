@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="home page-template-home">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Sunshine">
@@ -9,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Luxurious+Roman&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
     rel="stylesheet">
   <script type="text/javascript">
     // Lazy Load Start
@@ -162,13 +163,14 @@
 
 <body>
   <main class="wrapper" onclick="return true">
-    <!-- <div id="google_translate_element"></div> -->
+    <div id="google_translate_element"></div>
     <!-- <section-fold>  ====== Header Section ====== -->
     <!-- Mobile Header -->
     <div class="header_mob">
       <div class="top">
         <a class="btn" href="">Sign Up</a>
         <a class="btn btn-v2" href="">Login</a>
+        <a class="btn" onclick="toggleLanguage()">Arabic</a>
       </div>
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="/">
@@ -182,37 +184,7 @@
     <!-- Mobile Nav -->
     <div class="mobile_nav">
       <div id="mobile_nav" class=" collapse">
-        <ul class="nav">
-          <li> <a class="selected has_child" href="">Feature</a>
-            <ul>
-              <li><a href="" target="_self" class="selected">Link 1</a></li>
-              <li> <a href="#">Link 2</a>
-                <ul>
-                  <li> <a href="#">Level 3</a>
-                  </li>
-                  <li> <a href="#">Level 3</a>
-                  </li>
-                </ul>
-              </li>
-              <li> <a href="#">Link 3</a>
-              </li>
-              <li> <a href="#">Link 4</a>
-              </li>
-              <li> <a href="#">Link 5</a>
-              </li>
-            </ul>
-          </li>
-          <li> <a href="">Packages</a>
-          </li>
-          <li> <a href="">How it Works</a>
-          </li>
-          <li> <a href="">Case Studies</a>
-          </li>
-          <li> <a href="">Blog</a>
-          </li>
-          <li> <a href="">Content</a>
-          </li>
-        </ul>
+
       </div>
       <div class="mobile_overlay"></div>
     </div>
@@ -234,12 +206,6 @@
                     <ul>
                       <li class="selected"><a href="" target="_self" class="selected">Link 1</a></li>
                       <li> <a href="#">Link 2</a>
-                        <ul>
-                          <li> <a href="#">Level 3</a>
-                          </li>
-                          <li> <a href="#">Level 3</a>
-                          </li>
-                        </ul>
                       </li>
                       <li> <a href="#">Link 3</a>
                       </li>
@@ -263,13 +229,17 @@
                 <div class="nav_btns">
                   <a class="btn btn-v3" href="">Sign Up</a>
                   <a class="btn btn-v2" href="">Login</a>
+                  
+                  <label class="switch notranslate">
+                    <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+                    <span class="slider"></span>
+                  </label>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <a class="btn sticky_button bg">Book a free consultation</a>
     </header>
     <div class="sticky_space"></div>
     <!-- Header -->
@@ -337,7 +307,7 @@
         <div class="img">
           <video class="video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen="" controls="">
+            allowfullscreen="" controls="" poster="images/video-image.png">
             <source src="./Video/video.mp4" type="video/mp4">
           </video>
         </div>
@@ -452,6 +422,8 @@
     </div>
     <!-- property sec end -->
     <div class="space_botm bd cnt"></div>
+
+
     <!-- Stakeholders -->
     <div class="stakeholder">
       <div class="cnt-sm text-center">
@@ -461,19 +433,44 @@
           manage properties and engage with tenants.</p>
       </div>
       <div class="row cnt">
-        <div class="col-sm-6 sh_img img">
-          <img src="images/stakeholder-image.png" alt="">
-          <div class="btns">
-            <a href="" class="btn_tenant">
-              Tenant Documents
-            </a>
-            <a href="" class="btn_tenant">
-              Tenant Contract
-            </a>
+        <div class="col-md-6 sh_img img tab-content">
+          <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                Tenant Documents
+              </a>
+              <a href="" class="btn_tenant">
+                Tenant Contract
+              </a>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                Real Estate Documents
+              </a>
+              <a href="" class="btn_tenant">
+                Real Estate Contract
+              </a>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <img src="images/stakeholder-image.png" alt="">
+            <div class="btns">
+              <a href="" class="btn_tenant">
+                Technician Documents
+              </a>
+              <a href="" class="btn_tenant">
+                Technician Contract
+              </a>
+            </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="box">
+        <div class="col-md-6">
+          <div class="box active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1"
+            aria-selected="true">
             <h3>Tenants</h3>
             <ul class="list lg">
               <li>Can Raise Maintenance Request</li>
@@ -483,7 +480,8 @@
               <li>Contact Management</li>
             </ul>
           </div>
-          <div class="box">
+          <div class="box" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2"
+            aria-selected="true">
             <h3>Real Estate Company</h3>
             <ul class="list lg">
               <li>Property Management</li>
@@ -493,7 +491,8 @@
               <li>Insight Reports</li>
             </ul>
           </div>
-          <div class="box">
+          <div class="box" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3"
+            aria-selected="true">
             <h3>Technician</h3>
             <ul class="list lg">
               <li>Receive Request</li>
@@ -519,7 +518,8 @@
           <div class="col-6 col-lg-3">
             <div class="box">
               <h3>Free</h3>
-              <p class="amount">$0<small>.00</small><span>/month</span></p>
+              <p class="amount"><span class="notranslate"><span
+                    class="notranslate">$</span></span>0<small>.00</small><span>/month</span></p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>Unlimited guest reviewers</li>
@@ -533,7 +533,7 @@
           <div class="col-6 col-lg-3">
             <div class="box">
               <h3>Basic</h3>
-              <p class="amount">$14<small>.99</small><span>/month</span></p>
+              <p class="amount"><span class="notranslate">$</span>14<small>.99</small><span>/month</span></p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>Unlimited guest reviewers</li>
@@ -548,7 +548,7 @@
           <div class="col-6 col-lg-3">
             <div class="box">
               <h3>Advanced</h3>
-              <p class="amount">$39<small>.99</small><span>/month</span></p>
+              <p class="amount"><span class="notranslate">$</span>39<small>.99</small><span>/month</span></p>
               <div class="sep"></div>
               <ul class="list lg">
                 <li>Unlimited guest reviewers</li>
@@ -628,45 +628,69 @@
           skip tons of mission-critical features.</p>
       </div>
       <div class="text-center cnt">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="box">
-              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions with
-                tenants by streamlining payments, maintenance requests, and communication, leading to increased tenant
-                satisfaction and operational efficiency.</p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-1.png" alt="">
-                <div class="pl-2">
-                  <h3>Franceska Soanes</h3>
-                  <p>Edward & Towers</p>
+        <div class="row testi_slider">
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                  with
+                  tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                  tenant
+                  satisfaction and operational efficiency.</p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-1.png" alt="">
+                  <div class="pl-2">
+                    <h3>Franceska Soanes</h3>
+                    <p>Edward & Towers</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="box">
-              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
-                with tenants by streamlining payments, maintenance requests, and communication, leading to increased
-                tenant satisfaction and operational efficiency.</p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-2.png" alt="">
-                <div class="pl-2">
-                  <h3>Franceska Soanes</h3>
-                  <p>Edward & Towers</p>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                  with tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                  tenant satisfaction and operational efficiency.</p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-2.png" alt="">
+                  <div class="pl-2">
+                    <h3>Franceska Soanes</h3>
+                    <p>Edward & Towers</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="box">
-              <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
-                with tenants by streamlining payments, maintenance requests, and communication, leading to increased
-                tenant satisfaction and operational efficiency.</p>
-              <div class="testimonials_content">
-                <img src="./images/comment-img-1.png" alt="">
-                <div class="pl-2">
-                  <h3>Franceska Soanes</h3>
-                  <p>Edward & Towers</p>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                  with tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                  tenant satisfaction and operational efficiency.</p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-1.png" alt="">
+                  <div class="pl-2">
+                    <h3>Franceska Soanes</h3>
+                    <p>Edward & Towers</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="p-2">
+              <div class="box">
+                <p>As a property management service provider, the HappyTenant app has revolutionized our interactions
+                  with tenants by streamlining payments, maintenance requests, and communication, leading to increased
+                  tenant satisfaction and operational efficiency.</p>
+                <div class="testimonials_content">
+                  <img src="./images/comment-img-1.png" alt="">
+                  <div class="pl-2">
+                    <h3>Franceska Soanes</h3>
+                    <p>Edward & Towers</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -775,15 +799,17 @@
         </div>
         <div class="col-lg-2 app_icn">
           <h6>Download App</h6>
-          <a href=""><img src="images/apple-store.png" alt=""></a>
-          <a href=""><img src="images/google-play.png" alt=""></a>
+          <a href=""><img src="images/apple-store.svg" alt=""></a>
+          <a href=""><img src="images/google-play.svg" alt=""></a>
         </div>
         <div class="col-lg-4 inpt">
           <h6>Get Connected</h6>
           <p>Stay updated with the latest news and updates.</p>
           <div class="footer_input">
             <input type="text" placeholder="Email Address">
-            <div class="input_btn"><a href=""><img src="./images/footer_input.svg" alt=""></a> </div>
+            <a class="input_btn" href=""><img src="./images/footer_input.svg" alt=""></a>
+            <!-- <button class="input_btn"></button>
+            <div> </div> -->
           </div>
           <div class="social_icn">
             <a href="">
@@ -801,10 +827,10 @@
       <div class="space_botm"></div>
       <div class="bottom_links">
         <p>© 2024 Bayti Living. All rights reserved.</p>
-        <div class="policy">
-          <p><a href="">Terms & Conditions </a> </p>
-          <p><a href="">Privacy Policy </a></p>
-        </div>
+        <ul class="policy">
+          <li><a href="">Terms & Conditions </a> </li>
+          <li><a href="">Privacy Policy </a></li>
+        </ul>
       </div>
     </footer>
     <!-- Footer End -->
@@ -830,22 +856,72 @@
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/plugins.js"></script>
+
   <script>
-    $('.hero-txt').slick({
-      dots: true,
-      arrows: false,
+    $(document).ready(function () {
+
+      $('.hero-txt').slick({
+        dots: true,
+        arrows: false,
+      });
+      $('.testi_slider').slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
     });
+
   </script>
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
+    function setCookie(key, value, expiry) {
+      var expires = new Date();
+      expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+      document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+    }
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en' },
-        'google_translate_element'
-      );
+      setCookie('googtrans', '/en', 1);
+      new google.translate.TranslateElement({
+        pageLanguage: 'en'
+      }, 'google_translate_element');
+    }
+    let isArabic = false; // Tracks the current language state
+
+    function toggleLanguage() {
+      const selectElem = document.querySelector('.goog-te-combo');
+      const htmlTag = document.documentElement; // Get the <html> tag
+
+      if (selectElem) {
+        console.log(isArabic)
+        if (isArabic) {
+          // Remove translation (back to default language, English)
+          setTimeout(() => {
+            window.location.reload(); // Reload the page to reset translation
+            isArabic = false;
+          }, 300);
+        } else {
+          selectElem.value = 'ar';
+          selectElem.dispatchEvent(new Event('change'));
+          isArabic = true;
+          setTimeout(() => {
+            htmlTag.setAttribute('dir', 'rtl');
+            htmlTag.setAttribute('lang', 'ar');
+            htmlTag.classList.add('ar');
+          }, 400);
+        }
+      }
     }
   </script>
   <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
