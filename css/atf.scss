@@ -18,10 +18,12 @@ body {
   font-size: 18px;
   font-weight: 300;
   font-family: $f1;
-  background-image: url("../images/hero-art.svg");
   background-position: top right;
   background-repeat: no-repeat;
   background-size: calc(100vw - 40%);
+}
+.home body{
+  background-image: url("../images/hero-art.svg");
 }
 section{
   scroll-margin-top: 80px;
@@ -131,6 +133,7 @@ a {
 
 // Buttons Styling
 .btn {
+  text-align: center;
   padding: 12px 30px;
   white-space: inherit;
   font-size: 16px;
@@ -615,6 +618,18 @@ span.sup {
   }
 }
 
+.fcc{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcb{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .align_bottom {
   @include align-self(flex-end);
 }
@@ -996,12 +1011,12 @@ a:hover {
 }
 
 .form_default {
-  background: #eee;
-  padding-top: 60px;
-  padding-bottom: 60px;
 
-  .lbl {
-    font-weight: 600;
+  .lbl, label {
+    font-size: 16px;
+  }
+  input{
+    padding: 10px 15px;
   }
 
   &.no_labels {
@@ -1137,20 +1152,21 @@ a:hover {
 
 
 // =========================== Header Start
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-width: 90px;
+  }
+}
 .header_top {
   margin: auto;
   position: relative;
   z-index: 150;
   padding: 10px 0;
 
-  .logo {
-    display: flex;
-    align-items: center;
-
-    img {
-      max-width: 90px;
-    }
-  }
 
   .dropdown:hover>.dropdown-menu {
     display: block;
@@ -1304,6 +1320,13 @@ a:hover {
 
 
 // ========== Navigation Area
+.home .header_top .navigation>li>a{
+  color: $cf;
+  background-color: $c1;
+  &:before{
+    background-color: #fff;
+  }
+}
 .header_top .navigation {
   text-align: right;
   font-size: 0;
@@ -1321,17 +1344,29 @@ a:hover {
       padding: 13px 15px;
       position: relative;
       background: transparent;
-      color: $cf;
-      background-color: $c1;
+      color: $ct;
       border-radius: 10px;
       margin: 0 2px;
       transition: all .3s;
+      position: relative;
+      &::before{
+        display: block;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $c1;
+        transition: all .3s;
+      }
 
       &.selected,
       &:hover {
-        // background-color: $c4;
-        // color: $c2;
-        box-shadow: inset 0 0 10px #0000004d;
+        &::before{
+          width: calc(100% - 30px);
+        }
       }
       &.has_child{
         padding-right: 25px;
@@ -1429,12 +1464,6 @@ a:hover {
     }
 
     &:hover {
-      >a {
-        &:before {
-          width: 100%;
-        }
-      }
-
       >ul {
         left: 0;
         max-height: inherit;
@@ -6175,22 +6204,6 @@ body{
       background-image: url(../images/sh-icn-1.svg);
     }
   }
-  body{
-    position: relative;
-    background-image: none;
-    &::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('../images/hero-art.svg') no-repeat top right;
-      background-size: 70%; /* Adjust size as needed */
-      transform: scaleX(-1); /* Flip the image horizontally */
-      z-index: -1; /* Keeps it behind all content */
-    }
-  }
   .home_hero{
     background-position: 0;
     
@@ -6256,6 +6269,94 @@ body{
     .stakeholder .cnt .list:not(.slick-dots).lg {
       padding-left: 0;
       padding-right: 15px;
+    }
+  }
+}
+
+html:not(.default).ar body{
+  position: relative;
+  background-image: none;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/hero-art.svg') no-repeat top right;
+    background-size: 70%; /* Adjust size as needed */
+    transform: scaleX(-1); /* Flip the image horizontally */
+    z-index: -1; /* Keeps it behind all content */
+  }
+}
+
+// LOGIN PAGE
+.login {
+  .cnt-sm{
+    max-width: 570px;
+  }
+  .logo{
+    margin-left: 30px;
+  }
+  .rounded-img{
+    background-image: url(../images/login-img.jpg);
+    background-position: left center;
+    background-size: cover;
+    height: calc(100vh - 30px);
+    .btn{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 18px 30px;
+    }
+  }
+  .form_default{
+    padding-top: 35px;
+    .btn{
+      width: 100%;
+    }
+    form{
+      max-width: 360px;
+    }
+  }
+}
+.sep{
+  border-top: 1px solid #d9d9d9;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.sub{
+  font-size: 20px;
+}
+.text-small{
+  font-size: 15px;
+}
+.rounded-img{
+  border-radius: 30px;
+  position: relative;
+  .btn{
+    top: 10px;
+    right: 10px;
+  }
+}
+@media all and (max-width: 767px) {
+  h1{
+    margin-bottom: 0;
+  }
+  .mob_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: .2;
+    height: 100%;
+    padding: 10px;
+    .rounded-img{
+      height: 100%;
+    }
+    .btn{
+      display: none;
     }
   }
 }
