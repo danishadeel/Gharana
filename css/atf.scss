@@ -185,6 +185,7 @@ a {
   &.btn-v2 {
     background-color: #fff;
     color: $c1;
+    border: 2px solid #ee421d;
 
     &:focus,
     &:hover {
@@ -6300,24 +6301,30 @@ html:not(.default).ar body{
   }
   .rounded-img{
     background-image: url(../images/login-img.jpg);
-    background-position: left center;
-    background-size: cover;
-    height: calc(100vh - 30px);
-    .btn{
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      padding: 18px 30px;
-    }
+  }
+  section{
+    padding-top: 35px;
   }
   .form_default{
-    padding-top: 35px;
     .btn{
       width: 100%;
     }
     form{
       max-width: 360px;
     }
+  }
+}
+// Login specific end
+
+.rounded-img{
+  background-position: left center;
+  background-size: cover;
+  height: calc(100vh - 30px);
+  .btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 18px 30px;
   }
 }
 .sep{
@@ -6359,4 +6366,25 @@ html:not(.default).ar body{
       display: none;
     }
   }
+}
+
+// SIGN UP PAGE
+.signup{
+  .cnt-sm{
+    max-width: 570px;
+  }
+  section{
+    padding-top: 35px;
+  }
+  form{
+    max-width: 360px;
+  }
+  .logo{
+    margin-left: 30px;
+  }
+  .rounded-img{
+    background-position: center;
+    background-image: url(../images/sign-up-img.jpg);
+  }
+
 }

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Sunshine">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bayti Living - Login</title>
+  <title>Bayti Living - Sign Up</title>
   <link href="css/atf.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,57 +21,188 @@
     <div class="sticky_space"></div>
     <!-- Header End-->
 
-    <!-- Login -->
-    <div class="p-3 login" id="login">
+    <!-- Sign Up -->
+    <div class="p-3 signup" id="signup">
       <div class="row">
         <div class="col-sm-6">
           <div class="logo">
             <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
           </div>
           <div class="cnt-sm">
-            
-            <section class="form_default">
+
+            <section>
               <div class="text-center text-md-left">
-                <h1>Log In</h1>
+                <h1>Sign Up</h1>
                 <p class="sub">Let’s get started with 30 days free trial.</p>
               </div>
-              <div class="sep"></div>
 
-              <form class="">
-                <div class="form-group">
-                  <label class="lbl" for="username">Username</label>
-                  <input type="text" class="form-control validate[required]" placeholder="User Name" name="username"
-                    id="username">
+              <ul class="nav nav-pills mb-3 " role="tablist">
+                <li class="nav-item active">
+                  <a class="nav-link" data-toggle="pill" href="#_tab1" role="tab">Personal Info</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#_tab2" role="tab">Building Info</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#_tab3" role="tab">Login Info</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade active in" id="_tab1">
+                  <form class="validate" action="post">
+                    <div class="form-group">
+                      <label class="lbl" for="company-name">Company Name</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Company Name"
+                        name="company-name" id="company-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="contact-name">Contact Name</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Contact Name"
+                        name="contact-name" id="contact-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="mobile-phone">Mobile Phone</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Mobile Phone"
+                        name="mobile-phone" id="mobile-phone">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="email-address">E-mail Address</label>
+                      <input type="email" class="form-control validate[required]" placeholder="E-mail Address"
+                        name="email-address" id="email-address">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="country">Country</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Country" name="country"
+                        id="country">
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-md-6 id_date">
+                        <label class="lbl" for="emirate-id">Emirate ID</label>
+                        <input type="text" class="form-control validate[required]" placeholder="Emirate ID"
+                          name="emirate-id" id="emirate-id">
+                      </div>
+
+                      <div class="form-group col-md-6 id_date">
+                        <label class="lbl" for="expiry-date">Expiry Date</label>
+                        <input type="date" class="form-control validate[required]" name="expiry-date" id="expiry-date">
+                      </div>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="fcb">
+                      <button class="btn btn-v2 disabled" disabled>Prev</button>
+                      <button class="btn btn-v2">Next</button>
+                    </div>
+                  </form>
+
                 </div>
-                <div class="form-group">
-                  <label class="lbl" for="password">Password</label>
-                  <input type="password" class="form-control validate[required]" placeholder="Enter Password"
-                    id="password">
+                <div class="tab-pane fade" id="_tab2">
+                  <form action="post" class="validate">
+                    <div class="form-group">
+                      <label class="lbl" for="street-address">Street Address</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Street Address"
+                        name="street-address" id="street-address">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="address-line-1">Address Line 1</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Address Line 1"
+                        name="address-line-1" id="address-line-1">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="address-line-2">Address Line 2</label>
+                      <input type="text" class="form-control" placeholder="Address Line 2" name="address-line-2"
+                        id="address-line-2">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="building-email">Building Email</label>
+                      <input type="email" class="form-control validate[required]" placeholder="Building Email"
+                        name="building-email" id="building-email">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="city">City</label>
+                      <select class="form-control validate[required]" name="city" id="city">
+                        <option value="">Select City</option>
+                        <option value="abu-dhabi">Abu Dhabi</option>
+                        <option value="dubai">Dubai</option>
+                        <option value="sharjah">Sharjah</option>
+                        <option value="ajman">Ajman</option>
+                        <option value="umm-al-quwain">Umm Al Quwain</option>
+                        <option value="ras-al-khaimah">Ras Al Khaimah</option>
+                        <option value="fujairah">Fujairah</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="lbl" for="state">State</label>
+                      <select class="form-control validate[required]" name="state" id="state">
+                        <option value="">Select State</option>
+                        <option value="abu-dhabi">Abu Dhabi</option>
+                        <option value="dubai">Dubai</option>
+                        <option value="sharjah">Sharjah</option>
+                        <option value="ajman">Ajman</option>
+                        <option value="umm-al-quwain">Umm Al Quwain</option>
+                        <option value="ras-al-khaimah">Ras Al Khaimah</option>
+                        <option value="fujairah">Fujairah</option>
+                      </select>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="fcb">
+                      <button class="btn btn-v2 goto_step1" disabled>Prev</button>
+                      <button class="btn btn-v2">Next</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="fcb mb-3">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">Remember me
-                    </label>
-                  </div>
-                  <a class="text-small" href="forgot-password.html">Forgot password?</a>
+                <div class="tab-pane fade" id="_tab3">
+                  <form action="post" class="validate">
+                    <div class="form-group">
+                      <label class="lbl" for="username">Username</label>
+                      <input type="text" class="form-control validate[required]" placeholder="Username" name="username" id="username">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="lbl" for="password">Password</label>
+                      <input type="password" class="form-control validate[required]" placeholder="Password" name="password" id="password">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="lbl" for="retype-password">Re-type Password</label>
+                      <input type="password" class="form-control validate[required]" placeholder="Re-type Password" name="retype-password"
+                        id="retype-password">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="">
+                        I agree to the <a href="terms.html">Terms of Service</a> & <a href="terms.html">Privacy Policy</a>
+                      </label>
+                    </div>
+                    
+                    <div class="sep"></div>
+                    <div class="fcb">
+                      <button class="btn btn-v2 disabled" disabled>Prev</button>
+                      <button class="btn btn-v2">Submit</button>
+                    </div>
+                  </form>
                 </div>
-                <p>
-                  <a class="btn btn-block">Login</a>
-                </p>
-                <p  class="text-center text-small">Not a Member? <a href="sign-up.html">Create account</a></p>
-              </form>
+              </div>
             </section>
           </div>
         </div>
         <div class="col-sm-6 mob_bg">
           <div class="rounded-img">
-            <div class="btn">Register</div>
+            <a class="btn" href="login.html">Login</a>
           </div>
         </div>
       </div>
     </div>
-    <!-- Login End -->
+    <!-- Sign Up End -->
 
   </main>
   <noscript id="deferred-styles">

@@ -46,7 +46,7 @@ $(function() {
 // Phone validation and spam protection
 $(function() {
   var count_click = 0;
-  $("form.syed_ajax_form").validationEngine('attach',
+  $("form.validate").validationEngine('attach',
   {
     onValidationComplete: function(form, status)
     {
