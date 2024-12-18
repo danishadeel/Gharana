@@ -4394,6 +4394,7 @@ a:hover {
       font-size: 50px;
       line-height: 1.1;
       color: $c2;
+      letter-spacing: 2px;
 
       span {
         color: $c1;
@@ -6563,33 +6564,41 @@ html:not(.default).ar body {
 // Contact start
 
 .default {
-  body {
-    background-position: top -80px right;
-    background-repeat: no-repeat;
-    background-size: calc(85vw - 40%);
-    background-image: url("../images/hero-art.svg");
-  }
-
-  .home_hero {
-    background-image: none;
-
-    .flex {
-      align-items: center;
-    }
-
-    .img {
-      img {
-        border-radius: 50%;
-        border: 30px solid #fff;
-        max-width: 530px;
-      }
-    }
-    .head_content{
-      width: 50%;
-    }
   }
 
   .contact {
+    
+    body {
+      background-position: top -80px right;
+      background-repeat: no-repeat;
+      background-size: calc(100vw - 40%);
+      background-image: url("../images/hero-art.svg");
+    }
+
+    .home_hero {
+      background-image: none;
+
+      .flex {
+        align-items: center;
+      }
+
+      .img {
+        img {
+          border-radius: 50%;
+          border: 30px solid #fff;
+          max-width: 590px;
+        }
+      }
+      .head_content{
+        width: 50%;
+        p{
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .txt{
+          max-width: 550px;
+        }
+      }
 
     .text-area {
       width: 100%;
@@ -6640,4 +6649,43 @@ html:not(.default).ar body {
     justify-content: center;
   }
 
+}
+
+.contact{
+  
+  .header.default_sticky + .sticky_space {
+    height: 0;
+  }
+  .header.default_sticky {
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0;
+    z-index: 1000;
+    position: fixed;
+    box-shadow: 0 0 10px fade(#000, 40%);
+
+    * {
+      transition: all .3s;
+    }
+
+    .header_top {
+      background: #fff;
+      box-shadow: 0px 0 10px #ddd;
+      padding: 15px 0;
+
+      .nav_btns a {
+        padding: 9px 15px;
+      }
+    }
+
+
+    .sticky_button {
+      display: block;
+      opacity: 1;
+      bottom: 10px;
+      animation: fadeIn3 0.3s linear;
+      -webkit-animation: fadeIn3 0.3s linear;
+    }
+  }
 }

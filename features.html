@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="home">
+<html class="contact">
 
 <head>
   <meta charset="utf-8">
@@ -56,7 +56,7 @@
             <div class="col-md-10">
               <div class="flex jc_end">
                 <ul class="navigation">
-                  <li> <a class="has_child" href="home.html#features">Feature</a>
+                  <li> <a class="has_child selected" href="home.html#features">Feature</a>
                     <ul>
                       <li><a href="features.html">Property Management</a></li>
                       <li><a href="features.html">Facilities Management</a></li>
@@ -90,12 +90,56 @@
     </header>
     <div class="sticky_space"></div>
     <!-- Header End-->
-
     <!-- ====== Header Section End ====== -->
 
-    <div class="cnt fcc" style="height: 50vh;">
-      <h1>Features</h1>
+    <!-- Hero -->
+    <section class="home_hero" id="hero">
+      <div class="flex cnt-lg">
+        <div class="head_content">
+          <div class="txt">
+            <h1>Ready to see in action!</h1>
+            <p>Experience unparalleled convenience and comfort with Bayti, the ultimate destination for corporate
+              living. Our platform caters to the discerning needs of tenants, offering seamless access to available
+              properties, efficient maintenance request management, and transparent payment tracking.</p>
+          </div>
+        </div>
+        <div class="img"><img src="./images/contact_hero_img.png" alt=""></div>
+      </div>
+    </section>
+    <div class="space_botm"></div>
+    <!-- ====== Hero Section End ====== -->
+
+    
+
+
+
+    <!-- Feature Section -->
+    <div class="feature_block">
+      <div class="cnt-sm">
+        <h2>Raise Maintenance Request</h2>
+        <p>A fully integrated system for seamless vendor communication, task assignment, payment tracking, quotation management,
+        and KPI monitoring.</p>
+      </div>
+      <div class="cnt">
+        <div class="row">
+          <div class="col-sm-6">
+
+          </div>
+          <div class="col-sm-6">
+            <h3>Real-Time Facility Management Solutions</h3>
+            <p>Keep track of tenant responses to renewal offers and monitor their engagement with our Tenant Response Tracking feature.</p>
+            <p>Receive real-time updates on tenant decisions and preferences to facilitate timely and effective lease renewals.
+            Improve team efficiency and ensure timely completion of maintenance tasks.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Feature Section End -->
+
+
+
+
 
 
     <!-- Footer -->
@@ -179,10 +223,6 @@
   <script>
     $(document).ready(function () {
 
-      $('.hero-txt').slick({
-        dots: true,
-        arrows: false,
-      });
       $('.testi_slider').slick({
         dots: true,
         arrows: false,

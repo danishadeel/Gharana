@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="default">
+<html class="contact">
 
 <head>
   <meta charset="utf-8">
@@ -71,7 +71,7 @@
                   <li><a href="home.html#how-it-works">How it works</a></li>
                   <li><a href="home.html#case-study">Case Studies</a></li>
                   <li><a href="home.html#blog">Blogs</a></li>
-                  <li><a href="contact.html">Contacts</a></li>
+                  <li><a href="contact.html" class="selected">Contacts</a></li>
                 </ul>
                 <div class="nav_btns">
                   <a class="btn btn-v3" href="sign-up.html">Sign Up</a>
@@ -97,14 +97,10 @@
       <div class="flex cnt-lg">
         <div class="head_content">
           <div class="txt">
-            <div class="hero-txt">
-              <div class="item">
-                <h1>Ready to see in action!</h1>
-                <p>Experience unparalleled convenience and comfort with Bayti, the ultimate destination for corporate
-                  living. Our platform caters to the discerning needs of tenants, offering seamless access to available
-                  properties, efficient maintenance request management, and transparent payment tracking.</p>
-              </div>
-            </div>
+            <h1>Ready to see in action!</h1>
+            <p>Experience unparalleled convenience and comfort with Bayti, the ultimate destination for corporate
+              living. Our platform caters to the discerning needs of tenants, offering seamless access to available
+              properties, efficient maintenance request management, and transparent payment tracking.</p>
           </div>
         </div>
         <div class="img"><img src="./images/contact_hero_img.png" alt=""></div>
@@ -118,7 +114,7 @@
       <h1>Let’s talk about your project</h1>
       <p>We help companies and individuals streamline their workflows and processes.</p>
     </div>
-    <div class="container contact">
+    <div class="container">
       <div class="row">
         <div class="col">
           <form method="post" class="validate">
@@ -371,10 +367,6 @@
   <script>
     $(document).ready(function () {
 
-      $('.hero-txt').slick({
-        dots: true,
-        arrows: false,
-      });
       $('.testi_slider').slick({
         dots: true,
         arrows: false,
