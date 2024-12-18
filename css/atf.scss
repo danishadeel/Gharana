@@ -3140,27 +3140,6 @@ a:hover {
     top: 50%;
   }
 
-  .btn_tenant {
-    padding: 12px;
-    padding-left: 60px;
-    color: $c2;
-    font-weight: 400;
-    border-radius: 25px;
-    font-size: 20px;
-    display: block;
-    background: rgba(#fff, .8) no-repeat 10px center;
-    background-image: url(../images/sh-icn-4.png);
-    margin-bottom: 25px;
-    box-shadow: 0 0 10px rgba(#000, .1);
-
-    &:hover {
-      color: $c1;
-    }
-  }
-
-  .btn_tenant:nth-child(2) {
-    background-image: url(../images/sh-icn-5.png);
-  }
 
   .sh_img {
     position: relative;
@@ -3169,16 +3148,38 @@ a:hover {
       content: '';
       display: block;
       position: absolute;
-      bottom: 41px;
-      right: 55%;
+      top: 160px;
+      left: -60px;
       background: url(../images/dots.png) no-repeat center center;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+      width: 72px;
+      height: 408px;
     }
   }
 }
 
+.lbl_rounded {
+  padding: 12px;
+  padding-left: 60px;
+  color: $c2;
+  font-weight: 400;
+  border-radius: 25px;
+  font-size: 20px;
+  display: block;
+  background: rgba(#fff, .8) no-repeat 10px center;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgba(#000, .1);
+  position: relative;
+  cursor: default;
+  img{
+    position: absolute;
+    top: 7px;
+    left: 10px;
+  }
+
+  // &:hover {
+  //   color: $c1;
+  // }
+}
 @media all and (max-width: 991px) {
   .stakeholder {
     .btns {
@@ -3248,7 +3249,7 @@ a:hover {
       display: flex;
       gap: 5px;
 
-      .btn_tenant {
+      .lbl_rounded {
         font-size: 14px;
       }
     }
@@ -6689,3 +6690,58 @@ html:not(.default).ar body {
     }
   }
 }
+
+
+// Features Page
+.feature_block{
+  .details{
+    align-items: center;
+    margin-bottom: 100px;
+    position: relative;
+    .lbl_rounded{
+      position: absolute;
+      left: -50px;
+      top: 137px;
+    }
+    .scrn_shot{
+      position: absolute;
+      right: 0;
+      bottom: 70px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 270px;
+      left: -70px;
+      background: url(../images/dots.png) no-repeat center center;
+      width: 72px;
+      height: 200px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -8%;
+      left: -70px;
+      background: url(../images/tech-vector.svg) no-repeat center center;
+      width: 616px;
+      height: 640px;
+      z-index: -1;
+    }
+  }
+  .feature_list{
+    .box{
+      text-align: center;
+    }
+  }
+  &.flip{
+    .details{
+      flex-direction: row-reverse;
+      .img{
+        text-align: right;
+      }
+    }
+  }
+}
+// Features Page End
