@@ -3138,7 +3138,7 @@ a:hover {
   cursor: default;
   img{
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 10px;
   }
 
@@ -6795,6 +6795,7 @@ html:not(.default).ar body {
       position: absolute;
       left: -50px;
       top: 137px;
+      line-height: 1.3;
     }
     .scrn_shot{
       position: absolute;
@@ -6826,6 +6827,7 @@ html:not(.default).ar body {
   .feature_list{
     .box{
       text-align: center;
+      max-width: 370px;
     }
   }
   .box-txt{

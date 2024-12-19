@@ -9402,7 +9402,7 @@ a:hover {
 }
 .lbl_rounded img {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 10px;
 }
 
@@ -12127,6 +12127,7 @@ html:not(.default).ar body::before {
   position: absolute;
   left: -50px;
   top: 137px;
+  line-height: 1.3;
 }
 .feature_block .details .scrn_shot {
   position: absolute;
@@ -12156,6 +12157,7 @@ html:not(.default).ar body::before {
 }
 .feature_block .feature_list .box {
   text-align: center;
+  max-width: 370px;
 }
 .feature_block .box-txt {
   max-width: 439px;
