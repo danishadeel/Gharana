@@ -3042,7 +3042,7 @@ a:hover {
       .box {
         transform: none;
         margin: 0 0 15px !important;
-        max-width: none;
+        max-width: 370px;
       }
     }
 
@@ -3138,7 +3138,7 @@ a:hover {
   cursor: default;
   img{
     position: absolute;
-    top: 7px;
+    top: 20px;
     left: 10px;
   }
 
@@ -6827,6 +6827,9 @@ html:not(.default).ar body {
     .box{
       text-align: center;
     }
+  }
+  .box-txt{
+    max-width: 439px;
   }
   &.flip{
     .details{

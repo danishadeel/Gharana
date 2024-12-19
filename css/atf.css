@@ -9324,7 +9324,7 @@ a:hover {
   .feature_list [class*=col] .box {
     transform: none;
     margin: 0 0 15px !important;
-    max-width: none;
+    max-width: 370px;
   }
   .feature_list .feature_img {
     order: 3;
@@ -9402,7 +9402,7 @@ a:hover {
 }
 .lbl_rounded img {
   position: absolute;
-  top: 7px;
+  top: 20px;
   left: 10px;
 }
 
@@ -12156,6 +12156,9 @@ html:not(.default).ar body::before {
 }
 .feature_block .feature_list .box {
   text-align: center;
+}
+.feature_block .box-txt {
+  max-width: 439px;
 }
 .feature_block.flip .details {
   flex-direction: row-reverse;
