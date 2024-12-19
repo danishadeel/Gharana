@@ -6831,9 +6831,26 @@ html:not(.default).ar body {
   &.flip{
     .details{
       flex-direction: row-reverse;
+      &::before{
+        left: inherit;
+        right: -70px;
+      }
+      &::after{
+        left: inherit;
+        right: -70px;
+        background-image: url(../images/maintenance-vector.svg);
+      }
       .img{
         text-align: right;
       }
+      .scrn_shot {
+        left: 0;
+    }
+    .lbl_rounded {
+      position: absolute;
+      left: -50px;
+      top: 60px;
+  }
     }
   }
 }
