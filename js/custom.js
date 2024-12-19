@@ -1,11 +1,10 @@
 // @koala-prepend "plugins/bootstrap.js"
-// @koala-prepend "plugins/jquery-validation.js"
-// @koala-prepend "plugins/spam-protection.js"
+// @koala-exclude "plugins/jquery-validation.js"
+// @koala-prepend "plugins/jquery.validate.min.js"
 // @koala-prepend "plugins/datepicker.js"
 // @koala-prepend "plugins/lity.js"
 // @koala-prepend "plugins/slick.min.js"
-// @koala-exclude "plugins/resizeable.js"
-// @koala-exclude "plugins/map.js"
+// @koala-prepend "plugins/map.js"
 
 // Document.Ready Start
 $(document).ready(function () {

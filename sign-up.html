@@ -35,161 +35,162 @@
                 <h1>Sign Up</h1>
                 <p class="sub">Let’s get started with 30 days free trial.</p>
               </div>
-
-              <ul class="nav nav-pills mb-3 " role="tablist">
-                <li class="nav-item active">
-                  <a class="nav-link" data-toggle="pill" href="#_tab1" role="tab">Personal Info</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#_tab2" role="tab">Building Info</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#_tab3" role="tab">Login Info</a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane fade active in" id="_tab1">
-                  <form class="validate" action="post">
-                    <div class="form-group">
-                      <label class="lbl" for="company-name">Company Name</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Company Name"
-                        name="company-name" id="company-name">
-                    </div>
-
-                    <div class="form-group">
-                      <label class="lbl" for="contact-name">Contact Name</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Contact Name"
-                        name="contact-name" id="contact-name">
-                    </div>
-
-                    <div class="form-group">
-                      <label class="lbl" for="mobile-phone">Mobile Phone</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Mobile Phone"
-                        name="mobile-phone" id="mobile-phone">
-                    </div>
-
-                    <div class="form-group">
-                      <label class="lbl" for="email-address">E-mail Address</label>
-                      <input type="email" class="form-control validate[required]" placeholder="E-mail Address"
-                        name="email-address" id="email-address">
-                    </div>
-
-                    <div class="form-group">
-                      <label class="lbl" for="country">Country</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Country" name="country"
-                        id="country">
-                    </div>
-
-                    <div class="row">
-                      <div class="form-group col-md-6 id_date">
-                        <label class="lbl" for="emirate-id">Emirate ID</label>
-                        <input type="text" class="form-control validate[required]" placeholder="Emirate ID"
-                          name="emirate-id" id="emirate-id">
+              <div class="tab_box">
+                <ul class="nav tabs mb-4" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#_personal_info" role="tab">Personal Info</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#_building_info" role="tab">Building Info</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#_login_info" role="tab">Login Info</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade active in" id="_personal_info">
+                    <form class="validate form" id="step1" data-nxt-tab="_building_info" data-prv-tab="">
+                      <div class="form-group">
+                        <label class="lbl" for="company-name">Company Name</label>
+                        <input type="text" class="form-control" autofocus required placeholder="Company Name" name="company-name"
+                          id="company-name">
                       </div>
 
-                      <div class="form-group col-md-6 id_date">
-                        <label class="lbl" for="expiry-date">Expiry Date</label>
-                        <input type="date" class="form-control validate[required]" name="expiry-date" id="expiry-date">
+                      <div class="form-group">
+                        <label class="lbl" for="contact-name">Contact Name</label>
+                        <input type="text" class="form-control" required placeholder="Contact Name" name="contact-name"
+                          id="contact-name">
                       </div>
-                    </div>
-                    <div class="sep"></div>
-                    <div class="fcb">
-                      <button class="btn btn-v2 disabled" disabled>Prev</button>
-                      <button class="btn btn-v2">Next</button>
-                    </div>
-                  </form>
 
-                </div>
-                <div class="tab-pane fade" id="_tab2">
-                  <form action="post" class="validate">
-                    <div class="form-group">
-                      <label class="lbl" for="street-address">Street Address</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Street Address"
-                        name="street-address" id="street-address">
-                    </div>
+                      <div class="form-group">
+                        <label class="lbl" for="mobile-phone">Mobile Phone</label>
+                        <input type="tel" class="form-control" required placeholder="Mobile Phone" name="mobile-phone"
+                          id="mobile-phone">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="lbl" for="address-line-1">Address Line 1</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Address Line 1"
-                        name="address-line-1" id="address-line-1">
-                    </div>
+                      <div class="form-group">
+                        <label class="lbl" for="email-address">E-mail Address</label>
+                        <input type="email" class="form-control" required placeholder="E-mail Address"
+                          name="email-address" id="email-address">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="lbl" for="address-line-2">Address Line 2</label>
-                      <input type="text" class="form-control" placeholder="Address Line 2" name="address-line-2"
-                        id="address-line-2">
-                    </div>
+                      <div class="form-group">
+                        <label class="lbl" for="country">Country</label>
+                        <input type="text" class="form-control" required placeholder="Country" name="country"
+                          id="country">
+                      </div>
 
-                    <div class="form-group">
-                      <label class="lbl" for="building-email">Building Email</label>
-                      <input type="email" class="form-control validate[required]" placeholder="Building Email"
-                        name="building-email" id="building-email">
-                    </div>
+                      <div class="row">
+                        <div class="form-group col-md-6 id_date">
+                          <label class="lbl" for="emirate-id">Emirate ID</label>
+                          <input type="text" class="form-control" required placeholder="Emirate ID" name="emirate-id"
+                            id="emirate-id">
+                        </div>
 
-                    <div class="form-group">
-                      <label class="lbl" for="city">City</label>
-                      <select class="form-control validate[required]" name="city" id="city">
-                        <option value="">Select City</option>
-                        <option value="abu-dhabi">Abu Dhabi</option>
-                        <option value="dubai">Dubai</option>
-                        <option value="sharjah">Sharjah</option>
-                        <option value="ajman">Ajman</option>
-                        <option value="umm-al-quwain">Umm Al Quwain</option>
-                        <option value="ras-al-khaimah">Ras Al Khaimah</option>
-                        <option value="fujairah">Fujairah</option>
-                      </select>
-                    </div>
+                        <div class="form-group col-md-6 id_date">
+                          <label class="lbl" for="expiry-date">Expiry Date</label>
+                          <input type="date" class="form-control" required name="expiry-date" id="expiry-date">
+                        </div>
+                      </div>
+                      <div class="fcb wizard">
+                        <a class="btn btn-v2 disabled" disabled>Prev</a>
+                        <a class="btn btn-v2 next_btn">Next</a>
+                      </div>
+                    </form>
 
-                    <div class="form-group">
-                      <label class="lbl" for="state">State</label>
-                      <select class="form-control validate[required]" name="state" id="state">
-                        <option value="">Select State</option>
-                        <option value="abu-dhabi">Abu Dhabi</option>
-                        <option value="dubai">Dubai</option>
-                        <option value="sharjah">Sharjah</option>
-                        <option value="ajman">Ajman</option>
-                        <option value="umm-al-quwain">Umm Al Quwain</option>
-                        <option value="ras-al-khaimah">Ras Al Khaimah</option>
-                        <option value="fujairah">Fujairah</option>
-                      </select>
-                    </div>
-                    <div class="sep"></div>
-                    <div class="fcb">
-                      <button class="btn btn-v2 goto_step1" disabled>Prev</button>
-                      <button class="btn btn-v2">Next</button>
-                    </div>
-                  </form>
-                </div>
-                <div class="tab-pane fade" id="_tab3">
-                  <form action="post" class="validate">
-                    <div class="form-group">
-                      <label class="lbl" for="username">Username</label>
-                      <input type="text" class="form-control validate[required]" placeholder="Username" name="username" id="username">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label class="lbl" for="password">Password</label>
-                      <input type="password" class="form-control validate[required]" placeholder="Password" name="password" id="password">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label class="lbl" for="retype-password">Re-type Password</label>
-                      <input type="password" class="form-control validate[required]" placeholder="Re-type Password" name="retype-password"
-                        id="retype-password">
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">
-                        I agree to the <a href="terms.html">Terms of Service</a> & <a href="terms.html">Privacy Policy</a>
-                      </label>
-                    </div>
-                    
-                    <div class="sep"></div>
-                    <div class="fcb">
-                      <button class="btn btn-v2 disabled" disabled>Prev</button>
-                      <button class="btn btn-v2">Submit</button>
-                    </div>
-                  </form>
+                  </div>
+                  <div class="tab-pane fade" id="_building_info">
+                    <form class="validate form" id="step2" data-nxt-tab="_login_info" data-prv-tab="_personal_info">
+                      <div class="form-group">
+                        <label class="lbl" for="street-address">Street Address</label>
+                        <input type="text" class="form-control" autofocus required placeholder="Street Address"
+                          name="street-address" id="street-address">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="address-line-1">Address Line 1</label>
+                        <input type="text" class="form-control" required placeholder="Address Line 1"
+                          name="address-line-1" id="address-line-1">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="address-line-2">Address Line 2</label>
+                        <input type="text" class="form-control" placeholder="Address Line 2" name="address-line-2"
+                          id="address-line-2">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="building-email">Building Email</label>
+                        <input type="email" class="form-control" required placeholder="Building Email"
+                          name="building-email" id="building-email">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="city">City</label>
+                        <select class="form-control" required name="city" id="city">
+                          <option value="">Select City</option>
+                          <option value="abu-dhabi">Abu Dhabi</option>
+                          <option value="dubai">Dubai</option>
+                          <option value="sharjah">Sharjah</option>
+                          <option value="ajman">Ajman</option>
+                          <option value="umm-al-quwain">Umm Al Quwain</option>
+                          <option value="ras-al-khaimah">Ras Al Khaimah</option>
+                          <option value="fujairah">Fujairah</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="state">State</label>
+                        <select class="form-control" required name="state" id="state">
+                          <option value="">Select State</option>
+                          <option value="abu-dhabi">Abu Dhabi</option>
+                          <option value="dubai">Dubai</option>
+                          <option value="sharjah">Sharjah</option>
+                          <option value="ajman">Ajman</option>
+                          <option value="umm-al-quwain">Umm Al Quwain</option>
+                          <option value="ras-al-khaimah">Ras Al Khaimah</option>
+                          <option value="fujairah">Fujairah</option>
+                        </select>
+                      </div>
+                      <div class="fcb wizard">
+                        <a class="btn btn-v2 prev_btn">Prev</a>
+                        <a class="btn btn-v2 next_btn">Next</a>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="_login_info">
+                    <form class="validate form" id="step3" data-nxt-tab="" data-prv-tab="_building_info">
+                      <div class="form-group">
+                        <label class="lbl" for="username">Username</label>
+                        <input type="text" autofocus class="form-control" required placeholder="Username" name="username"
+                          id="username">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="password">Password</label>
+                        <input type="password" class="form-control" required placeholder="Password" name="password"
+                          id="password">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="lbl" for="retype-password">Re-type Password</label>
+                        <input type="password" class="form-control" required placeholder="Re-type Password"
+                          name="retype-password" id="retype-password">
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" value="">
+                          I agree to the <a href="terms.html">Terms of Service</a> & <a href="terms.html">Privacy
+                            Policy</a>
+                        </label>
+                      </div>
+
+                      <div class="fcb wizard">
+                        <a class="btn btn-v2 prev_btn">Prev</a>
+                        <a class="btn btn-v2 next_btn submit">Submit</a>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </section>
@@ -266,6 +267,35 @@
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    $(function () {
+      $('.wizard .btn').on("click", function (e) {
+        frm = $(this).parents('form').attr('id');
+        prv = $(this).parents('form').data('prv-tab');
+        nxt = $(this).parents('form').data('nxt-tab');
+        console.log(nxt)
+        btn = $(this).hasClass('next_btn')
+        if(btn){
+          if ($('#' + frm).valid()) {
+            if($(this).hasClass('submit')){
+              alert('POST YOUR FORM HERE')
+            }else{
+              activateTab(nxt);
+            }
+          }
+        }else{
+          activateTab(prv);
+          console.log('prv')
+        }
+      });
+
+      // Function to activate a tab
+      function activateTab(tabId) {
+        $('[href="#' + tabId + '"]').trigger('click')
+      }
+    });
+  </script>
 </body>
 
 </html>

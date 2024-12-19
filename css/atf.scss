@@ -10,6 +10,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+* li,
+* a{
+  transition: all .3s;
+}
 
 html {
   scroll-behavior: smooth;
@@ -149,6 +153,11 @@ a {
   color: $cf;
   transition: all .3s;
   background-color: $c1;
+
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
   em {
     margin-left: 12px;
@@ -383,9 +392,17 @@ span.sup {
 }
 
 .sep {
-  margin: 10px auto;
-  height: 1px;
-  background-color: rgba(#000, .1);
+  border-top: 1px solid #d9d9d9;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.sub {
+  font-size: 20px;
+}
+
+.text-small {
+  font-size: 15px;
 }
 
 .no_padding {
@@ -769,10 +786,31 @@ a:hover {
 
   .form-group {
     background-color: transparent;
-    padding: 0 !important;
+    // padding: 0 !important;
     position: relative;
-    margin: 0;
-
+    input:user-valid{
+      outline: 1px solid #6ed128;
+      border-color: transparent;
+    }
+    input:user-invalid{
+      outline: 2px solid #e24040;
+      border-color: transparent;
+      background-color: $c4;
+    }
+    input{
+      &.form-control{
+        height: auto;
+        padding: 9.5px 15px;
+      }
+      &::-webkit-input-placeholder {
+        opacity: .5;
+        color: $c2;
+      }
+      &::-moz-placeholder {
+        opacity: .5;
+        color: $c2;
+      }
+    }
     &.star {
       &:before {
         display: block;
@@ -801,76 +839,8 @@ a:hover {
     }
   }
 
-  .input,
-  select {
-    width: 100%;
-    border: 0 solid $c1;
-    ;
-    background-color: #e3e5e8;
-    font-size: 16px;
-    padding: 10px 10px 10px 25px;
-    min-height: 50px;
-    border-radius: 25px;
-    margin: 0;
-    color: $ct;
-
-    &:focus {
-      outline: none;
-    }
-
-    &::-webkit-input-placeholder {
-      opacity: 0;
-      font-weight: 400;
-      font-size: 16px;
-      color: $ct;
-      text-transform: uppercase;
-    }
-
-    &::-moz-placeholder {
-      /* Firefox 18- */
-      opacity: 0;
-      font-weight: 400;
-      font-size: 16px;
-      text-transform: uppercase;
-      text-transform: uppercase;
-    }
-  }
-
-  select {
-    display: block;
-    zoom: 1;
-    appearance: none;
-    -ms-appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background: none;
-  }
-
-  .select {
-    position: relative;
-
-    &:after {
-      display: block;
-      content: '\f107';
-      font-family: FontAwesome;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      z-index: 200;
-      color: $ct;
-    }
-  }
-
   label {
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-bottom: 0;
-    display: block;
-    text-align: left;
-    padding: 4px 10px 0;
-    text-transform: uppercase;
-    font-weight: 200;
-    ;
+    font-size: 16px;
     font-family: $f1;
   }
 
@@ -925,11 +895,6 @@ a:hover {
         display: block;
       }
     }
-  }
-
-  .btn {
-    width: 100%;
-    margin: 0 0 10px;
   }
 
   // File Upload styling
@@ -1361,6 +1326,7 @@ a:hover {
       margin: 0 2px;
       transition: all .3s;
       position: relative;
+      font-weight: 500;
 
       &::before {
         display: block;
@@ -1383,15 +1349,15 @@ a:hover {
       }
 
       &.has_child {
-        padding-right: 25px;
+        margin-right: 10px;
 
         &::after {
           display: block;
           content: '\e82e';
           position: absolute;
           top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
+          right: -3px;
+          transform: translateY(-30%);
           font-family: 'tio-font';
           font-size: 11px;
         }
@@ -3387,13 +3353,9 @@ a:hover {
 .how_works {
   ol {
     counter-reset: item;
-    /* Initialize the counter */
     padding-left: 20px;
-
-    /* Add space for numbers */
     .box {
       list-style: none;
-      /* Remove default list style */
       position: relative;
       padding: 20px;
       padding-left: 90px;
@@ -3414,9 +3376,7 @@ a:hover {
 
       &:before {
         content: counter(item) "";
-        /* Add the number with a period */
         counter-increment: item;
-        /* Increment the counter */
         position: absolute;
         left: 95%;
         top: 0px;
@@ -6488,19 +6448,6 @@ html:not(.default).ar body {
   }
 }
 
-.sep {
-  border-top: 1px solid #d9d9d9;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.sub {
-  font-size: 20px;
-}
-
-.text-small {
-  font-size: 15px;
-}
 
 .rounded-img {
   border-radius: 30px;
@@ -6559,16 +6506,209 @@ html:not(.default).ar body {
     background-position: center;
     background-image: url(../images/sign-up-img.jpg);
   }
-
+  .wizard .btn{
+    padding: 12px 15px;
+  }
 }
+
+.form{
+  label.error{
+    display: none !important;
+  }
+  input.error{
+    outline: 2px solid #e24040;
+    border-color: transparent;
+    background-color: $c4;
+  }
+}
+  
+.nav.tabs{  
+  counter-reset: item;
+  li{
+    width: 33.33%;
+    position: relative;
+    pointer-events: none;
+    a{
+      color: $c2;
+      border-bottom: 2px solid #D9D9D9;
+      text-align: center;
+      font-size: 16px;
+      padding-top: 40px;
+      &::before{
+        display: block;
+        content: '';
+        content: counter(item) "";
+        counter-increment: item;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        border-radius: 50%;
+        background-color: $c4;
+        color: $c1;
+        font-weight: 400;
+      }
+      &.active{
+        font-weight: 500;
+        border-bottom: 2px solid $c1;
+        &::before{
+          background-color: $c1;
+          color: $cf;
+        }
+      }
+    }
+  }
+}
+.tab_box {
+  .tab-content {
+    display: flex;
+    padding-bottom: 90px;
+    > .tab-pane {
+      display: block; /* undo "display: none;" */
+      visibility: hidden;
+      margin-right: -100%;
+      width: 100%;
+      &.active {
+        visibility: visible;
+      }
+    }
+    
+    .fcb{
+      position: absolute;
+      width: 100%;
+      max-width: 360px;
+      bottom: 0;
+      border-top: 1px solid #d9d9d9;
+      padding-top: 20px;
+      .btn{
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media all and (max-width: 991px) {
+  .nav.tabs li a{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .tab_box form label{
+    margin-bottom: 3px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .signup{
+    .sub{
+      font-size: 14px;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  
+  .nav.tabs li a{
+    padding: 25px 0 3px;
+    &::before{
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      background-color: #f7e4dd;
+    }
+    &.active{
+      &::before{
+        background-color: $c1;;
+      }
+    }
+  }
+  .form .form-group {
+    margin-bottom: 5px;
+    input.form-control{
+      padding: 3px 10px;
+    }
+  }
+  .tab_box .tab-content {
+    padding-bottom: 60px;
+    .fcb{
+      width: calc(100% - 60px);
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+  .signup {
+    section {
+      padding-top: 20px;
+    }
+    .rounded-img {
+      box-shadow: 0 0 10px #000;
+    }
+    .wizard .btn {
+      padding: 5px 15px;
+    }
+  }
+}
+
+
 
 // Contact start
 
-.default {
+  .contact {
+    .text-area {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid grey;
+      color: #495057;
+      background-color: #fff;
+      border-radius: 10px;
+      height: 145px;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .form-check {
+      padding-top: 15px;
+    }
+
+    .form-check-input {
+      margin-top: 0.8rem;
+    }
+    .contact-maps {
+      width: 70%;
+      padding: 31px;
+      border-radius: 20px;
+      background-color: $c4;
+      background-image: url(../images/maps-lines.png);
+      background-position: top left 100px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    
+      h3 {
+        font-size: 22px;
+    
+      }
+    
+      p {
+        margin-bottom: 0;
+      }
+    }
+    
+    .maps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
-  .contact {
-    
+
+.nav_2{
+  
     body {
       background-position: top -80px right;
       background-repeat: no-repeat;
@@ -6600,60 +6740,7 @@ html:not(.default).ar body {
           max-width: 550px;
         }
       }
-
-    .text-area {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid grey;
-      color: #495057;
-      background-color: #fff;
-      border-radius: 10px;
-      height: 145px;
     }
-
-    .btn-block {
-      width: 100%;
-    }
-
-    .form-check {
-      padding-top: 15px;
-    }
-
-    .form-check-input {
-      margin-top: 0.8rem;
-    }
-  }
-
-  .contact-maps {
-    width: 70%;
-    padding: 31px;
-    border-radius: 20px;
-    background-color: $c4;
-    background-image: url(../images/maps-lines.png);
-    background-position: top left 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    h3 {
-      font-size: 22px;
-
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-
-  .maps {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-}
-
-.contact{
-  
   .header.default_sticky + .sticky_space {
     height: 0;
   }
@@ -6664,7 +6751,7 @@ html:not(.default).ar body {
     border: 0;
     z-index: 1000;
     position: fixed;
-    box-shadow: 0 0 10px fade(#000, 40%);
+    box-shadow: 0 0 10px rgba(#000, 10%);
 
     * {
       transition: all .3s;
@@ -6672,11 +6759,17 @@ html:not(.default).ar body {
 
     .header_top {
       background: #fff;
-      box-shadow: 0px 0 10px #ddd;
       padding: 15px 0;
 
       .nav_btns a {
         padding: 9px 15px;
+      }
+      
+      .navigation>li>a{
+        &.selected,
+        &:hover {
+          color: $c1;
+        }
       }
     }
 
@@ -6745,3 +6838,28 @@ html:not(.default).ar body {
   }
 }
 // Features Page End
+
+
+.shine{
+  .img{
+    position: relative;
+  }
+  .img:before {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      content: '';
+      width: 50%;
+      height: 100%;
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+      -webkit-transform: skewX(-25deg);
+      transform: skewX(-25deg)
+  }
+
+  .img:hover::before {
+      -webkit-animation: shine .75s;
+      animation: shine .75s
+  }
+}
