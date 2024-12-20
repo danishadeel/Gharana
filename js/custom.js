@@ -62,6 +62,7 @@ $(document).ready(function () {
   }
 
   $('.menu_expander').click(function() {
+
     $(this).next().slideToggle();
     $(this).toggleClass('toggled');
     $(this).parent().siblings().find('ul').slideUp()

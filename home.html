@@ -14,44 +14,50 @@
 
   <title>Bayti Living</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
-  <link href="css/atf.css" rel="stylesheet">
+  <link href="css/atf.css?v2" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
     rel="stylesheet">
+    
 </head>
 
 <body>
+  
+  <!-- Mobile Nav -->
+  <div class="mobile_nav">
+    <div id="mobile_nav" class="">
+        <div class="fcb">
+          <div class="logo"> <a class="m_logo img" href="home.html">
+              <img width="90" height="60" src="images/logo.png"> </a> </div>
+          <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
+        </div>
+    </div>
+    <div class="top">
+      <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
+      <a class="btn btn-sm" href="login.html">Login</a>
+      <label class="switch notranslate">
+        <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <!-- Mobile Nav End-->
   <main class="wrapper" onclick="return true">
     <div id="google_translate_element"></div>
-    <!-- ====== Header Section ====== -->
-
-    <!-- Mobile Header -->
+    <!-- ====== Header Section ====== --><!-- Mobile Header -->
     <div class="header_mob">
-      <div class="top">
-        <a class="btn" href="sign-up.html">Sign Up</a>
-        <a class="btn btn-v2" href="login.html">Login</a>
-        <a class="btn" onclick="toggleLanguage()">Arabic</a>
-      </div>
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="home.html">
             <img width="90" height="60" src="images/logo.png"> </a> </div>
         <div class="menu_mob text-right flex">
-          <a class="humburger_menu" data-toggle="collapse" data-target="#mobile_nav"> <em class="fa-bars"></em> </a>
+          <a class="humburger_menu"> <em class="fa-bars"></em> </a>
         </div>
       </div>
     </div>
     <!-- Mobile Header END -->
 
-    <!-- Mobile Nav -->
-    <div class="mobile_nav">
-      <div id="mobile_nav" class=" collapse">
-
-      </div>
-      <div class="mobile_overlay"></div>
-    </div>
-    <!-- Mobile Nav End-->
 
     <!-- Header -->
     <header class="header default_sticky" data-top="5">
@@ -64,7 +70,7 @@
             <div class="col-md-10">
               <div class="flex jc_end">
                 <ul class="navigation">
-                  <li> <a class="has_child" href="home.html#features">Features</a>
+                  <li> <a class="has_child in_page" href="home.html#features">Features</a>
                     <ul>
                       <li><a href="features.html">Property Management</a></li>
                       <li><a href="features.html">Facilities Management</a></li>
@@ -75,10 +81,10 @@
                       <li><a href="features.html">Management Reports</a></li>
                     </ul>
                   </li>
-                  <li><a href="home.html#packages">Packages</a></li>
-                  <li><a href="home.html#how-it-works">How it Works</a></li>
-                  <li><a href="home.html#case-study">Case Studies</a></li>
-                  <li><a href="home.html#blog">Blogs</a></li>
+                  <li><a class="in_page" href="home.html#packages">Packages</a></li>
+                  <li><a class="in_page" href="home.html#how-it-works">How it Works</a></li>
+                  <li><a class="in_page" href="home.html#case-study">Case Studies</a></li>
+                  <li><a class="in_page" href="home.html#blog">Blogs</a></li>
                   <li><a href="contact.html">Contacts</a></li>
                 </ul>
                 <div class="nav_btns">
@@ -722,10 +728,60 @@
     else window.addEventListener('load', loadDeferredStyles);
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="js/plugins.js"></script>
+  <script src="js/plugins.js?v2"></script>
 
   <script>
     $(document).ready(function () {
+        $('.humburger_menu').on('click', function () {
+          $('html').addClass('menu_open');
+        });
+        $('.close_btn, .in_page').on('click', function (e) {
+          e.preventDefault();
+          pg = $(this).attr('href');
+          // console.log(pg)
+
+          if(pg){
+            id = pg.split('#')[1];
+            // console.log(id)
+          }else{
+            id = 'close'
+          }
+          $('.wrapper').addClass('reset_menu');
+            setTimeout(() => {
+              $('.wrapper').removeClass('reset_menu');
+              $('html').removeClass('menu_open');
+
+              if (id == 'close') {
+              }else{
+                const target = $('#'+id);
+                console.log(target)
+                $('html, body').animate(
+                  {
+                    scrollTop: target.offset().top - 30,
+                  },
+                  100 // Duration of the animation in milliseconds
+                );
+
+              }
+            }, 600);
+        });
+
+        setTimeout(() => {
+          
+          // Mobile menu function
+          if ($('#mobile_nav ul ul').length > 0) {
+            $('#mobile_nav ul ul ').before('<em class="fa fa-chevron-down visible-xs visible-sm menu_expander"></em>')
+          }
+          if ($('#myNavbar ul ul').length > 0) {
+            $('#myNavbar ul ul ').before('<em class="fa fa-chevron-down menu_expander"></em>')
+          }
+          $('.menu_expander').click(function () {
+            $(this).next().slideToggle();
+            $(this).toggleClass('toggled');
+            $(this).parent().siblings().find('ul').slideUp()
+            $(this).parent().siblings().find('em').removeClass('toggled')
+          });
+        }, 10);
 
       $('.hero-txt').slick({
         dots: true,
