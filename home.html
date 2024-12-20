@@ -33,17 +33,20 @@
               <img width="90" height="60" src="images/logo.png"> </a> </div>
           <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
         </div>
+      </div>
+      <div class="top">
+        <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
+        <a class="btn btn-sm" href="login.html">Login</a>
+        <label class="switch notranslate">
+          <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
-    <div class="top">
-      <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
-      <a class="btn btn-sm" href="login.html">Login</a>
-      <label class="switch notranslate">
-        <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-        <span class="slider"></span>
-      </label>
-    </div>
-  </div>
-  <!-- Mobile Nav End-->
+    <!-- Mobile Nav End-->
+    <!-- <a class="humburger_menu">
+      <div class="nav-icon2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </a> -->
   <main class="wrapper" onclick="return true">
     <div id="google_translate_element"></div>
     <!-- ====== Header Section ====== --><!-- Mobile Header -->
@@ -732,6 +735,9 @@
 
   <script>
     $(document).ready(function () {
+      	$('.nav-icon2').click(function () {
+          $(this).toggleClass('open');
+        });
         $('.humburger_menu').on('click', function () {
           $('html').addClass('menu_open');
         });

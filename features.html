@@ -15,35 +15,44 @@
 </head>
 
 <body>
+  <!-- Mobile Nav -->
+  <div class="mobile_nav">
+    <div id="mobile_nav" class="">
+      <div class="fcb">
+        <div class="logo"> <a class="m_logo img" href="home.html">
+            <img width="90" height="60" src="images/logo.png"> </a> </div>
+        <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
+      </div>
+    </div>
+    <div class="top">
+      <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
+      <a class="btn btn-sm" href="login.html">Login</a>
+      <label class="switch notranslate">
+        <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <!-- Mobile Nav End-->
+  <!-- <a class="humburger_menu">
+        <div class="nav-icon2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </a> -->
   <main class="wrapper" onclick="return true">
     <div id="google_translate_element"></div>
     <!-- ====== Header Section ====== -->
-
-    <!-- Mobile Header -->
+     <!-- Mobile Header -->
     <div class="header_mob">
-      <div class="top">
-        <a class="btn" href="sign-up.html">Sign Up</a>
-        <a class="btn btn-v2" href="login.html">Login</a>
-        <a class="btn" onclick="toggleLanguage()">Arabic</a>
-      </div>
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="home.html">
             <img width="90" height="60" src="images/logo.png"> </a> </div>
         <div class="menu_mob text-right flex">
-          <a class="humburger_menu" data-toggle="collapse" data-target="#mobile_nav"> <em class="fa-bars"></em> </a>
+          <a class="humburger_menu"> <em class="fa-bars"></em> </a>
         </div>
       </div>
     </div>
     <!-- Mobile Header END -->
 
-    <!-- Mobile Nav -->
-    <div class="mobile_nav">
-      <div id="mobile_nav" class=" collapse">
 
-      </div>
-      <div class="mobile_overlay"></div>
-    </div>
-    <!-- Mobile Nav End-->
 
     <!-- Header -->
     <header class="header default_sticky" data-top="5">
@@ -416,24 +425,60 @@
 
   <script>
     $(document).ready(function () {
-
-      $('.testi_slider').slick({
-        dots: true,
-        arrows: false,
-        slidesToShow: 3,
-        adaptiveHeight: true,
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
+      
+      $('.nav-icon2').click(function () {
+        $(this).toggleClass('open');
       });
-      $('.packages .box').on('click', function () {
-        $(this).find('.btn').trigger('click')
-      })
+      $('.humburger_menu').on('click', function () {
+        $('html').addClass('menu_open');
+      });
+      $('.close_btn, .in_page').on('click', function (e) {
+        e.preventDefault();
+        pg = $(this).attr('href');
+        // console.log(pg)
+
+        if (pg) {
+          id = pg.split('#')[1];
+          // console.log(id)
+        } else {
+          id = 'close'
+        }
+        $('.wrapper').addClass('reset_menu');
+        setTimeout(() => {
+          $('.wrapper').removeClass('reset_menu');
+          $('html').removeClass('menu_open');
+
+          if (id == 'close') {
+          } else {
+            const target = $('#' + id);
+            console.log(target)
+            $('html, body').animate(
+              {
+                scrollTop: target.offset().top - 30,
+              },
+              100 // Duration of the animation in milliseconds
+            );
+
+          }
+        }, 600);
+      });
+
+      setTimeout(() => {
+
+        // Mobile menu function
+        if ($('#mobile_nav ul ul').length > 0) {
+          $('#mobile_nav ul ul ').before('<em class="fa fa-chevron-down visible-xs visible-sm menu_expander"></em>')
+        }
+        if ($('#myNavbar ul ul').length > 0) {
+          $('#myNavbar ul ul ').before('<em class="fa fa-chevron-down menu_expander"></em>')
+        }
+        $('.menu_expander').click(function () {
+          $(this).next().slideToggle();
+          $(this).toggleClass('toggled');
+          $(this).parent().siblings().find('ul').slideUp()
+          $(this).parent().siblings().find('em').removeClass('toggled')
+        });
+      }, 10);
     });
 
   </script>
