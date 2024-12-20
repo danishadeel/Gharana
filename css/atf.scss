@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -2968,6 +2969,7 @@ a:hover {
 
 .feature_list {
   padding-bottom: 90px;
+  gap: 10px;
 
   .box {
     width: 100%;
@@ -3680,6 +3682,9 @@ a:hover {
 }
 
 @media all and (max-width: 767px) {
+  .space_botm{
+    margin-top: 70px;
+  }
   .before_after {
     .box {
       max-width: none;
@@ -4356,8 +4361,11 @@ a:hover {
     }
 
     p {
-      line-height: 1.4;
-      font-size: 14px;
+      font-size: 18px;
+      @media all and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 1.4;
+      }
     }
 
     .btns {
@@ -5473,6 +5481,42 @@ a:hover {
 //<section-fold>  ====== Responsive Queries ======
 
 
+
+// @media (min-width: 1200px) {
+//     .container-xl, .container-lg, .container-md, .container-sm, .container {
+//         max-width: 1140px;
+//     }
+// }
+// @media (min-width: 992px) {
+//     .container-lg, .container-md, .container-sm, .container {
+//         max-width: 960px;
+//     }
+// }
+// @media (min-width: 768px) {
+//     .container-md, .container-sm, .container {
+//         max-width: 720px;
+//     }
+// }
+// @media (min-width: 576px) {
+//     .container-sm, .container {
+//         max-width: 540px;
+//     }
+// }
+
+@media all and (max-width: 1200px) {
+  .cnt,
+  .cnt-lg,
+  .cnt-sm{
+    max-width: 900px;
+  }
+  .header_top .navigation li a {
+    font-size: 14px;
+  }
+  .header_top .navigation li a:not(.has_child) {
+    padding: 13px 5px;
+  }
+}
+
 // ===================== 1440 and above
 @media all and (max-width: 991px) {
 
@@ -5609,7 +5653,6 @@ a:hover {
   }
 
   .cnt {
-    max-width: 100%;
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -6391,6 +6434,14 @@ body {
       padding-right: 15px;
     }
   }
+
+
+  // Login Arabic start
+  
+  // Login Arabic end
+
+
+
 }
 
 html:not(.default).ar body {
@@ -6640,8 +6691,10 @@ html:not(.default).ar body {
   }
   .form .form-group {
     margin-bottom: 5px;
-    input.form-control{
-      padding: 3px 10px;
+    input, select, textarea{
+      &.form-control{
+        padding: 3px 10px;
+      }
     }
   }
   .tab_box .tab-content {
@@ -6688,11 +6741,8 @@ html:not(.default).ar body {
       padding-top: 15px;
     }
 
-    .form-check-input {
-      margin-top: 0.8rem;
-    }
     .contact-maps {
-      width: 70%;
+      max-width: 370px;
       padding: 31px;
       border-radius: 20px;
       background-color: $c4;
@@ -6739,20 +6789,13 @@ html:not(.default).ar body {
         img {
           border-radius: 50%;
           border: 30px solid #fff;
-          max-width: 590px;
         }
       }
       .head_content{
         width: 50%;
         @media all and (max-width: 991px) {
           width: 100%;
-        }
-        p{
-          font-size: 18px;
-          line-height: 1.8;
-        }
-        .txt{
-          max-width: 550px;
+          margin: 0;
         }
       }
     }
@@ -6878,10 +6921,10 @@ html:not(.default).ar body {
 
 
 .shine{
-  .img{
+  &.img{
     position: relative;
   }
-  .img:before {
+  &.img:before {
       position: absolute;
       top: 0;
       left: -75%;
@@ -6895,7 +6938,7 @@ html:not(.default).ar body {
       transform: skewX(-25deg)
   }
 
-  .img:hover::before {
+  &.img:hover::before {
       -webkit-animation: shine .75s;
       animation: shine .75s
   }
