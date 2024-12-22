@@ -9330,9 +9330,9 @@ a:hover {
     padding-bottom: 0;
   }
   .feature_list .row {
-    background: no-repeat center bottom;
+    background: no-repeat center top;
     background-image: url(../images/feature-img.png);
-    padding-bottom: 80vw;
+    padding-top: 80vw;
     background-size: 80%;
   }
   .feature_list [class*=col] {
@@ -9357,6 +9357,7 @@ a:hover {
     align-items: center;
   }
   .feature_list .feature_img .box {
+    width: 100%;
     width: 370px;
     max-width: none;
   }
@@ -12423,6 +12424,12 @@ html:not(.default).ar body::before {
   .lbl_rounded img {
     width: 20px;
     height: 20px;
+  }
+  .packages .col-6 {
+    margin-bottom: 10px;
+  }
+  .packages .box {
+    max-width: 100%;
   }
 }
 @media all and (max-width: 991px) {

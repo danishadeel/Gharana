@@ -3038,9 +3038,9 @@ a:hover {
     padding-bottom: 0;
 
     .row {
-      background: no-repeat center bottom;
+      background: no-repeat center top;
       background-image: url(../images/feature-img.png);
-      padding-bottom: 80vw;
+      padding-top: 80vw;
       background-size: 80%;
     }
 
@@ -3072,6 +3072,7 @@ a:hover {
   }
 
   .feature_list .feature_img .box {
+    width: 100%;
     width: 370px;
     max-width: none;
   }
@@ -7119,6 +7120,14 @@ html:not(.default).ar body {
   img {
       width: 20px;
       height: 20px;
+    }
+  }
+  .packages{
+    .col-6{
+      margin-bottom: 20px; 
+    }
+    .box{
+      max-width: 100%;
     }
   }
 
