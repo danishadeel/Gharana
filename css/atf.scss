@@ -5869,6 +5869,13 @@ footer {
 .ar {
   // direction: ltr;
   animation: fade .6s;
+
+  .header_top .navigation  li ul {
+    position: absolute;
+    top: 47px;
+    min-width: 240px;
+    text-align: right;
+  }
   
 }
 
@@ -6183,6 +6190,9 @@ body {
       margin-left: -100%;
       width: 100%;
     }
+    .text-md-left {
+      text-align: right !important;
+  } 
   }
   // register arabic end
 
