@@ -7025,6 +7025,12 @@ html:not(.default).ar body {
 // ============================================= 1200 and less
 @media all and (max-width: 1200px) {
 
+  .features .cnt{
+    max-width: 100%;
+  }
+  .home_hero .head_content h1 {
+    font-size: 30px;
+  }
   // General
   .navbar-default .navigation li ul {
     top: 44px;
