@@ -12426,7 +12426,7 @@ html:not(.default).ar body::before {
     height: 20px;
   }
   .packages .col-6 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .packages .box {
     max-width: 100%;
