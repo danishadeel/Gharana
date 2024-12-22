@@ -11438,6 +11438,12 @@ footer .bottom_links .policy a:hover {
 .ar {
   animation: fade 0.6s;
 }
+.ar .header_top .navigation li ul {
+  position: absolute;
+  top: 47px;
+  min-width: 240px;
+  text-align: right;
+}
 
 .translated-rtl font font {
   background: none !important;
@@ -11684,6 +11690,9 @@ body {
   margin-right: 0;
   margin-left: -100%;
   width: 100%;
+}
+.ar .signup .text-md-left {
+  text-align: right !important;
 }
 @media all and (max-width: 1200px) {
   .ar.default .signup .logo, .ar.default .mob_bg {
