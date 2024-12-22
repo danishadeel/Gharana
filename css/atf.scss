@@ -7014,8 +7014,8 @@ html:not(.default).ar body {
 // ╔╝╚╗║╚═╝║║╚═╝║║╚═╝║
 // ╚══╝╚═══╝╚═══╝╚═══╝
 //1366 and less it will cover 1280 too Mac
-@media all and (max-width: 1366px) {
 
+@media all and (max-width: 1366px) {
   // General
   .wrapper {
     padding: 0;
@@ -7041,7 +7041,7 @@ html:not(.default).ar body {
   .home_hero .head_content h1 {
     font-size: 30px;
   }
-  
+
   // General
   .navbar-default .navigation li ul {
     top: 44px;
