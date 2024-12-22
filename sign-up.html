@@ -24,7 +24,7 @@
     <!-- Sign Up -->
     <div class="p-3 signup" id="signup">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="logo">
             <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
           </div>
@@ -179,9 +179,8 @@
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">
-                          I agree to the <a href="terms.html">Terms of Service</a> & <a href="terms.html">Privacy
-                            Policy</a>
+                          <input type="checkbox" id="agree" name="agree" required class="form-check-input" value="">
+                          I agree to the <a href="terms.html">Terms of Service</a> & <a href="terms.html">Privacy Policy</a>
                         </label>
                       </div>
 
@@ -196,13 +195,15 @@
             </section>
           </div>
         </div>
-        <div class="col-sm-6 mob_bg">
+        <div class="col-md-6 mob_bg">
           <div class="rounded-img">
-            <a class="btn" href="login.html">Login</a>
-            <label class="switch notranslate">
-              <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-              <span class="slider"></span>
-            </label>
+            <div class="fcb p-2">
+              <label class="switch notranslate">
+                <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+                <span class="slider"></span>
+              </label>
+              <a class="btn" href="login.html">Login</a>
+            </div>
           </div>
         </div>
       </div>

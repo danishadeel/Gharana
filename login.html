@@ -24,7 +24,7 @@
     <!-- Login -->
     <div class="p-3 login" id="login">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="logo">
             <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
           </div>
@@ -37,40 +37,42 @@
               </div>
               <div class="sep"></div>
 
-              <form method="post" class="validate">
+              <form class="validate form" id="login_frm">
                 <div class="form-group">
                   <label class="lbl" for="username">Username</label>
-                  <input type="text" class="form-control validate[required]" placeholder="User Name" name="username"
+                  <input type="text" class="form-control" required placeholder="User Name" name="username"
                     id="username">
                 </div>
                 <div class="form-group">
                   <label class="lbl" for="password">Password</label>
-                  <input type="password" class="form-control validate[required]" placeholder="Enter Password"
+                  <input type="password" class="form-control" required placeholder="Enter Password"
                     id="password">
                 </div>
                 <div class="fcb mb-3">
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">Remember me
+                      <input type="checkbox" class="form-check-input" name="Remember" id="remember" value=""> Remember me
                     </label>
                   </div>
                   <a class="text-small" href="forgot-password.html">Forgot password?</a>
                 </div>
                 <p>
-                  <button type="submit" class="btn btn-block">Login</button>
+                  <a class="btn btn-block submit">Login</a>
                 </p>
                 <p class="text-center text-small">Not a Member? <a href="sign-up.html">Create account</a></p>
               </form>
             </section>
           </div>
         </div>
-        <div class="col-sm-6 mob_bg">
+        <div class="col-md-6 mob_bg">
           <div class="rounded-img">
-            <a class="btn" href="sign-up.html">Register</a>
-            <label class="switch notranslate">
-              <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-              <span class="slider"></span>
-            </label>
+            <div class="fcb p-2">
+              <label class="switch notranslate">
+                <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+                <span class="slider"></span>
+              </label>
+              <a class="btn" href="sign-up.html">Register</a>
+            </div>
           </div>
         </div>
       </div>
@@ -99,43 +101,13 @@
   <script src="js/plugins.js"></script>
 
   <script type="text/javascript">
-    function setCookie(key, value, expiry) {
-      var expires = new Date();
-      expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
-      document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-    }
-    function googleTranslateElementInit() {
-      setCookie('googtrans', '/en', 1);
-      new google.translate.TranslateElement({
-        pageLanguage: 'en'
-      }, 'google_translate_element');
-    }
-    let isArabic = false; // Tracks the current language state
-
-    function toggleLanguage() {
-      const selectElem = document.querySelector('.goog-te-combo');
-      const htmlTag = document.documentElement; // Get the <html> tag
-
-      if (selectElem) {
-        console.log(isArabic)
-        if (isArabic) {
-          // Remove translation (back to default language, English)
-          setTimeout(() => {
-            window.location.reload(); // Reload the page to reset translation
-            isArabic = false;
-          }, 300);
-        } else {
-          selectElem.value = 'ar';
-          selectElem.dispatchEvent(new Event('change'));
-          isArabic = true;
-          setTimeout(() => {
-            htmlTag.setAttribute('dir', 'rtl');
-            htmlTag.setAttribute('lang', 'ar');
-            htmlTag.classList.add('ar');
-          }, 400);
+    $(function () {
+      $('.submit.btn').on("click", function (e) {
+        if ($('#login_frm').valid()) {
+          alert('POST YOUR FORM HERE');
         }
-      }
-    }
+      });
+    });
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

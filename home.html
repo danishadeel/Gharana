@@ -8,7 +8,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Bayti Living">
   <meta property="og:description" content="Streamline Your Building with All-in-One Solution">
-  <meta property="og:image" content="images/favicon.png">
+  <meta property="og:image" content="images/logo.png">
   <meta property="og:url" content="https://baytiliving.ae/">
   <meta property="og:type" content="website">
 
@@ -71,7 +71,7 @@
               <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
             </div>
             <div class="col-md-10">
-              <div class="flex jc_end">
+              <div class="flex jc_end align-items-center">
                 <ul class="navigation">
                   <li> <a class="has_child in_page" href="home.html#features">Features</a>
                     <ul>
@@ -735,59 +735,6 @@
 
   <script>
     $(document).ready(function () {
-      	$('.nav-icon2').click(function () {
-          $(this).toggleClass('open');
-        });
-        $('.humburger_menu').on('click', function () {
-          $('html').addClass('menu_open');
-        });
-        $('.close_btn, .in_page').on('click', function (e) {
-          e.preventDefault();
-          pg = $(this).attr('href');
-          // console.log(pg)
-
-          if(pg){
-            id = pg.split('#')[1];
-            // console.log(id)
-          }else{
-            id = 'close'
-          }
-          $('.wrapper').addClass('reset_menu');
-            setTimeout(() => {
-              $('.wrapper').removeClass('reset_menu');
-              $('html').removeClass('menu_open');
-
-              if (id == 'close') {
-              }else{
-                const target = $('#'+id);
-                console.log(target)
-                $('html, body').animate(
-                  {
-                    scrollTop: target.offset().top - 30,
-                  },
-                  100 // Duration of the animation in milliseconds
-                );
-
-              }
-            }, 600);
-        });
-
-        setTimeout(() => {
-          
-          // Mobile menu function
-          if ($('#mobile_nav ul ul').length > 0) {
-            $('#mobile_nav ul ul ').before('<em class="fa fa-chevron-down visible-xs visible-sm menu_expander"></em>')
-          }
-          if ($('#myNavbar ul ul').length > 0) {
-            $('#myNavbar ul ul ').before('<em class="fa fa-chevron-down menu_expander"></em>')
-          }
-          $('.menu_expander').click(function () {
-            $(this).next().slideToggle();
-            $(this).toggleClass('toggled');
-            $(this).parent().siblings().find('ul').slideUp()
-            $(this).parent().siblings().find('em').removeClass('toggled')
-          });
-        }, 10);
 
       $('.hero-txt').slick({
         dots: true,
@@ -800,7 +747,7 @@
         adaptiveHeight: true,
         responsive: [
           {
-            breakpoint: 600,
+            breakpoint: 767,
             settings: {
               slidesToShow: 1
             }
@@ -813,45 +760,7 @@
     });
 
   </script>
-  <script type="text/javascript">
-    function setCookie(key, value, expiry) {
-      var expires = new Date();
-      expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
-      document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-    }
-    function googleTranslateElementInit() {
-      setCookie('googtrans', '/en', 1);
-      new google.translate.TranslateElement({
-        pageLanguage: 'en'
-      }, 'google_translate_element');
-    }
-    let isArabic = false; // Tracks the current language state
-
-    function toggleLanguage() {
-      const selectElem = document.querySelector('.goog-te-combo');
-      const htmlTag = document.documentElement; // Get the <html> tag
-
-      if (selectElem) {
-        console.log(isArabic)
-        if (isArabic) {
-          // Remove translation (back to default language, English)
-          setTimeout(() => {
-            window.location.reload(); // Reload the page to reset translation
-            isArabic = false;
-          }, 300);
-        } else {
-          selectElem.value = 'ar';
-          selectElem.dispatchEvent(new Event('change'));
-          isArabic = true;
-          setTimeout(() => {
-            htmlTag.setAttribute('dir', 'rtl');
-            htmlTag.setAttribute('lang', 'ar');
-            htmlTag.classList.add('ar');
-          }, 400);
-        }
-      }
-    }
-  </script>
+  
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>

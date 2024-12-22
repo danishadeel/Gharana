@@ -4,7 +4,50 @@
 // @koala-prepend "plugins/datepicker.js"
 // @koala-prepend "plugins/lity.js"
 // @koala-prepend "plugins/slick.min.js"
-// @koala-prepend "plugins/map.js"
+// @koala-exclude "plugins/map.js"
+
+
+
+// Google Translate Start
+function setCookie(key, value, expiry) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+function googleTranslateElementInit() {
+  setCookie('googtrans', '/en', 1);
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+let isArabic = false; // Tracks the current language state
+
+function toggleLanguage() {
+  const selectElem = document.querySelector('.goog-te-combo');
+  const htmlTag = document.documentElement; // Get the <html> tag
+
+  if (selectElem) {
+    console.log(isArabic)
+    if (isArabic) {
+      // Remove translation (back to default language, English)
+      setTimeout(() => {
+        window.location.reload(); // Reload the page to reset translation
+        isArabic = false;
+      }, 300);
+    } else {
+      selectElem.value = 'ar';
+      selectElem.dispatchEvent(new Event('change'));
+      isArabic = true;
+      setTimeout(() => {
+        htmlTag.setAttribute('dir', 'rtl');
+        htmlTag.setAttribute('lang', 'ar');
+        htmlTag.classList.add('ar');
+      }, 400);
+    }
+  }
+}
+// Google Translate End
+
 
 // Document.Ready Start
 $(document).ready(function () {
@@ -53,26 +96,58 @@ $(document).ready(function () {
   $(window).resize(adjustList);
 
 
-  // Mobile menu function
+
+
+  // Mobile menu start
   if ($('#mobile_nav ul ul').length > 0) {
-    $('#mobile_nav ul ul ').before('<em class="fa fa-plus-squared visible-xs visible-sm menu_expander"></em>')
+    $('#mobile_nav ul ul ').before('<em class="fa fa-chevron-down visible-xs visible-sm menu_expander"></em>')
   }
-  if ($('#myNavbar ul ul').length > 0) {
-    $('#myNavbar ul ul ').before('<em class="fa fa-plus-squared menu_expander"></em>')
-  }
-
-  $('.menu_expander').click(function() {
-
+  $('.menu_expander').click(function () {
     $(this).next().slideToggle();
     $(this).toggleClass('toggled');
     $(this).parent().siblings().find('ul').slideUp()
     $(this).parent().siblings().find('em').removeClass('toggled')
   });
 
-
-  $('.humburger_menu').click(function() {
-    $('.navigation').toggleClass('expand');
+  $('.nav-icon2').click(function () {
+    $(this).toggleClass('open');
   });
+  $('.humburger_menu').on('click', function () {
+    $('html').addClass('menu_open');
+  });
+  $('.close_btn, .in_page').on('click', function (e) {
+    e.preventDefault();
+    pg = $(this).attr('href');
+
+    if (pg) {
+      id = pg.split('#')[1];
+      // console.log(id)
+    } else {
+      id = 'close'
+    }
+    $('.wrapper').addClass('reset_menu');
+    setTimeout(() => {
+      $('.wrapper').removeClass('reset_menu');
+      $('html').removeClass('menu_open');
+
+      if (id == 'close') {
+      } else {
+        const target = $('#' + id);
+        console.log(target)
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top - 30,
+          },
+          100
+        );
+      }
+    }, 600);
+  });
+  // Mobile menu end
+
+
+
+
 
 
   //Add sticky button for Book Now
@@ -265,28 +340,29 @@ $('.popup_title').on('click', function(){
 
 
 $(document).ready(function() {
-$('.update_form_data').on('click', function(){
-  if($(this).attr('thanks')) {
-    var _thanks = $(this).attr('thanks');
-    $('.thanks').val('');
-    $('.thanks').val(_thanks);
-  }
-  if($(this).attr('key')) {
-    var _key = $(this).attr('key');
-    $('.key').val('');
-    $('.key').val(_key);
-  }
-  if($(this).attr('accountid')) {
-    var _accountid = $(this).attr('accountid');
-    $('.accountid').val('');
-    $('.accountid').val(_accountid);
-  }
-  if($(this).attr('email')) {
-    var _email_recipient = $(this).attr('email');
-    $('.email').val('');
-    $('.email').val(_email_recipient);
-  }
-});
+  $('.update_form_data').on('click', function(){
+    if($(this).attr('thanks')) {
+      var _thanks = $(this).attr('thanks');
+      $('.thanks').val('');
+      $('.thanks').val(_thanks);
+    }
+    if($(this).attr('key')) {
+      var _key = $(this).attr('key');
+      $('.key').val('');
+      $('.key').val(_key);
+    }
+    if($(this).attr('accountid')) {
+      var _accountid = $(this).attr('accountid');
+      $('.accountid').val('');
+      $('.accountid').val(_accountid);
+    }
+    if($(this).attr('email')) {
+      var _email_recipient = $(this).attr('email');
+      $('.email').val('');
+      $('.email').val(_email_recipient);
+    }
+  });
+
 });
 $(document).on('change','.update_form_data_select', function(){
   var loc = $(this).val();

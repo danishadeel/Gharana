@@ -40,7 +40,7 @@
   <main class="wrapper" onclick="return true">
     <div id="google_translate_element"></div>
     <!-- ====== Header Section ====== -->
-     <!-- Mobile Header -->
+    <!-- Mobile Header -->
     <div class="header_mob">
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="home.html">
@@ -63,7 +63,7 @@
               <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
             </div>
             <div class="col-md-10">
-              <div class="flex jc_end">
+              <div class="flex jc_end align-items-center">
                 <ul class="navigation">
                   <li> <a class="has_child selected" href="home.html#features">Features</a>
                     <ul>
@@ -110,11 +110,11 @@
             <p>Experience unparalleled convenience and comfort with Bayti, the ultimate destination for corporate
               living. Our platform caters to the discerning needs of tenants, offering seamless access to available
               properties, efficient maintenance request management, and transparent payment tracking.</p>
-              <div class="btns">
-                <a href="contact.html" class="btn">Request Demo</a>
-              </div>
+            <div class="btns">
+              <a href="contact.html" class="btn">Request Demo</a>
             </div>
-          
+          </div>
+
         </div>
         <div class="img"><img src="./images/features-hero-img.png" alt=""></div>
       </div>
@@ -136,7 +136,7 @@
       </div>
       <div class="cnt">
         <div class="row details">
-          <div class="col-sm-6 pic">
+          <div class="col-md-12 col-lg-6 pic">
             <p class="img">
               <img src="images/maintenance-img.jpg" alt="">
             </p>
@@ -149,7 +149,7 @@
               <img src="images/app-screenshot.png">
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-12 col-lg-6">
             <div class="box-txt">
               <h3>Real-Time Facility Management Solutions</h3>
               <p>Keep track of tenant responses to renewal offers and monitor their engagement with our Tenant Response
@@ -158,9 +158,9 @@
                 renewals.
                 Improve team efficiency and ensure timely completion of maintenance tasks.</p>
             </div>
-            </div>
+          </div>
         </div>
-        <div class="feature_list fcb">
+        <div class="d-block d-sm-flex feature_list fcb">
           <div class="box">
             <p class="icn">
               <img src="images/hiw-icon-2.png">
@@ -205,7 +205,7 @@
       </div>
       <div class="cnt">
         <div class="row details">
-          <div class="col-sm-6 pic">
+          <div class="col-md-12 col-lg-6 pic">
             <p class="img">
               <img src="images/updates-img.jpg" alt="">
             </p>
@@ -218,7 +218,7 @@
               <img src="images/app-screenshot.png">
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-12 col-lg-6">
             <div class="box-txt">
               <h3>Real-Time Facility Management Solutions</h3>
               <p>Keep track of tenant responses to renewal offers and monitor their engagement with our Tenant Response
@@ -227,9 +227,9 @@
                 renewals.
                 Improve team efficiency and ensure timely completion of maintenance tasks.</p>
             </div>
-            </div>
+          </div>
         </div>
-        <div class="feature_list fcb">
+        <div class="d-block d-sm-flex feature_list fcb">
           <div class="box">
             <p class="icn">
               <img src="images/hiw-icon-2.png">
@@ -273,7 +273,7 @@
       </div>
       <div class="cnt">
         <div class="row details">
-          <div class="col-sm-6 pic">
+          <div class="col-md-12 col-lg-6 pic">
             <p class="img">
               <img src="images/tech-img.jpg" alt="">
             </p>
@@ -286,7 +286,7 @@
               <img src="images/app-screenshot.png">
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-md-12 col-lg-6">
             <div class="box-txt">
               <h3>Real-Time Facility Management Solutions</h3>
               <p>Keep track of tenant responses to renewal offers and monitor their engagement with our Tenant Response
@@ -295,9 +295,9 @@
                 renewals.
                 Improve team efficiency and ensure timely completion of maintenance tasks.</p>
             </div>
-            </div>
+          </div>
         </div>
-        <div class="feature_list fcb">
+        <div class="d-block d-sm-flex feature_list fcb">
           <div class="box">
             <p class="icn">
               <img src="images/hiw-icon-2.png">
@@ -331,8 +331,8 @@
 
     <!-- technicians end -->
 
-     <!-- demo start -->
-     <section class="demo text-center cnt">
+    <!-- demo start -->
+    <section class="demo text-center cnt">
       <h1>Let’s talk about your project</h1>
       <p>We help companies and individuals streamline their workflows and processes.</p>
       <a class="btn btn-v2" href="contact.html"> Request Demo</a>
@@ -423,124 +423,6 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/plugins.js"></script>
 
-  <script>
-    $(document).ready(function () {
-      
-      $('.nav-icon2').click(function () {
-        $(this).toggleClass('open');
-      });
-      $('.humburger_menu').on('click', function () {
-        $('html').addClass('menu_open');
-      });
-      $('.close_btn, .in_page').on('click', function (e) {
-        e.preventDefault();
-        pg = $(this).attr('href');
-        // console.log(pg)
-
-        if (pg) {
-          id = pg.split('#')[1];
-          // console.log(id)
-        } else {
-          id = 'close'
-        }
-        $('.wrapper').addClass('reset_menu');
-        setTimeout(() => {
-          $('.wrapper').removeClass('reset_menu');
-          $('html').removeClass('menu_open');
-
-          if (id == 'close') {
-          } else {
-            const target = $('#' + id);
-            console.log(target)
-            $('html, body').animate(
-              {
-                scrollTop: target.offset().top - 30,
-              },
-              100 // Duration of the animation in milliseconds
-            );
-
-          }
-        }, 600);
-      });
-
-      setTimeout(() => {
-
-        // Mobile menu function
-        if ($('#mobile_nav ul ul').length > 0) {
-          $('#mobile_nav ul ul ').before('<em class="fa fa-chevron-down visible-xs visible-sm menu_expander"></em>')
-        }
-        if ($('#myNavbar ul ul').length > 0) {
-          $('#myNavbar ul ul ').before('<em class="fa fa-chevron-down menu_expander"></em>')
-        }
-        $('.menu_expander').click(function () {
-          $(this).next().slideToggle();
-          $(this).toggleClass('toggled');
-          $(this).parent().siblings().find('ul').slideUp()
-          $(this).parent().siblings().find('em').removeClass('toggled')
-        });
-      }, 10);
-    });
-
-  </script>
-  <script type="text/javascript">
-    function setCookie(key, value, expiry) {
-      var expires = new Date();
-      expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
-      document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-    }
-    function googleTranslateElementInit() {
-      setCookie('googtrans', '/en', 1);
-      new google.translate.TranslateElement({
-        pageLanguage: 'en'
-      }, 'google_translate_element');
-    }
-    let isArabic = false; // Tracks the current language state
-
-    function toggleLanguage() {
-      const selectElem = document.querySelector('.goog-te-combo');
-      const htmlTag = document.documentElement; // Get the <html> tag
-
-      if (selectElem) {
-        console.log(isArabic)
-        if (isArabic) {
-          // Remove translation (back to default language, English)
-          setTimeout(() => {
-            window.location.reload(); // Reload the page to reset translation
-            isArabic = false;
-          }, 300);
-        } else {
-          selectElem.value = 'ar';
-          selectElem.dispatchEvent(new Event('change'));
-          isArabic = true;
-          setTimeout(() => {
-            htmlTag.setAttribute('dir', 'rtl');
-            htmlTag.setAttribute('lang', 'ar');
-            htmlTag.classList.add('ar');
-          }, 400);
-        }
-      }
-    }
-    function findOverflowElements() {
-        const overflowElements = [];
-
-        document.querySelectorAll('*').forEach((element) => {
-          const { scrollWidth, clientWidth, scrollHeight, clientHeight } = element;
-          if (scrollWidth > clientWidth || scrollHeight > clientHeight) {
-            overflowElements.push(element);
-          }
-        });
-
-        return overflowElements;
-      }
-
-      // Example usage:
-      const elementsWithOverflow = findOverflowElements();
-      if (elementsWithOverflow.length > 0) {
-        console.log("Elements with overflow found:", elementsWithOverflow);
-      } else {
-        console.log("No elements with overflow.");
-      }
-  </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
