@@ -5876,13 +5876,24 @@ footer {
       }
 
       .footer_input {
-        display: flex;
-        padding-top: 10px;
+        position: relative; 
+        display: inline-block;
+        .input-field {
+          padding-right: 60px;
+          height: auto;
+          width: 200px;
+        }
 
         .input_btn {
+          content: "";
           background-color: $c1;
+          position: absolute;
+          top: 0; 
+          right: 0;
+          text-decoration: none;
           border-radius: 10px;
-          margin-left: -20px;
+          z-index: 1; 
+          
 
           img {
             padding: 15px;
@@ -5896,9 +5907,9 @@ footer {
         input {
           border-radius: 10px;
           border: 1px solid #C5BDBB;
-          padding-right: 80px;
+          padding: 13px 70px 13px 20px;
           font-size: 15px;
-          padding-left: 15px;
+          height: auto;
           width: 100%;
           max-width: 260px;
         }
@@ -6932,8 +6943,10 @@ html:not(.default).ar body {
     }
     .fcb{
       padding: 0 10px;
+      
       img{
         max-width: 70px;
+        filter: contrast(0) brightness(2.5);
       }
     }
   }
@@ -7273,6 +7286,7 @@ html:not(.default).ar body {
   }
 
 
+
   // Default
   .template_default {
     margin-top: 20px;
@@ -7359,6 +7373,10 @@ html:not(.default).ar body {
   .blog {
     .box {
       margin-bottom: 25px !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
     }
   }
 
