@@ -6617,6 +6617,7 @@ html:not(.default).ar body {
     input, select, textarea{
       &.form-control{
         padding: 3px 10px;
+        min-height: 32px;
       }
     }
   }
