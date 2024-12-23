@@ -25,15 +25,49 @@ body {
   font-size: 18px;
   font-weight: 300;
   font-family: $f1;
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: calc(100vw - 40%);
   width: 100vw;
   contain: layout paint;
 }
 
-.home body {
-  background-image: url("../images/hero-art.svg");
+.home, .nav_2 {
+  body {
+    // background-position: top right;
+    // background-repeat: no-repeat;
+    // background-size: calc(100vw - 40%);
+    // background-image: url("../images/hero-art.svg");
+    &::before{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 50%;
+      width: clamp(300px, 100%, 1920px);
+      height: 100%;
+      background: url(../images/hero-art.svg) no-repeat top right / 65%;
+      // background-size: 65%;
+      transform: translateX(50%) scaleX(1);
+      z-index: -1;
+    }
+  }
+  @media all and (min-width: 992px) {
+    &.ar{
+      body{
+        &::before {
+          right: auto;
+          left: 50%;
+          background: url(../images/hero-art.svg) no-repeat top right / 65%;
+          transform: translateX(-50%) scaleX(-1);
+        }
+
+      }
+    }
+  }
+  @media all and (max-width: 991px) {
+    &.menu_open.home body::before, 
+    &.menu_open.nav_2 body::before{
+      transform: translateX(50%) scaleX(-1);
+    }
+  }
 }
 
 section {
@@ -2977,7 +3011,21 @@ a:hover {
 
 // Features
 .features {
-  background: url(../images/features-vector.svg) no-repeat right top;
+  // background: url(../images/features-vector.svg) no-repeat right top;
+  position: relative;
+
+  .svg_anim{
+    position: absolute;
+    top: 80px;
+    right: 50%;
+    width: 100%;
+    max-width: 1500px;
+    transform: translateX(50%);
+    z-index: -1;
+    path{
+      // fill: #FFEFEA;
+    }
+  }
 }
 
 .feature_list {
@@ -4310,26 +4358,31 @@ a:hover {
 // Home Hero
 .home_hero {
   position: relative;
-  // background-image: url("../images/hero-image.webp");
-  background-image: url("../images/hero-image.png");
-  background-repeat: no-repeat;
-  background-size: clamp(60%, 1129px, 60%), 40%;
-  background-position: calc(100% + 50px);
 
-  &::after {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 832px;
-    height: 685px;
-    background-image: url("../images/hero-art-2.svg");
-    background-repeat: no-repeat;
-    top: 60px;
-    left: -200px;
-    animation: rotate 20s linear infinite;
-    max-width: 50vw;
-    background-size: contain;
-    z-index: -1;
+  .flex{
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 832px;
+      height: 685px;
+      background-image: url("../images/hero-art-2.svg");
+      background-repeat: no-repeat;
+      top: 60px;
+      left: -410px;
+      animation: rotate 20s linear infinite;
+      max-width: 50vw;
+      background-size: contain;
+      z-index: -1;
+      @media all and (max-width: 991px) {
+        width: 90vw;
+        height: 90vw;
+        top: 30px;
+        left: -100px;
+        max-width: none;
+        z-index: -10;
+      }
+    }
   }
 
   @keyframes rotate {
@@ -4412,15 +4465,53 @@ a:hover {
   }
 }
 
-@media all and (max-width: 1200px) {
-  .home_hero {
-    &:before {
-      display: none;
+.ar{
+  .home_hero{
+    .flex{
+      &::after {
+        left: auto;
+        right: -410px;
+      }
     }
   }
 }
 
-@media all and (max-width: 991px) {
+.home {
+  .home_hero {
+    &::before{
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 50%;
+      width: 100vw;
+      max-width: 1920px;
+      height: 100%;
+      background: url("../images/hero-image.png") no-repeat 104% center;
+      background-size: clamp(300px, 59vw, 1130px);
+      transform: translateX(50%) scaleX(1);
+      z-index: -1;
+      @media all and (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+  &.ar{
+    .home_hero{
+      &::before {
+        right: auto;
+        left: 50%;
+        background: url("../images/hero-image.png") no-repeat 0% center;
+        background-size: clamp(300px, 59vw, 1130px);
+        transform: translateX(-50%) scaleX(1);
+      }
+
+    }
+  }
+}
+
+
+@media all and (max-width: 1200px) {
   .home_hero {
     background: none;
 
@@ -5565,10 +5656,10 @@ a:hover {
     background: none !important;
   }
   .home .wrapper, .contact .wrapper, .feature_page .wrapper{
-    background-image: url(../images/hero-art.svg);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: calc(100vw - 40%);
+    // background-image: url(../images/hero-art.svg);
+    // background-position: top right;
+    // background-repeat: no-repeat;
+    // background-size: calc(100vw - 40%);
   }
   body,
   p {
@@ -6222,21 +6313,6 @@ html:not(.default).ar body {
   position: relative;
   background-image: none;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/hero-art.svg') no-repeat top right;
-    background-size: 70%;
-    /* Adjust size as needed */
-    transform: scaleX(-1);
-    /* Flip the image horizontally */
-    z-index: -1;
-    /* Keeps it behind all content */
-  }
 }
 
 
@@ -6614,10 +6690,10 @@ html:not(.default).ar body {
 .nav_2{
   
     body {
-      background-position: top -80px right;
-      background-repeat: no-repeat;
-      background-size: calc(100vw - 40%);
-      background-image: url("../images/hero-art.svg");
+      // background-position: top -80px right;
+      // background-repeat: no-repeat;
+      // background-size: calc(100vw - 40%);
+      // background-image: url("../images/hero-art.svg");
     }
 
     .home_hero {
@@ -6796,6 +6872,7 @@ html:not(.default).ar body {
     height: 100svh;
     background-color: #000000c1;
     padding: 20px;
+    opacity: 0;
     #mobile_nav{
       background: none;
       height: calc(100svh - 90px);
@@ -6860,14 +6937,18 @@ html:not(.default).ar body {
     }
   }
   .wrapper{
-    background-color: #fff;
+    // background-color: #fff;
     overflow: hidden;
     transition: all .6s cubic-bezier(0, 0, 0.2, 1.02);
     position: relative;
     z-index: 10;
   }
   .menu_open{
+    .mobile_nav{
+      opacity: 1;
+    }
     .wrapper{
+      background-color: #fff;
       transform: translate(calc(100% - 50px), 7%) scale(0.9);
       transform-origin: left;
       border-radius: 20px;
@@ -6877,6 +6958,10 @@ html:not(.default).ar body {
         transform: translate(0,0) scale(1);
         height: calc(100vh);
       }
+    }
+    &.home body::before, 
+    &.nav_2 body::before{
+      // transform: translateX(50%) scaleX(-1);
     }
   }
 }

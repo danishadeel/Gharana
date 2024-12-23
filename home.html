@@ -20,31 +20,31 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
     rel="stylesheet">
-    
+
 </head>
 
 <body>
-  
+
   <!-- Mobile Nav -->
   <div class="mobile_nav">
     <div id="mobile_nav" class="">
-        <div class="fcb">
-          <div class="logo"> <a class="m_logo img" href="home.html">
-              <img width="90" height="60" src="images/logo.png"> </a> </div>
-          <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
-        </div>
-      </div>
-      <div class="top">
-        <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
-        <a class="btn btn-sm" href="login.html">Login</a>
-        <label class="switch notranslate">
-          <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-          <span class="slider"></span>
-        </label>
+      <div class="fcb">
+        <div class="logo"> <a class="m_logo img" href="home.html">
+            <img width="90" height="60" src="images/logo.png"> </a> </div>
+        <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
       </div>
     </div>
-    <!-- Mobile Nav End-->
-    <!-- <a class="humburger_menu">
+    <div class="top">
+      <a class="btn btn-sm" href="sign-up.html">Sign Up</a>
+      <a class="btn btn-sm" href="login.html">Login</a>
+      <label class="switch notranslate">
+        <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <!-- Mobile Nav End-->
+  <!-- <a class="humburger_menu">
       <div class="nav-icon2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     </a> -->
   <main class="wrapper" onclick="return true">
@@ -149,7 +149,9 @@
             </div>
           </div>
         </div>
-        <div class="img"></div>
+        <div class="img">
+          <!-- <img src="images/hero-image.png"> -->
+        </div>
       </div>
     </section>
     <div class="space_botm"></div>
@@ -255,6 +257,24 @@
           </div>
         </div>
       </div>
+
+      <!-- Shape Animation -->
+      <div class="svg_anim">
+        <svg xmlns="http://www.w3.org/2000/svg" id="erhjUXgpQwR1" shape-rendering="geometricPrecision"
+          text-rendering="geometricPrecision" viewBox="0 0 1600 900">
+          <defs>
+            <linearGradient id="erhjUXgpQwR3-fill" x1=".5" x2=".5" y1="0" y2="1" gradientUnits="objectBoundingBox"
+              spreadMethod="pad">
+              <stop id="erhjUXgpQwR3-fill-0" offset="0%" stop-color="rgba(255,255,255,0)" />
+              <stop id="erhjUXgpQwR3-fill-1" offset="100%" stop-color="#010022" />
+            </linearGradient>
+          </defs>
+          <path id="erhjUXgpQwR2" fill="#fff6f3"
+            d="M1161 65c278 160 567 467 375 635-139 121-217-141-681 79-439 209-751 63-828-166-53-155 43-346 257-482C520-19 996-29 1161 65Z" />
+        </svg>
+      </div>
+      <!-- Shape Animation End -->
+
     </section>
     <div class="space_botm"></div>
     <!-- Features End -->
@@ -759,10 +779,14 @@
       })
     });
 
+
   </script>
-  
+
+
+
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- <script type="text/javascript" src="js/plugins/svg-anim.js"></script> -->
 </body>
 
 </html>

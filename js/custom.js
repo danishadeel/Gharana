@@ -1,9 +1,9 @@
 // @koala-prepend "plugins/bootstrap.js"
-// @koala-exclude "plugins/jquery-validation.js"
 // @koala-prepend "plugins/jquery.validate.min.js"
 // @koala-prepend "plugins/datepicker.js"
 // @koala-prepend "plugins/lity.js"
 // @koala-prepend "plugins/slick.min.js"
+// @koala-prepend "plugins/svg-anim.js"
 // @koala-exclude "plugins/map.js"
 
 
