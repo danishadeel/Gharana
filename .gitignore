@@ -1,2 +1,4 @@
 # Ignore the following path
-css/atf.css.map
+**/atf.css.map/*
+**atf.css.map**
+**.vscode**

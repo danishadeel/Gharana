@@ -52,6 +52,14 @@ function toggleLanguage() {
 // Document.Ready Start
 $(document).ready(function () {
 
+  // Footer validation
+  $('.footer_input').on("click", function (e) {
+    if ($('#newsletter').valid()) {
+      alert('POST YOUR FORM HERE');
+    }
+  });
+
+  // Sticky nav
   if ($(window).width() > 991) {
     $(window).scroll(function() {
       var scroll = $(window).scrollTop();
