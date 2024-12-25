@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="home">
+<html class="home" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -11,15 +11,40 @@
   <meta property="og:image" content="images/logo.png">
   <meta property="og:url" content="https://baytiliving.ae/">
   <meta property="og:type" content="website">
+  <meta name="description" content="Welcome to Bayti Living. Streamline Your Building Operations with
+Our All-in-One Solution.">
+
 
   <title>Bayti Living</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <link href="css/atf.css?v2" rel="stylesheet">
+  <link rel="preload" href="images/hero-image.webp" as="image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Arabic:wght@100..900&display=swap"
-    rel="stylesheet">
+
+  <!-- #region Lazy Load -->
+  <script type="text/javascript">
+    // Lazy Load Start
+    document.addEventListener("DOMContentLoaded", function () {
+      var e, n = document.querySelectorAll(".lazy");
+      function t() {
+        e && clearTimeout(e), e = setTimeout(function () {
+          for (var e = window.pageYOffset, o = 0; o < n.length; o++) n[o].offsetTop < window.innerHeight + e && (n[o].src = n[o].dataset.src, n[o].classList.remove("lazy"));
+          0 == n.length && (document.removeEventListener("scroll", t), window.removeEventListener("resize", t), window.removeEventListener("orientationChange", t))
+        }, 20)
+      }
+      document.addEventListener("scroll", t), window.addEventListener("resize", t), window.addEventListener("orientationChange", t)
+    });
+    // Lazy Load End
+  </script>
+  <style type="text/css">
+    .lazy {
+      background-image: none !important;
+    }
+  </style>
+  <!-- #endregion -->
+
 
 </head>
 
@@ -29,9 +54,10 @@
   <div class="mobile_nav">
     <div id="mobile_nav" class="">
       <div class="fcb">
-        <div class="logo"> <a class="m_logo img" href="home.html">
-            <img width="90" height="60" src="images/logo.png"> </a> </div>
-        <a class="humburger_menu close_btn"> <em class="fa-times"></em> </a>
+        <div class="logo"><a class="m_logo img" href="home.html">
+          <img alt="Bayti Living" width="90" height="60" src="images/logo.png"> </a> 
+        </div>
+        <span class="humburger_menu close_btn"> <em class="fa-times"></em> </span>
       </div>
     </div>
     <div class="top">
@@ -39,7 +65,7 @@
       <a class="btn btn-sm" href="login.html">Login</a>
       <label class="switch notranslate">
         <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-        <span class="slider"></span>
+        <span class="swch_circle"></span>
       </label>
     </div>
   </div>
@@ -53,9 +79,9 @@
     <div class="header_mob">
       <div class="row ng bot flex">
         <div class="logo"> <a class="m_logo img" href="home.html">
-            <img width="90" height="60" src="images/logo.png"> </a> </div>
+            <img alt="Bayti Living" width="90" height="60" src="images/logo.png"> </a> </div>
         <div class="menu_mob text-right flex">
-          <a class="humburger_menu"> <em class="fa-bars"></em> </a>
+          <span class="humburger_menu"> <em class="fa-bars"></em> </span>
         </div>
       </div>
     </div>
@@ -68,7 +94,8 @@
         <div class="cnt-lg">
           <div class="flex align-items-center row ng">
             <div class="logo col-md-2">
-              <a href="home.html" class="img"> <img src="images/logo.png" width="90" height="60" /> </a>
+              <a href="home.html" class="img"> <img alt="Bayti Living" src="images/logo.png" width="90" height="60" />
+              </a>
             </div>
             <div class="col-md-10">
               <div class="flex jc_end align-items-center">
@@ -96,7 +123,7 @@
 
                   <label class="switch notranslate">
                     <input type="checkbox" onchange="toggleLanguage()" class="yes_no">
-                    <span class="slider"></span>
+                    <span class="swch_circle"></span>
                   </label>
                 </div>
               </div>
@@ -115,7 +142,7 @@
       <div class="flex cnt-lg">
         <div class="head_content">
           <div class="txt">
-            <div class="hero-txt">
+            <div class="hero-txt" style="opacity: 0;">
               <div class="item">
                 <h1>Streamline Building Operation with <br><span>All-In-One-Solution</span></h1>
                 <p>Bayti Living is your trusted partner for seamless facility management and effortless property
@@ -149,9 +176,7 @@
             </div>
           </div>
         </div>
-        <div class="img">
-          <!-- <img src="images/hero-image.png"> -->
-        </div>
+        <div class="img"></div>
       </div>
     </section>
     <div class="space_botm"></div>
@@ -174,10 +199,10 @@
           </div>
         </div>
         <div class="img">
-          <video class="video"
+          <video class="video" loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen="" controls="" poster="images/video-image.png">
-            <source src="./Video/video.mp4" type="video/mp4">
+            allowfullscreen="" controls="" poster="images/video-image.webp">
+            <source src="./video/video.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -222,7 +247,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-6 feature_img">
+            <div class="col-lg-6 feature_img lazy">
               <div class="box mb">
                 <h4>Broadcast</h4>
                 <ul>
@@ -323,43 +348,48 @@
       </div>
       <div class="row cnt">
         <div class="col-md-6 sh_img img tab-content">
-          <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-            <img src="images/stakeholder-image.png">
+          <div class="tab-pane fade show active" id="tab1" aria-labelledby="tab1-tab">
+            <img alt="Bayti Living" class="lazy" data-src="images/stakeholder-image.webp" width="520" height="747">
             <div class="btns">
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-4.png">Tenant Documents
-              </a>
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-5.png">Tenant Contract
-              </a>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-4.png" width="33" height="36">Tenant
+                Documents
+              </span>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-5.png" width="33" height="36">Tenant
+                Contract
+              </span>
             </div>
           </div>
-          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-            <img src="images/stakeholder-image.png">
+          <div class="tab-pane fade" id="tab2" aria-labelledby="tab2-tab">
+            <img alt="Bayti Living" class="lazy" data-src="images/stakeholder-image.webp" width="520" height="747">
             <div class="btns">
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-4.png">Real Estate Documents
-              </a>
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-5.png">Real Estate Contract
-              </a>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-4.png" width="33" height="36">Real Estate
+                Documents
+              </span>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-5.png" width="33" height="36">Real Estate
+                Contract
+              </span>
             </div>
           </div>
-          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-            <img src="images/stakeholder-image.png">
+          <div class="tab-pane fade" id="tab3" aria-labelledby="tab3-tab">
+            <img alt="Bayti Living" class="lazy" data-src="images/stakeholder-image.webp" width="520" height="747">
             <div class="btns">
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-4.png">Technician Documents
-              </a>
-              <a class="lbl_rounded">
-                <img src="images/sh-icn-5.png">Technician Contract
-              </a>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-4.png" width="33" height="36">Technician
+                Documents
+              </span>
+              <span class="lbl_rounded">
+                <img alt="Bayti Living" class="lazy" data-src="images/sh-icn-5.png" width="33" height="36">Technician
+                Contract
+              </span>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="box active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1"
-            aria-selected="true">
+          <div class="box lazy active" id="tab1-tab" data-toggle="tab" href="#tab1">
             <h3>Tenants</h3>
             <ul class="list lg">
               <li>Can Raise Maintenance Request</li>
@@ -369,8 +399,7 @@
               <li>Contact Management</li>
             </ul>
           </div>
-          <div class="box" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2"
-            aria-selected="true">
+          <div class="box lazy" id="tab2-tab" data-toggle="tab" href="#tab2">
             <h3>Real Estate Company</h3>
             <ul class="list lg">
               <li>Property Management</li>
@@ -380,8 +409,7 @@
               <li>Insight Reports</li>
             </ul>
           </div>
-          <div class="box" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3"
-            aria-selected="true">
+          <div class="box lazy" id="tab3-tab" data-toggle="tab" href="#tab3">
             <h3>Technician</h3>
             <ul class="list lg">
               <li>Receive Request</li>
@@ -482,27 +510,27 @@
       </div>
       <div class="row">
         <div class="col-lg-6 text-center img">
-          <img src="images/img-how-it-works.png">
+          <img alt="Bayti Living" class="lazy" data-src="images/img-how-it-works.webp" width="572" height="563">
         </div>
         <div class="col-lg-6">
           <ol>
-            <li class="box">
+            <li class="box lazy">
               <p class="head">Sign Up</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
             </li>
-            <li class="box">
+            <li class="box lazy">
               <p class="head">Fill Onboarding Form</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
             </li>
-            <li class="box">
+            <li class="box lazy">
               <p class="head">Relationship Manager Assigned</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
             </li>
-            <li class="box">
+            <li class="box lazy">
               <p class="head">Lorem Ipsum Dolor Sit</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
             </li>
-            <li class="box">
+            <li class="box lazy">
               <p class="head">Duis Aute Irure Reprehenderit</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
             </li>
@@ -531,7 +559,7 @@
                   tenant
                   satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png">
+                  <img alt="Bayti Living" class="lazy" data-src="./images/comment-img-1.png" width="43" height="43">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -547,7 +575,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-2.png">
+                  <img alt="Bayti Living" class="lazy" data-src="./images/comment-img-2.png" width="43" height="43">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -563,7 +591,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png">
+                  <img alt="Bayti Living" class="lazy" data-src="./images/comment-img-1.png" width="43" height="43">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -579,7 +607,7 @@
                   with tenants by streamlining payments, maintenance requests, and communication, leading to increased
                   tenant satisfaction and operational efficiency.</p>
                 <div class="testimonials_content">
-                  <img src="./images/comment-img-1.png">
+                  <img alt="Bayti Living" class="lazy" data-src="./images/comment-img-1.png" width="43" height="43">
                   <div class="pl-2">
                     <h3>Franceska Soanes</h3>
                     <p>Edward & Towers</p>
@@ -631,7 +659,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-1.png">
+              <img alt="Bayti Living" class="lazy" data-src="./images/blog-img-1.webp" width="370" height="230">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Bayti Living: Make Commercial Property Management Easier than Ever</h3>
@@ -641,7 +669,7 @@
           </div>
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-2.png">
+              <img alt="Bayti Living" class="lazy" data-src="./images/blog-img-2.webp" width="370" height="230">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>Fortifying Trust | Bayti Living's Approach to Data Security in Proptech</h3>
@@ -651,7 +679,7 @@
           </div>
           <div class="col-md-4">
             <div class="box img">
-              <img src="./images/blog-img-3.png">
+              <img alt="Bayti Living" class="lazy" data-src="./images/blog-img-3.webp" width="370" height="230">
               <div class="blog_content">
                 <p>2024-11-13</p>
                 <h3>The Ultimate Guide to Choosing the Right Property Management Software</h3>
@@ -666,7 +694,7 @@
     <!-- blog end -->
 
     <!-- demo start -->
-    <section class="demo text-center cnt">
+    <section class="demo text-center cnt lazy">
       <h1>Let’s talk about your project</h1>
       <p>We help companies and individuals streamline their workflows and processes.</p>
       <a class="btn btn-v2" href="contact.html"> Request Demo</a>
@@ -675,10 +703,10 @@
     <!-- demo start -->
 
     <!-- Footer -->
-    <footer class="cnt">
+    <footer class="cnt lazy">
       <div class="row m-0 ftr text-center text-lg-left">
         <div class="col-lg-4">
-          <img src="images/logo.png" width="90" height="60">
+          <img alt="Bayti Living" class="lazy" data-src="images/logo.png" width="90" height="60">
           <h3>BAYTI LIVING SMART IT SOLUTION CO</h3>
           <p>Office 1001-AB Plaza 8 Building Al Mamzar, Dubai-UA</p>
           <a href="mailto:support@baytiliving.ae">support@baytiliving.ae</a>
@@ -696,10 +724,10 @@
         </div>
         <div class="col-lg-2 app_icn">
           <h6>Download App</h6>
-          <a href="https://apps.apple.com/ae/app/bayti-living/id6474440931" target="_blank"><img
-              src="images/apple-store.svg"></a>
+          <a href="https://apps.apple.com/ae/app/bayti-living/id6474440931" target="_blank"><img alt="Bayti Living"
+              width="156" height="45" class="lazy" data-src="images/apple-store.svg"></a>
           <a href="https://play.google.com/store/apps/details?id=com.bayti.living" target="_blank"><img
-              src="images/google-play.svg"></a>
+              alt="Bayti Living" width="156" height="45" class="lazy" data-src="images/google-play.svg"></a>
         </div>
         <div class="col-lg-4 inpt">
           <h6>Get Connected</h6>
@@ -707,18 +735,18 @@
           <form id="newsletter" class="validate form">
             <div class="footer_input">
               <input class="form-control input-field" type="email" required placeholder="Email Address">
-              <a class="input_btn"><img src="./images/footer_input.svg"></a>
+              <button aria-label="Submit email" class="input_btn"></button>
             </div>
           </form>
           <div class="social_icn">
-            <a>
-              <img src="./images/fb.svg">
+            <a title="Facebook" href="https://baytiliving.ae/">
+              <i class="fab fa-facebook"></i>
             </a>
-            <a>
-              <img src="./images/linkedin.png">
+            <a title="Linkedin" href="https://baytiliving.ae/">
+              <i class="fab fa-linkedin"></i>
             </a>
-            <a>
-              <img src="./images/twitter.png">
+            <a title="Twitter" href="https://baytiliving.ae/">
+              <i class="fa fa-twitter"></i>
             </a>
           </div>
         </div>
@@ -754,14 +782,20 @@
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/plugins.js?v2"></script>
-
+  <script type="text/javascript" defer
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     $(document).ready(function () {
+      $('.hero-txt').on('init', function (event, slick) {
+        $('.hero-txt').css({ opacity: 1 })
+      });
 
       $('.hero-txt').slick({
         dots: true,
         arrows: false,
+        lazyLoad: 'ondemand',
       });
+
       $('.testi_slider').slick({
         dots: true,
         arrows: false,
@@ -784,10 +818,6 @@
 
   </script>
 
-
-
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

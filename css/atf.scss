@@ -1,6 +1,4 @@
-@import 'plugins/bootstrap',
-'plugins/fonts',
-'abstracts/variables';
+@import 'plugins/bootstrap', 'plugins/slick', 'plugins/fonts', 'abstracts/variables';
 
 
 // SECTION Generic Styling
@@ -33,10 +31,6 @@ body {
 
 .home, .nav_2 {
   body {
-    // background-position: top right;
-    // background-repeat: no-repeat;
-    // background-size: calc(100vw - 40%);
-    // background-image: url("../images/hero-art.svg");
     &::before{
       display: block;
       content: "";
@@ -46,9 +40,16 @@ body {
       width: clamp(300px, 100%, 1920px);
       height: 100%;
       background: url(../images/hero-art.svg) no-repeat top right / 65%;
-      // background-size: 65%;
       transform: translateX(50%) scaleX(1);
       z-index: -1;
+    }
+    @media all and (max-width: 767px) {
+      &::before{
+        display: none;        
+      }
+      .wrapper{
+        background:#fff url(../images/hero-art.svg) no-repeat top right / 65%;
+      }
     }
   }
   @media all and (min-width: 992px) {
@@ -70,6 +71,18 @@ body {
       transform: translateX(50%) scaleX(-1);
     }
   }
+  @media all and (max-width: 767px) {
+    &.menu_open body{
+      &::before{
+          display: block;
+          transform: translateX(50%) scaleX(-1);        
+        }
+    }
+  }
+}
+.nav_2 body::before{
+  top: -100px;
+  right: 48%;
 }
 
 section {
@@ -222,7 +235,6 @@ a {
   &.btn-v2 {
     background-color: #fff;
     color: $c1;
-    border: 2px solid #ee421d;
 
     &:focus,
     &:hover {
@@ -1351,7 +1363,7 @@ a:hover {
     &.sticky {
       position: fixed;
       right: 20px;
-      top: 5px;
+      top: 20px;
       height: 50px;
       z-index: 500;
       background-color: $c2;
@@ -2155,7 +2167,9 @@ a:hover {
 // SECTION Home Hero
 .home_hero {
   position: relative;
-
+  .hero-txt{
+    transition: all .5s;
+  }
   .flex{
     &::after {
       display: block;
@@ -2284,7 +2298,7 @@ a:hover {
       width: 100vw;
       max-width: 1920px;
       height: 100%;
-      background: url("../images/hero-image.png") no-repeat 104% center;
+      background: url("../images/hero-image.webp") no-repeat 104% center;
       background-size: clamp(300px, 59vw, 1130px);
       transform: translateX(50%) scaleX(1);
       z-index: -1;
@@ -2298,7 +2312,7 @@ a:hover {
       &::before {
         right: auto;
         left: 50%;
-        background: url("../images/hero-image.png") no-repeat 0% center;
+        background: url("../images/hero-image.webp") no-repeat 0% center;
         background-size: clamp(300px, 59vw, 1130px);
         transform: translateX(-50%) scaleX(1);
       }
@@ -2340,7 +2354,7 @@ a:hover {
     .img {
       width: 100%;
       height: 55vw;
-      background-image: url(../images/hero-image.png);
+      background-image: url(../images/hero-image.webp);
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center bottom !important;
@@ -2448,7 +2462,7 @@ a:hover {
     transform: translateX(50%);
     z-index: -1;
     path{
-      // fill: #FFEFEA;
+      fill: #FFEFEA;
     }
   }
 }
@@ -2503,7 +2517,7 @@ a:hover {
   justify-content: center;
   align-items: end;
   background: no-repeat center center;
-  background-image: url(../images/feature-img.png), radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(229, 61, 3, 0.25) 49.5%, rgba(255, 255, 255, 0) 100%);
+  background-image: url(../images/feature-img.webp), radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(229, 61, 3, 0.25) 49.5%, rgba(255, 255, 255, 0) 100%);
 }
 
 @media all and (max-width: 991px) {
@@ -2512,7 +2526,7 @@ a:hover {
 
     .row {
       background: no-repeat center top;
-      background-image: url(../images/feature-img.png);
+      background-image: url(../images/feature-img.webp);
       padding-top: 80vw;
       background-size: 80%;
     }
@@ -3506,7 +3520,12 @@ a:hover {
 }
 
 @media all and (max-width: 767px) {
-  
+  .login, .signup{
+    padding: 12px 20px !important;
+    .logo{
+      margin-left: 0;
+    }
+  }
   .nav.tabs li a{
     padding: 25px 0 3px;
     &::before{
@@ -3601,7 +3620,7 @@ a:hover {
 
 // SECTION Footer
 footer {
-  background-image: url(../images/footer-graphic.png);
+  background-image: url(../images/footer-graphic.webp);
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -3669,8 +3688,27 @@ footer {
         gap: 10px;
 
         a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 3px;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          color: #fff;
+          background-color: rgba($c1, .4);
+          cursor: pointer;
           &:hover {
-            filter: brightness(0);
+            background-color: rgba($c1, 1);
+          }
+          i{
+            &::before{
+              font-size: 18px;
+            }
+            &.fa-twitter::before{
+              font-size: 24px;
+              transform: translateY(-3px);
+            }
           }
         }
       }
@@ -3689,21 +3727,20 @@ footer {
         width: 100%;
 
         .input_btn {
-          background-color: $c1;
           position: absolute;
           top: 0; 
           right: 0;
           text-decoration: none;
           border-radius: 10px;
           z-index: 1; 
-          
-
-          img {
-            padding: 15px;
-          }
-
+          width: 50.5px;
+          height: 50.5px;
+          background: #ee421d url(../images/footer_input.svg) no-repeat center;
+          cursor: pointer;
+          border: 0;
+          transition: all .3s;
           &:hover {
-            opacity: 0.8;
+            background-color: $ct;
           }
         }
 
@@ -3880,7 +3917,7 @@ footer {
     width: 0;
     height: 0;
 
-    &:checked+.slider {
+    &:checked+.swch_circle {
       background-color: $c2;
 
       &:before {
@@ -3893,12 +3930,12 @@ footer {
       }
     }
 
-    &:focus+.slider {
+    &:focus+.swch_circle {
       box-shadow: 0 0 1px $c2;
     }
   }
 
-  .slider {
+  .swch_circle {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -4159,15 +4196,6 @@ footer {
   }
 
 
-
-  // Login Arabic start
-  .login{
-    .switch{
-      margin: 20px 850px 0 15px;
-    }
-  }
-  // Login Arabic end
-
   // register arabic start
   .signup{
     .tab_box .tab-content > .tab-pane {
@@ -4255,7 +4283,15 @@ html:not(.default).ar body {
       padding: 15px 0;
 
       .nav_btns a {
-        padding: 9px 15px;
+        &.btn-v2{
+          box-shadow: inset 0 0 0px 2px $c1;
+          &:hover{
+            background-color: $c1;
+          }
+        }
+        &.btn-v3{
+          box-shadow: 0 0;
+        }
       }
       
       .navigation>li>a{
@@ -4273,6 +4309,11 @@ html:not(.default).ar body {
       bottom: 10px;
       animation: fadeIn3 0.3s linear;
       -webkit-animation: fadeIn3 0.3s linear;
+    }
+  }
+  &.terms{
+    .wrapper{
+      margin-top: 120px;
     }
   }
 }
@@ -4396,6 +4437,19 @@ html:not(.default).ar body {
       animation: shine .75s
   }
 }
+
+// Twitter replace
+.fa.fa-twitter::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "";
+    background-color: currentColor;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+    mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+    background-position: center 3px;
+}
+
 
 // Orbit animation for How it works.
 
@@ -5073,13 +5127,13 @@ html:not(.default).ar body {
     opacity: 0;
     #mobile_nav{
       background: none;
-      height: calc(100svh - 90px);
+      height: calc(100svh - 110px);
       overflow: hidden;
       .navigation {
         width: calc(100% - 50px);
         padding-top: 20px;
         height: calc(100svh - 100px);
-        padding-bottom: 50px;
+        padding-bottom: 70px;
         overflow: auto;
         transform: translateX(-80px);
         transition: all .5s ease-out;
@@ -5116,14 +5170,12 @@ html:not(.default).ar body {
       }
     }
     .close_btn{
-      // position: absolute;
-      right: 40px;
-      top: 40px;
+      color: $c1;
     }
     .top{
       padding: 10px;
       position: absolute;
-      bottom: 20px;
+      bottom: 50px;
       .btn-sm{
         font-size: 12px;
         border: 0;
