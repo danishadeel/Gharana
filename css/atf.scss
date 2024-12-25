@@ -68,14 +68,16 @@ body {
   @media all and (max-width: 991px) {
     &.menu_open.home body::before, 
     &.menu_open.nav_2 body::before{
-      transform: translateX(50%) scaleX(-1);
+      transform: translateX(50%) scaleX(-1); 
+      top: 0;
+      right: 50%;
     }
   }
   @media all and (max-width: 767px) {
     &.menu_open body{
       &::before{
           display: block;
-          transform: translateX(50%) scaleX(-1);        
+          transform: translateX(50%) scaleX(-1);  
         }
     }
   }
@@ -2418,6 +2420,11 @@ a:hover {
       border-radius: 20px;
       display: inline-block;
       margin: auto;
+      direction: ltr !important;
+      *{
+        direction: ltr !important;
+
+      }
     }
 
     img {
@@ -2512,6 +2519,10 @@ a:hover {
   }
 }
 
+.ar .feature_list .mr {
+    transform: translateX(40px);
+}
+
 .feature_img {
   display: flex;
   justify-content: center;
@@ -2560,8 +2571,7 @@ a:hover {
 
   .feature_list .feature_img .box {
     width: 100%;
-    width: 370px;
-    max-width: none;
+    max-width: 370px;
   }
 }
 
@@ -4099,8 +4109,8 @@ footer {
   .stakeholder {
     .sh_img {
       &:before {
-        left: 55%;
-        right: inherit;
+        // left: 55%;
+        // right: inherit;
       }
     }
 
@@ -4184,7 +4194,7 @@ footer {
       text-align: center;
     }
 
-    .stakeholder .cnt .tab-pane img {
+    .stakeholder .cnt .tab-pane > img {
       padding-left: 0;
       padding-right: 10%;
     }
@@ -4314,6 +4324,23 @@ html:not(.default).ar body {
   &.terms{
     .wrapper{
       margin-top: 120px;
+      @media all and (max-width: 991px) {
+        margin-top: 0;
+      }
+    }
+  }
+  @media all and (max-width: 1024px) {
+    &:not(.terms){
+      .wrapper{
+        margin-top: 120px;
+      }
+    }
+  }
+  @media all and (max-width: 991px) {
+    &:not(.terms){
+      .wrapper{
+        margin-top: 0;
+      }
     }
   }
 }
@@ -4458,75 +4485,96 @@ html:not(.default).ar body {
   position: relative;
   top: 25px;
   left: 25px;
-  height: 300px;
-  width: 300px;
+  height: 540px;
+  width: 540px;
 }
 
 /* ---------- Inner orbit - This is the circles closest to the central point ---------- */
 #inner-orbit {
   position: absolute;
-  top: 75px;
-  left: 75px;
-  width: 150px;
-  height: 150px;
-  border: 2px #4A437F dashed;
+  background-color:#ed421c;
+  top: 130px;
+  left: 130px;
+  width: 270px;
+  height: 270px;
   border-radius: 100%;
-  -webkit-animation: spin-right 10s linear infinite;
-  animation: spin-right 10s linear infinite;
+  // animation: spin-right 10s linear infinite;
 }
 
 /* ---------- Repeating styles for the inner orbiting circles ---------- */
 .inner-orbit-cirlces {
   position: absolute;
-  top: 62px;
+  top: 110px;
   left: -6px;
-  height: 10px;
-  width: 10px;
+  height: 30px;
+  width: 30px;
   border-radius: 100%;
   background-color: #9F98E6;
+}
+.inner-orbit-cirlces:before{
+  content: '';
+  display:block;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(https://picsum.photos/200) no-repeat center center / 100%;
+  // animation: spin-around 20s linear infinite;
 }
 
 /* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
 #middle-orbit {
   position: absolute;
-  top: 35px;
-  left: 35px;
-  width: 225px;
-  height: 225px;
-  border: 2px #4A437F dashed;
+  background-color:#fce2dd;
+  top: 55px;
+  left: 55px;
+  width: 433px;
+  height: 433px;
   border-radius: 100%;
-  -webkit-animation: spin-right 15s linear infinite;
-  animation: spin-right 15s linear infinite;
+  z-index:-1;
+  // animation: spin-right 15s linear infinite;
 }
 
 /* ---------- Repeating styles for the inner orbiting circles ---------- */
 .middle-orbit-cirlces {
   position: absolute;
-  top: 25px;
+  top: 100px;
   left: 17px;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   border-radius: 100%;
   background-color: #4A437F;
+}
+.middle-orbit-cirlces:before{
+  content: '';
+  display:block;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(https://picsum.photos/200) no-repeat center center / 100%;
+  // animation: spin-around 20s linear infinite;
 }
 
 /* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
 #outer-orbit {
   position: absolute;
+  background-color:#fdf5f3;
   top: 0;
   left: 0;
-  width: 294px;
-  height: 294px;
-  border: 2px #4A437F dashed;
+  width: 100%;
+  height: 100%;
   border-radius: 100%;
-  -webkit-animation: spin-right 20s linear infinite;
-  animation: spin-right 20s linear infinite;
+  z-index:-2;
+  // animation: spin-right 20s linear infinite;
 }
 
 /* ---------- Repeating styles for the outer orbiting circles ---------- */
 .outer-orbit-cirlces {
   position: absolute;
-  top: -17px;
+  top: 15px;
   left: 125px;
   height: 30px;
   width: 30px;
@@ -4542,7 +4590,7 @@ html:not(.default).ar body {
   left: 0;
   top: 0;
   background: url(https://picsum.photos/200) no-repeat center center / 100%;
-  animation: spin-around 20s linear infinite;
+  // animation: spin-around 20s linear infinite;
 }
 
 
