@@ -144,6 +144,7 @@ h1 {
   margin-bottom: 20px;
   font-family: $f1;
   color: $c2;
+  letter-spacing: 2px;
   font-weight: 600;
 
   span {
@@ -354,7 +355,7 @@ span.sup {
 }
 
 .space_botm {
-  margin-top: 100px;
+  margin-top: 75px;
   clear: both;
 
   &.bd {
@@ -1663,11 +1664,11 @@ a:hover {
 
     .navigation {
       background: none;
-      li {
+      >li {
         ul{
           top: 40px;
         }
-        a {
+        >a {
           color: $ct;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -2221,9 +2222,8 @@ a:hover {
   }
 
   .flex {
-    // height: calc(100vh - 100px);
-    height: 620px;
-    // max-height: 550px;
+    height: 590px;
+    margin-top: -30px;
     align-items: center;
     position: relative;
   }
@@ -2233,6 +2233,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 500px;
 
     .slick-dots {
       bottom: -40px;
@@ -2244,6 +2245,7 @@ a:hover {
       line-height: 1.1;
       color: $c2;
       letter-spacing: 2px;
+      margin-bottom: 17px;
 
       span {
         color: $c1;
@@ -2252,6 +2254,8 @@ a:hover {
 
     p {
       font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 15px;
       @media all and (max-width: 767px) {
         font-size: 14px;
         line-height: 1.4;
@@ -2301,7 +2305,7 @@ a:hover {
       max-width: 1920px;
       height: 100%;
       background: url("../images/hero-image.webp") no-repeat 104% center;
-      background-size: clamp(300px, 59vw, 1130px);
+      background-size: clamp(300px, 59vw, 1129px);
       transform: translateX(50%) scaleX(1);
       z-index: -1;
       @media all and (max-width: 1200px) {
@@ -2315,7 +2319,7 @@ a:hover {
         right: auto;
         left: 50%;
         background: url("../images/hero-image.webp") no-repeat 0% center;
-        background-size: clamp(300px, 59vw, 1130px);
+        background-size: clamp(300px, 59vw, 1129px);
         transform: translateX(-50%) scaleX(1);
       }
 
@@ -2339,6 +2343,7 @@ a:hover {
       height: auto;
       flex-direction: column;
       max-height: none;
+      margin-top: 0;
     }
 
 
@@ -2486,6 +2491,37 @@ a:hover {
     box-shadow: 0 0 10px rgba(#000, .1);
     padding: 15px;
     margin-bottom: 25px;
+    display: block;
+    color: $c2;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s;
+    overflow: hidden;
+    border: 1px dotted transparent;
+    &::after{
+      display: block;
+      content: '';
+      position: absolute;
+      background: url(../images/updates-vector.svg) no-repeat center / contain;
+      width: 100%;
+      aspect-ratio: 1/.8;
+      transform: translateY(100%) rotate(180deg);
+      transition: all .7s cubic-bezier(0, 0, 0.03, 1.02);
+      top: 0;
+      z-index: 0;
+      filter: blur(10px);
+    }
+    &:hover{
+      border: 1px dotted $c1;
+      &:after{
+        transform: translateY(0%) rotate(0deg);
+        filter: blur(0px);
+      }
+    }
+    *{
+      z-index: 10;
+      position: relative;
+    }
 
     li {
       list-style: none;
@@ -2824,7 +2860,9 @@ a:hover {
     border-radius: 10px;
     border: 1px solid transparent;
     cursor: pointer;
-    display: block;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: $c2;
 
     h3 {
@@ -2839,12 +2877,15 @@ a:hover {
       font-weight: bold;
       text-align: center;
 
-      small {
+      .small {
         font-weight: bold;
         font-size: 30px;
       }
+      .notranslate{
+        font-size: 35px;
+      }
 
-      span {
+      span.mnth {
         font-size: 18px;
         font-weight: 400;
         color: #666;
@@ -2857,11 +2898,10 @@ a:hover {
 
     .list {
       margin-top: 20px;
-      margin-right: -10px;
-      width: calc(100% + 10px);
 
       li {
         font-size: 18px;
+        letter-spacing: -.5px;
       }
     }
 
@@ -3281,6 +3321,9 @@ a:hover {
 
     form {
       max-width: 360px;
+      @media all and (max-width: 1200px) {
+        margin: auto;
+      }
     }
   }
 }
@@ -3365,6 +3408,9 @@ a:hover {
 
   form {
     max-width: 360px;
+    @media all and (max-width: 1200px) {
+      margin: auto;
+    }
   }
 
   .logo {
@@ -3730,6 +3776,7 @@ footer {
         font-size: 15px;
         height: auto;
         width: 100%;
+        max-height: 50.5px;
       }
       .footer_input {
         position: relative; 
@@ -4005,6 +4052,21 @@ footer {
 .ar {
   overflow-x: hidden;
   animation: fade .6s;
+  body {
+    font-family: $f2;
+    font-weight: 400;
+    p, li, span{
+      font-weight: 400 !important;
+      font-family: $f2;
+    }
+    h1,h2,h3,h4{
+      font-weight: 600 !important;
+      font-family: $f2;
+      span{
+        font-weight: 600 !important;
+      }
+    }
+  }
 
   .header_top .navigation  li ul {
     position: absolute;
@@ -4024,16 +4086,6 @@ footer {
     }
   }
 
-  .hs1,
-  %hs1,
-  h1 {
-    font-family: $f2;
-  }
-
-  body {
-    font-family: $f2;
-    font-weight: 400;
-  }
   .header_mob, .mobile_nav{
     direction: ltr;
     #mobile_nav .navigation li a{
@@ -4094,7 +4146,9 @@ footer {
       right: auto;
     }
   }
-
+  .feature_list .ml {
+    margin-right: 40px;
+  }
   .footer_input {
     .input_btn {
       margin-right: -20px;
@@ -4479,118 +4533,157 @@ html:not(.default).ar body {
 
 
 // Orbit animation for How it works.
-
-/* ---------- Container for the orbiting circles animation ---------- */
 #circle-orbit-container {
   position: relative;
-  top: 25px;
-  left: 25px;
-  height: 540px;
-  width: 540px;
-}
-
-/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
-#inner-orbit {
-  position: absolute;
-  background-color:#ed421c;
-  top: 130px;
-  left: 130px;
-  width: 270px;
-  height: 270px;
-  border-radius: 100%;
-  // animation: spin-right 10s linear infinite;
-}
-
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
-.inner-orbit-cirlces {
-  position: absolute;
-  top: 110px;
-  left: -6px;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  background-color: #9F98E6;
-}
-.inner-orbit-cirlces:before{
-  content: '';
-  display:block;
-  width:100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: url(https://picsum.photos/200) no-repeat center center / 100%;
-  // animation: spin-around 20s linear infinite;
-}
-
-/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
-#middle-orbit {
-  position: absolute;
-  background-color:#fce2dd;
-  top: 55px;
-  left: 55px;
-  width: 433px;
-  height: 433px;
-  border-radius: 100%;
-  z-index:-1;
-  // animation: spin-right 15s linear infinite;
-}
-
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
-.middle-orbit-cirlces {
-  position: absolute;
-  top: 100px;
-  left: 17px;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  background-color: #4A437F;
-}
-.middle-orbit-cirlces:before{
-  content: '';
-  display:block;
-  width:100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: url(https://picsum.photos/200) no-repeat center center / 100%;
-  // animation: spin-around 20s linear infinite;
-}
-
-/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
-#outer-orbit {
-  position: absolute;
-  background-color:#fdf5f3;
-  top: 0;
-  left: 0;
+  aspect-ratio: 1 / 1;
   width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  z-index:-2;
-  // animation: spin-right 20s linear infinite;
-}
+  max-width: 540px;
 
-/* ---------- Repeating styles for the outer orbiting circles ---------- */
-.outer-orbit-cirlces {
-  position: absolute;
-  top: 15px;
-  left: 125px;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  background-color: #00FFCA;
-}
-.outer-orbit-cirlces:before{
-  content: '';
-  display:block;
-  width:100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: url(https://picsum.photos/200) no-repeat center center / 100%;
-  // animation: spin-around 20s linear infinite;
+  .inner-orbit, .middle-orbit, .outer-orbit {
+    position: absolute;
+    border-radius: 100%;
+    margin: auto;
+    inset: 0;
+
+    &.inner-orbit {
+      background-color: #ed421c;
+      width: 50%;
+      height: 50%;
+      animation: spin-right 20s linear infinite;
+    }
+
+    &.middle-orbit {
+      background-color: #fce2dd;
+      width: 80%;
+      height: 80%;
+      z-index: -1;
+      animation: spin-right 33s linear infinite;
+    }
+
+    &.outer-orbit {
+      background-color: #fdf5f3;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      animation: spin-right 40s linear infinite;
+    }
+
+    // Styles for orbiting circles
+    div {
+      position: absolute;
+      border-radius: 50%;
+      margin: auto;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+
+      &.inner-orbit-cirlces {
+        &:before{
+          width: 24%;
+          height: 24%;
+          animation: spin-around 20s linear infinite;
+          left: 40%;
+          top: -10%;
+          background: url(../images/orbit-img-5.png) no-repeat center / 100%;
+        }
+        &:after{
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          width: 70%;
+          height: 70%;
+          animation: spin-around 20s linear infinite;
+          inset: 0;
+          margin: auto;
+          background: url(../images/logo.svg) no-repeat center / 90%;
+          filter: contrast(0) brightness(2.5);
+        }
+      }
+
+      &.middle-orbit-cirlces {
+        &:before{
+          width: 15%;
+          height: 15%;
+          animation: spin-around 33s linear infinite;
+          left: 14.5%;
+          top: 85%;
+          background: url(../images/orbit-img-3.png) no-repeat center / 100%;
+        }
+        &.v2{
+          &:before{
+            animation: spin-around 33s linear infinite;
+            top: 14.5%;
+            left: 85%;
+            background: url(../images/orbit-img-4.png) no-repeat center / 100%;
+          }
+          .circle{
+            top: 20%;
+            left: 7.5%;
+            &:nth-child(2){
+              top: 50%;
+              left: 98.5%;
+            }
+            &:nth-child(3){
+              top: 96.5%;
+              left: 62%;
+            }
+          }
+        }
+      }
+
+      &.outer-orbit-cirlces {
+        &:before{
+          animation: spin-around 40s linear infinite;
+          left: 44%;
+          top: -6%;
+          background: url(../images/orbit-img-1.png) no-repeat center / 100%;
+        }
+        &.v2{
+          &:before{
+            animation: spin-around 40s linear infinite;
+            top: 79%;
+            left: 79%;
+            background: url(../images/orbit-img-2.png) no-repeat center / 100%;
+          }
+          .circle{
+            top: 8%;
+            left: 20%;
+            &:nth-child(2){
+              top: 40%;
+              left: 98%;
+            }
+            &:nth-child(3){
+              top: 93.5%;
+              left: 70%;
+            }
+            &:nth-child(4){
+              top: 68%;
+              left: 3%;
+            }
+          }
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 12%;
+        height: 12%;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 3px #fff, 0 0 10px #0000001f;
+      }
+      .circle{
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid $c1;
+        position: absolute;
+        background-color: $c4;
+      }
+    }
+  }
 }
 
 
