@@ -2576,6 +2576,7 @@ a:hover {
 @media all and (max-width: 1200px) {
   .feature_list {
     padding-bottom: 0;
+    justify-content: center;
 
     [class*='col'] {
 
@@ -5155,6 +5156,9 @@ html:not(.default).ar body {
   .home_hero .head_content h1 {
     font-size: 30px;
   }
+  .nav_2:not(.terms) .wrapper {
+    margin-top: 120px;
+}
 
   // General
   .navbar-default .navigation li ul {
@@ -5215,6 +5219,8 @@ html:not(.default).ar body {
   .packages{
     .col-6{
       margin-bottom: 20px; 
+      display: flex;
+      justify-content: center;
     }
     .box{
       max-width: 100%;
@@ -5254,6 +5260,9 @@ html:not(.default).ar body {
     display: none;
   }
 
+  .nav_2:not(.terms) .wrapper {
+    margin-top: 0;
+}
   .breadcrumb {
     display: none;
     padding: 0 20px;
