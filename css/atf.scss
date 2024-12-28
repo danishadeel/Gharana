@@ -4127,6 +4127,8 @@ footer {
     top: 47px;
     min-width: 240px;
     text-align: right;
+    left: auto;
+    right: 0;
   }
   footer .ftr{
     input {
@@ -4183,8 +4185,6 @@ footer {
 
   .list:not(.slick-dots) {
     li {
-      font-size: 20px;
-      // background-size: 25px;
       background: url(../images/bullet-lg.svg) no-repeat right center;
       padding: 5px 35px 5px 0;
     }
